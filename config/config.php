@@ -1,11 +1,11 @@
 <?php
 date_default_timezone_set("Asia/Colombo");
 
-$site_http_path = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/system/";
+$site_http_path = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/galaxy-lab/";
 
 
 define('HTTP_PATH', $site_http_path);
-define('DOC_ROOT', 'C:/xampp/htdocs/system/');
+define('DOC_ROOT', 'C:/xampp/htdocs/galaxy-lab/');
 define('SITE_NAME', 'GALAXY System');
 
 // define('ADMIN_PATH', $adminpath);
