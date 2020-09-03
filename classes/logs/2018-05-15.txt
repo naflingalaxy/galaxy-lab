@@ -1,0 +1,178 @@
+Time : 12:08:30
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WEHRE AboutUs_Id = ?' at line 4
+Raw SQL : UPDATE tbl_about_us SET AboutUs_Title = :aboutTitle,  
+													AboutUs_Year = :aboutyear,  
+													AboutUs_Description = :aboutdescription,  
+													AboutUs_Status = :aboutStatus WEHRE AboutUs_Id = :aboutId
+
+Time : 11:50:59
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_about_us SET AboutUs_Title = :aboutTitle, AboutUs_Year = :aboutyear, AboutUs_Description = :aboutdescription, AboutUs_Status = :aboutStatus WHERE AboutUs_Id = 2
+
+Time : 11:49:25
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_about_us SET AboutUs_Title = :aboutTitle, AboutUs_Year = :aboutyear, AboutUs_Description = :aboutdescription, AboutUs_Status = :aboutStatus WHERE AboutUs_Id = 2
+
+Time : 11:48:36
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_about_us SET AboutUs_Title = :abouttitle, AboutUs_Year = :aboutyear, AboutUs_Description = :aboutdescription, AboutUs_Status = :aboutStatus WHERE AboutUs_Id = 2
+
+Time : 11:13:42
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'AbouftUs_Status' in 'field list'
+Raw SQL : UPDATE tbl_about_us SET AboutUs_Title = :aboutTitle, AboutUs_Year = :aboutyear, AboutUs_Description = :aboutdescription, AbouftUs_Status = :aboutStatus WHERE AboutUs_Id = :id
+
+Time : 10:08:11
+SQLSTATE[HY093]: Invalid parameter number
+Raw SQL : UPDATE tbl_about_us SET AboutUs_Id = :id, AboutUs_Title = :aboutTitle, AboutUs_Year = :aboutyear, AboutUs_Description = :aboutdescription, AboutUs_Status = :aboutStatus WHERE AboutUs_Id = :id
+	<style type="text/css">
+		#photos {
+  /* Prevent vertical gaps */
+  line-height: ;
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;  
+  padding: 25px;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+#one{
+	padding: 10px;
+}
+
+#one:hover{
+	background-color: #404040;
+}
+
+/*.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}*/
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+	</style>
+
+	<div class="container" style="" align="center">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8 col-sm-12" style="padding: 25px;">
+				<h2>Products</h2>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p> -->
+			</div>
+         </div>
+        
+		 <!-- product details -->
+         <div class="row " align="center" style="width: 100%">
+	         <?php
+	         	if (isset($msg)) {?>
+	         		<div class="alert alert-success"><b><?php echo $msg; ?></b></div>
+	         	<?php }
+	         ?>
+         	
+         		<section id="photos">
+         		<?php if (isset($productResult) && count($productResult)>2) {
+         		for ($d=0; $d < count($productResult); $d++) { 
+         		?>
+         		<!-- <div class="more" id="more2"><?php echo $productResult[$d]['Product_Name']; ?> ( <?php echo $productResult[$d]['Product_Code']; ?> ) </div> -->
+         		<div id="one">
+  				<a href="<?php echo IMAGE_UPLOAD; ?>Products/<?php echo $productResult[$d]['Product_Image']; ?>" data-lightbox-gallery="portfolio-gallery">
+				
+				<img src="<?php echo IMAGE_UPLOAD; ?>Products/<?php echo $productResult[$d]['Product_Image']; ?>" alt="portfolio img"></a>
+				
+				<!-- <div class="more"><a target="_Blank" href="<?php echo HTTP_PATH.'productview/'.$productResult[$d]['Product_Url'];?>">More Details</a></div> -->
+				</div>
+	 			<?php }
+				}?>
+				</section>
+			<!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" style="background-color: #333333; border: 5px #101010 solid ;" align="center" id="long">
+				<div class="more" id="more2"><?php echo $productResult[$d]['Product_Name']; ?> ( <?php echo $productResult[$d]['Product_Code']; ?> ) </div>
+				<a href="<?php echo IMAGE_UPLOAD; ?>Products/<?php echo $productResult[$d]['Product_Image']; ?>" data-lightbox-gallery="portfolio-gallery">
+				
+				<img src="<?php echo IMAGE_UPLOAD; ?>Products/<?php echo $productResult[$d]['Product_Image']; ?>" alt="portfolio img"></a>
+				<div class="a"><i>Rs.<b><?php echo $productResult[$d]['Product_Price']?></b></i></div>
+				<div class="more"><a href="<?php echo HTTP_PATH;?>productview/<?php echo $productResult[$d]['Product_Url']; ?>/<?php echo  $productResult[$d]['Product_Orientation']; ?>">More Details</a></div>
+ -->
+				<!-- <div class="more"><a target="_Blank" href="<?php echo HTTP_PATH.'productview/'.$productResult[$d]['Product_Url'];?>">More Details</a></div> -->
+				<!-- <br>				
+			</div> -->
+			
+		</div>
+		<!-- product details end /////-->
+	</div>
+<?php 
+	if ($toimage <= $countPro) {?>
+	<div  align="center">
+	<a href="<?php echo HTTP_PATH; ?>products/<?php echo $start2+1; ?>" class="btn btn-default">View More</a>
+	</div>
+<br>
+	<?php }
+?>

@@ -1,0 +1,31 @@
+Time : 10:02:29
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-1, 1' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -1, 1
+
+Time : 09:15:30
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10
+
+Time : 09:15:06
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10
+
+Time : 09:14:59
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10
+
+Time : 09:14:33
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10
+
+Time : 09:06:46
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10
+
+Time : 08:58:56
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10
+
+Time : 08:57:50
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :status LIMIT -10, 10

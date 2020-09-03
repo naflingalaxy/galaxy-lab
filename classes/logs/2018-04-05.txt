@@ -1,0 +1,15 @@
+Time : 13:15:55
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 10' at line 1
+Raw SQL : SELECT * FROM tbl_product WHERE Product_Url != :url AND Product_Status = :status ORDER BY Product_Id DESC LIMIT , 10
+
+Time : 13:01:28
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' 10' at line 1
+Raw SQL : SELECT * FROM tbl_product WHERE Product_Url != :url AND Product_Status = :status ORDER BY Product_Id DESC LIMIT , 10
+
+Time : 11:54:54
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT count(*) FROM tbl_product WHERE Product_Url != :url
+
+Time : 11:54:40
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT count(*) FROM tbl_product WHERE Product_Url != :url

@@ -1,0 +1,15 @@
+Time : 13:59:41
+SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+
+Time : 10:18:21
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_order SET Order_Quantity = :orderQuantity, Order_Total_Price = :orderTotalPrice, Customer_Email = :customeremail, Customer_Contact_No = :customercontact, Order_Delivered_To = :customeraddress WHERE Order_Code = :ordercode
+
+Time : 09:10:04
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM tbl_order WHERE Order_Code = :ordercode AND Order_Status = :orderstatus
+
+Time : 09:09:48
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM tbl_order WHERE Order_Code = :ordercode AND Order_Status = :orderstatus

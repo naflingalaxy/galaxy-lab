@@ -1,0 +1,27 @@
+Time : 07:50:09
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 07:49:06
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 07:48:34
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 07:47:49
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 07:46:39
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 07:46:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 07:46:08
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10

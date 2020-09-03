@@ -1,0 +1,7 @@
+Time : 07:17:52
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Customer_Address' in 'field list'
+Raw SQL : INSERT INTO tbl_order(Product_Url, Product_Size, Order_Quantity, order_Total_Price, Customer_Email, Customer_Contact_No, Customer_Address) VALUES(:producturl, :productsize, :orderQuantity, :orderTotalPrice, :customeremail, :customercontact, :customeraddress)
+
+Time : 07:17:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')rder_Total_Price, Customer_Email, Customer_Contact_No, Customer_Address) VALUES' at line 1
+Raw SQL : INSERT INTO tbl_order(Product_Url, Product_Size, Order_Quantity, )rder_Total_Price, Customer_Email, Customer_Contact_No, Customer_Address) VALUES(:producturl, :productsize, :orderQuantity, :orderTotalPrice, :customeremail, :customercontact, :customeraddress)

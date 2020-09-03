@@ -1,0 +1,30 @@
+Time : 09:03:11
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Imag' at line 1
+Raw SQL : INSERT INTO tbl_gallery (User_Id, Gallery_Code Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Image_Status, Gallery_Image_Price, Gallery_Image_Size, Gallery_Image) VALUES (:UserId, :galleryCode, :galleryImageTitle, :galleryImageLinkPage, :galleryImageDescription, :galleryImageStatus, :galleryImagePrice, :gallerySize, :galleryImage )
+
+Time : 08:56:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Gallery_Imgage_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Ima' at line 1
+Raw SQL : INSERT INTO tbl_gallery (User_Id, Gallery_Code Gallery_Imgage_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Image_Status, Gallery_Image_Price, Gallery_Image_Size, Gallery_Image) VALUES (:UserId, :galleryCode, :galleryImageTitle, :galleryImageLinkPage, :galleryImageDescription, :galleryImageStatus, :galleryImagePrice, :gallerySize, :galleryImage )
+
+Time : 08:52:31
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Imag' at line 1
+Raw SQL : INSERT INTO tbl_gallery (User_Id, Gallery_Code Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Image_Status, Gallery_Image_Price, Gallery_Image_Size, Gallery_Image) VALUES (:UserId, :galleryCode, :galleryImageTitle, :galleryImageLinkPage, :galleryImageDescription, :galleryImageStatus, :galleryImagePrice, :gallerySize, :galleryImage )
+
+Time : 06:29:57
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_product SET  
+									Product_Code = :productcode,  
+									Product_Name = :productname,  
+									Product_Size = :productsize,  
+									Product_Orientation = :productorientation,  
+									Product_Description = :productdescription,  
+									Product_Price = :productprice,  
+									Product_Status = :productstatus,  
+									Product_Image = :productImage WHERE Product_id = :productid
+
+Time : 05:45:13
+SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+
+Time : 05:45:13
+SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+

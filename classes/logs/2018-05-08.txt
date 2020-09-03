@@ -1,0 +1,11 @@
+Time : 10:48:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE Product_id = ?' at line 9
+Raw SQL : UPDATE tbl_product SET  
+			User_Id = :UserId, 
+			Product_Code = :productcode,  
+			Product_Name = :productname,  
+			Product_Size = :productsize,  
+			Product_Orientation = :productorientation,  
+			Product_Description = :poductdescription,  
+			Product_Price = :productprice,  
+			WHERE Product_id = :productid

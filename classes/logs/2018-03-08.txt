@@ -1,0 +1,11 @@
+Time : 12:17:13
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1 FROM tbl_slider where Slider_Status = ? AND Slider_Linked_Page = ? ORDER BY Sl' at line 1
+Raw SQL : SELECT TOP 1 FROM tbl_slider where Slider_Status = :sliderStatus AND Slider_Linked_Page = :sliderLinkedPage ORDER BY Slider_Id DESC
+
+Time : 11:30:56
+SQLSTATE[HY000]: General error: 1111 Invalid use of group function
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :sliderStatus AND Slider_Linked_Page = :sliderLinkedPage AND MAX(Slider_Id)
+
+Time : 11:28:15
+SQLSTATE[HY000]: General error: 1111 Invalid use of group function
+Raw SQL : SELECT * FROM tbl_slider WHERE Slider_Status = :sliderStatus AND Slider_Linked_Page = :sliderLinkedPage AND Slider_Id = Max(Slider_Id)

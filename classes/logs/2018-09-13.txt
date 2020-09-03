@@ -1,0 +1,3 @@
+Time : 06:41:36
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM tbl_slider WHERE slider_id = :slideid

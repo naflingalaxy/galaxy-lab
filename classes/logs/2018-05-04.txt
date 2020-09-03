@@ -1,0 +1,23 @@
+Time : 12:20:03
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_product SET Product_Code = :productcode, Product_Name = :productname, Product_Size = :productsize, Product_Orientation = :productorientation, Product_Description = :productdescription, Product_Price = :productprice, Product_Status = :productstatus WHERE Product_id = :productid
+
+Time : 12:10:40
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_product SET Product_Code = :productcode, Product_Name = :productname, Product_Size = :productsize, Product_Orientation = :productorientation, Product_Description = :productdescription, Product_Price = :productprice, Product_Status = :productstatus WHERE Product_id = :productid
+
+Time : 12:03:46
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_product SET Product_Code = :productcode, Product_Name = :productname, Product_Size = :productsize, Product_Orientation = :productorientation, Product_Description = :productdescription, Product_Price = :productprice, Product_Status = :productstatus WHERE Product_id = :productid
+
+Time : 12:02:28
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_product SET Product_Code = :productcode, Product_Name = :productname, Product_Size = :productsize, Product_Orientation = :productorientation, Product_Description = :productdescription, Product_Price = :productprice, Product_Status = :productstatus WHERE Product_id = 34
+
+Time : 08:13:49
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT * FROM tbl_product WHERE Product_Status = :status
+
+Time : 07:41:04
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM tbl_slider_bottom WHERE Slider_Bottom_Status = :status LIMIT 0, 10

@@ -1,0 +1,27 @@
+Time : 12:44:11
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proPage, :productStatus, :Image)
+
+Time : 12:39:26
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proPage, :productStatus, :Image)
+
+Time : 12:39:11
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proPage, :productStatus, :Image)
+
+Time : 12:39:01
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proPage, :productStatus, :Image)
+
+Time : 12:33:54
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proLinkPage, :productStatus, :Image)
+
+Time : 12:13:56
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proLinkPage, :productStatus, :Image)
+
+Time : 12:13:29
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_slider (Slider_Name, Slider_Linked_Page, Slider_Status, Slider_Image) VALUES (:protitle, :proLinkPage, :productStatus, :Image)

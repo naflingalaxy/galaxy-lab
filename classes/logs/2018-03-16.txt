@@ -1,0 +1,7 @@
+Time : 11:32:57
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT 0, 10
+
+Time : 10:58:16
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SLECT count(*) FROM' at line 1
+Raw SQL : SLECT count(*) FROM

@@ -1,0 +1,79 @@
+Time : 09:08:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:08:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:07:54
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:06:36
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:06:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:06:19
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:05:41
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:04:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:04:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:02:34
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:00:53
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 56?status=Active
+
+Time : 09:00:47
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:00:47
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:00:47
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 09:00:46
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 08:52:16
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?status=Active' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Status = 'Deactive' WHERE Slider_Id = 57?status=Active
+
+Time : 08:06:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Raw SQL : UPDATE tbl_slider SET Slider_Name = 'ssssssssssssss', Slider_Linked_Page = 'home', Slider_Status = 'Active', Slider_Image = '1521443181--portfolio-img8.jpg' WHERE Slider_Id =
+
+Time : 07:58:30
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_slider SET Slider_Name = :sliderTitle, Slider_Linked_Page = :sliderLinkedPage, Slider_Status = :sliderStatus, Slider_Image = :sliderImage WHERE Slider_Id = :sliderid
+
+Time : 07:53:30
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_slider SET Slider_Name = :sliderTitle, Slider_Linked_Page = :sliderLinkedPage, Slider_Status = :sliderStatus, Slider_Image = :sliderImage WHERE Slider_Id = :sliderid
+
+Time : 07:52:33
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_slider SET Slider_Name = :sliderTitle, Slider_Linked_Page = :sliderLinkedPage, Slider_Status = :sliderStatus, Slider_Image = :sliderImage WHERE Slider_Id = :sliderid

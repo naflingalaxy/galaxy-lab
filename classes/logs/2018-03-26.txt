@@ -1,0 +1,23 @@
+Time : 11:44:01
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT count(*) FROM tbl_contact WHERE Contact_Status = :status AND Contact_Type = :contactType
+
+Time : 11:43:56
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT count(*) FROM tbl_contact WHERE Contact_Status = :status AND Contact_Type = :contactType
+
+Time : 11:43:25
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT count(*) FROM tbl_contact WHERE Contact_Status = :status AND Contact_Type = :contactType
+
+Time : 11:41:57
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT count(*) FROM tbl_contact WHERE Contact_Status = :status AND Contact_Type = :contactType
+
+Time : 11:41:35
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT count(*) FROM tbl_contact WHERE Contact_Status = :status AND Contact_Type = :contactType
+
+Time : 09:54:30
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM tbl_contact WHERE Contact_Status = :status

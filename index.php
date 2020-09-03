@@ -1,11 +1,5 @@
 <?php
-	if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
-		$uri = 'https://';
-	} else {
-		$uri = 'http://';
-	}
-	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/dashboard/');
-	exit;
+include 'top.php';
+$include_file = DOC_ROOT.'pages/index_pages.php';
+include DOC_ROOT.'template.php';
 ?>
-Something is wrong with the XAMPP installation :-(

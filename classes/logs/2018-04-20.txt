@@ -1,0 +1,11 @@
+Time : 07:55:32
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :galleryImageStatus AND Gallery_Image_Page = :page ORDER BY Gallery_Id DESC LIMIT 1,
+
+Time : 07:21:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :galleryImageStatus AND Gallery_Image_Page = :page ORDER BY Gallery_Id DESC LIMIT 1,
+
+Time : 07:20:57
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :galleryImageStatus AND Gallery_Image_Page = :page ORDER BY Gallery_Id DESC LIMIT 1,

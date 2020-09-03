@@ -1,0 +1,19 @@
+Time : 09:22:39
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Slider_Status' in 'where clause'
+Raw SQL : SELECT count(*) FROM tbl_gallery WHERE Slider_Status = :status
+
+Time : 09:08:08
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 09:07:52
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-10, 10' at line 1
+Raw SQL : SELECT * FROM tbl_gallery WHERE Gallery_Image_Status = :status LIMIT -10, 10
+
+Time : 09:04:45
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_gallery SET Gallery_Image_Status = :status WHERE Gallery_Id = :galleryid
+
+Time : 09:02:27
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Gallery_Id' in 'where clause'
+Raw SQL : UPDATE tbl_slider SET Gallery_Image_Status = :status WHERE Gallery_Id = :galleryid
