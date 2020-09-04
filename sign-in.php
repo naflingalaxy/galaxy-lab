@@ -1,6 +1,10 @@
 <?php
 include 'top.php';
-include 'includes/auth.php';
+
+if (isset($_SESSION['user_id'])) { 
+	header("Location:".HTTP_PATH."index");
+}
+
 include_once DOC_ROOT.'classes/db_connection.php';
 
 if (isset($_POST['signin-btn'])) {
@@ -9,8 +13,8 @@ if (isset($_POST['signin-btn'])) {
 	$md5password = md5($userpassword);
 	$userstatus = '1';
 
-	$user_login = array('userid' => $username, 'md5password' => $md5password, 'userstatus' => $userstatus);
-    $user_login_query = $db->query("SELECT * FROM tbl_galaxy_users WHERE user_id = :userid AND user_password = :md5password AND user_status = :userstatus", $user_login);
+	$user_login = array('username' => $username, 'md5password' => $md5password, 'userstatus' => $userstatus);
+    $user_login_query = $db->query("SELECT * FROM tbl_galaxy_users WHERE user_name = :username AND user_password = :md5password AND user_status = :userstatus", $user_login);
 
 	if ($user_login_query) {
         for ($i=0; $i < count($user_login_query); $i++) { 

@@ -19,17 +19,12 @@
             <div id="sidebar-scrollbar">
                <nav class="iq-sidebar-menu">
                   <ul class="iq-menu">
-                     <li class="iq-menu-title"><i class="ri-separator"></i><span>Main</span></li>
-                     <li class="active">
-                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-home-4-line"></i><span>Dashboard</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                     
+                     <li class="">
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-pencil-ruler-line"></i><span>Production</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu">
-                           <li class="active"><a href="index.html">Dashboard 1</a></li>
-                           <li><a href="dashboard1.html">Dashboard 2</a></li>
-                           <li><a href="analytics.html">Analytics</a></li>
-                           <li><a href="tracking.html">Tracking</a></li>
-                           <li><a href="web-analytics.html">Web Analytics</a></li>
-                           <li><a href="patient-dashboard.html">Patient</a></li>
-                           <li><a href="ticket-booking.html">Ticket Booking</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li>
+                           
                         </ul>
                      </li>
                      <li style="display: none;">
@@ -39,10 +34,6 @@
                            <li><a href="app/email-compose.html">Email Compose</a></li>
                         </ul>
                      </li>
-                     
-                     
-                     
-                     
                   </ul>
                </nav>
                <div class="p-3"></div>
@@ -64,8 +55,8 @@
                   <h5 class="mb-0">Dashboard</h5>
                   <nav aria-label="breadcrumb">
                      <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        <li class="breadcrumb-item"><a href="<?php echo HTTP_PATH; ?>index">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?php $current_page = basename($_SERVER['PHP_SELF'],".php");  echo preg_replace("/[^a-zA-Z]/", " ", $current_page); ?></li>
                      </ul>
                   </nav>
                </div>
@@ -95,7 +86,7 @@
                   </div>
                   <ul class="navbar-list">
                      <li>
-                        <a href="#" class="search-toggle iq-waves-effect bg-primary text-white"><img src="images/user/1.jpg" class="img-fluid rounded" alt="user"></a>
+                        <a href="#" class="search-toggle iq-waves-effect bg-primary text-white"><img src="<?php echo $_SESSION['user_image']; ?>" class="img-fluid rounded" alt="user"></a>
                         <div class="iq-sub-dropdown iq-user-dropdown">
                            <div class="iq-card shadow-none m-0">
                               <div class="iq-card-body p-0 ">
