@@ -203,7 +203,7 @@ Index Of Script
         Page Loader
         -----------------------------------------------------------------------*/
         jQuery("#load").fadeOut();
-        jQuery("#loading").delay().fadeOut("");
+        jQuery("#loading").delay(800).fadeOut("");
 
         /*---------------------------------------------------------------------
        Ticket Booking

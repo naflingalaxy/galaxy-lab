@@ -39,3 +39,5 @@ Header set X-Frame-Options DENY
 
 # Enable iframes come from the same origin.
 Header always append X-Frame-Options SAMEORIGIN
+
+DirectoryIndex sign-in.php

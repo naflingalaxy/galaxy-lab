@@ -1,5 +1,5 @@
 /*
-Template: Sofbox - Responsive Bootstrap 4 Admin Dashboard Template
+Template: Galaxy Printers Admin System
 Author: iqonicthemes.in
 Design and Developed by: iqonicthemes.in
 NOTE: This file contains the styling for responsive Template.
@@ -782,4 +782,24 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 .user-profile > button { position: absolute; right: 0; }
 .chat-searchbar { position: relative; }
 .form-group.chat-search-data > i { position: absolute; top: 10px; left: 5px; }
->>>>>>> 5abf3eac8f2551a83803787a036d03c9b67f74e2
+
+/*NAFLIN CSS */
+#loading {
+    /*background-color: #ffffff;*/
+    height: 100%;
+    width: 100%;
+    
+    
+    z-index: 999999;
+   
+     background-repeat: no-repeat;
+}
+.loader-gif {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.alert {
+  margin-top: 15px;
+}

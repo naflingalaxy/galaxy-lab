@@ -1,4 +1,6 @@
+
       <!-- Footer -->
+      <?php if (isset($_SESSION['user_id'])) { ?>
       <footer class="bg-white iq-footer">
          <div class="container-fluid">
             <div class="row">
@@ -14,6 +16,7 @@
             </div>
          </div>
       </footer>
+      <?php } ?>
       <!-- Footer END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
