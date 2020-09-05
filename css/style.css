@@ -803,3 +803,8 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 .alert {
   margin-top: 15px;
 }
+.custom-select {
+    
+    text-transform: capitalize;
+    
+}
