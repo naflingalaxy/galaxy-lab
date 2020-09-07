@@ -4,7 +4,7 @@
          <!-- Sidebar  -->
          <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-               <a href="index.html">
+               <a href="<?php echo HTTP_PATH; ?>index">
                <img src="images/logo.png" class="img-fluid" alt="">
                <span>Galaxy</span>
                </a>
@@ -21,10 +21,10 @@
                   <ul class="iq-menu">
                      
                      <li class="">
-                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-pencil-ruler-line"></i><span>Production</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-pencil-ruler-line"></i><span>Manage Stock</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu">
-                           <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li>
-                           
+                           <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>home">Stocks Home</a></li>
                         </ul>
                      </li>
                      <li style="display: none;">

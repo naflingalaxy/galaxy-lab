@@ -803,8 +803,17 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 .alert {
   margin-top: 15px;
 }
-.custom-select {
+.custom-select option {
     
-    text-transform: capitalize;
+    text-transform: uppercase;
     
+}
+.iq-card-body h2 {
+  text-transform: uppercase;
+}
+.text-dark .font-size-32 {
+    font-size: 40px;
+}
+.font-size-32 {
+    font-size: 40px;
 }
