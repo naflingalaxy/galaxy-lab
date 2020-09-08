@@ -6,7 +6,7 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Art Board</h4>
+                              <h4 class="card-title"> Art Board </h4>
                            </div>
                         </div>
                         <div class="iq-card-body">

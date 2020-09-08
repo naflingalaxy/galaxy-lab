@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2020 at 02:31 PM
+-- Generation Time: Sep 08, 2020 at 01:53 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -53,49 +53,38 @@ INSERT INTO `tbl_galaxy_items` (`item_id`, `item_name`, `item_section_id`) VALUE
 CREATE TABLE `tbl_galaxy_stock_items` (
   `item_id` int(11) NOT NULL,
   `item_name` varchar(200) NOT NULL,
-  `item_section` int(11) NOT NULL
+  `item_section` int(11) NOT NULL,
+  `item_url` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_galaxy_stock_items`
 --
 
-INSERT INTO `tbl_galaxy_stock_items` (`item_id`, `item_name`, `item_section`) VALUES
-(1, 'Art Board', 1),
-(5, 'Ivery board', 1),
-(6, 'Ice Gold', 1),
-(10, 'Box Board', 1),
-(11, 'BRISTAL BOARD', 1),
-(13, 'NCR Top white (carbonized)', 2),
-(14, 'NCR Middle Blue (carbonized)', 2),
-(15, 'NCR middle pink (carbonized)', 2),
-(16, 'NCR middle green', 2),
-(17, 'NCR Bottom yellow', 2),
-(18, 'NCR Bottom pink', 2),
-(19, 'Yellow Demain', 2),
-(20, 'N/P 48 White demain', 2),
-(21, 'Cover Paper', 2),
-(22, 'Bank Paper 60gsm (Short)', 2),
-(23, 'Bank Paper 60gsm (Long)', 2),
-(24, 'Bank Paper 70gsm', 2),
-(25, 'Bank Paper 80gsm', 2),
-(26, 'Bank Paper 100', 2),
-(27, 'Art Paper 100gsm', 2),
-(28, 'Art Paper 120gsm', 2),
-(29, 'Art paper 150', 2),
-(30, 'Art paper 150', 2),
-(31, 'Fire red', 3),
-(32, 'Warm red', 3),
-(33, 'Royal Blue', 3),
-(34, 'E|green', 3),
-(35, 'Cyen', 3),
-(36, 'Yellow', 3),
-(37, 'Magenta', 3),
-(38, 'Black', 3),
-(39, 'Gold', 3),
-(40, 'Violet', 3),
-(41, 'B|Orange', 3),
-(42, 'Fountaint', 4);
+INSERT INTO `tbl_galaxy_stock_items` (`item_id`, `item_name`, `item_section`, `item_url`) VALUES
+(1, 'Art Board', 1, 'art-board'),
+(5, 'Ivery board', 1, 'ivery-board'),
+(6, 'Ice Gold', 1, 'ice-gold'),
+(10, 'Box Board', 1, 'box-board'),
+(11, 'Bristal Board', 1, 'bristal-board'),
+(13, 'NCR', 2, 'ncr'),
+(19, 'Demain', 2, 'demain'),
+(21, 'Cover Paper', 2, 'cover-paper'),
+(23, 'Bank Paper', 2, 'bank-paper'),
+(27, 'Art Paper', 2, 'art-paper'),
+(38, 'Fire red', 3, 'fire-red'),
+(42, 'Fount', 4, 'fount'),
+(43, 'Sticker Paper', 2, 'sticker-paper'),
+(44, 'Warm red', 3, 'warm-red'),
+(45, 'Royal Blue', 3, 'royal-blue'),
+(46, 'E|green', 3, 'egreen'),
+(47, 'Cyen', 3, 'cyen'),
+(48, 'Yellow', 3, 'yellow'),
+(49, 'Magenta', 3, 'magenta'),
+(50, 'Black', 3, 'black'),
+(51, 'Gold', 3, 'gold'),
+(52, 'Violet', 3, 'violet'),
+(53, 'B|Orange', 3, 'borange');
 
 -- --------------------------------------------------------
 
@@ -160,7 +149,7 @@ ALTER TABLE `tbl_galaxy_items`
 -- AUTO_INCREMENT for table `tbl_galaxy_stock_items`
 --
 ALTER TABLE `tbl_galaxy_stock_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tbl_galaxy_users`

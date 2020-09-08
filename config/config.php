@@ -20,8 +20,8 @@ $CURRENT_PAGE = basename($_SERVER['PHP_SELF']);
 header("Cache-Control", "no-store, no-cache, must-revalidate");
 // session_cache_limiter("private_no_expire");
 $current_page_url_name = basename($_SERVER['PHP_SELF'],".php");
-$current_page = basename($_SERVER['PHP_SELF'],".php");
-$current_page = preg_replace("/[^a-zA-Z]/", " ", $current_page);
+$current_page_name_without_extention = basename($_SERVER['PHP_SELF'],".php");
+$current_page = preg_replace("/[^a-zA-Z]/", " ", $current_page_name_without_extention);
 $current_date_time = date("Y-m-d h:i:sa");
 /* Admin e-mails */
 $mailArray = array("naflin566@gmail.com", "naflin456@gmail.com");
