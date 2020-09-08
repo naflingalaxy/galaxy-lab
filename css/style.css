@@ -223,7 +223,7 @@ border-radius: 10px; }
 .iq-sidebar-menu .iq-menu li { list-style-type: none;/* border-bottom: 1px solid #1c67a214;*/}
 .iq-sidebar-menu .iq-menu li a { font-size: 14px; white-space: nowrap; display: block; color: #777D74; position: relative; padding: 15px 20px 15px 30px; line-height: 18px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 .iq-sidebar-menu .iq-menu li a i { font-size: 20px; margin-right: 10px; vertical-align: middle; width: 20px; display: inline-block; float: left; }
-.iq-sidebar-menu .iq-menu li a span { white-space: nowrap; padding: 0; display: inline-block; float: left; -webkit-transition: all 0.3=s ease-out 0s; -moz-transition: all 0.3=s ease-out 0s; -ms-transition: all 0.3=s ease-out 0s; -o-transition: all 0.3=s ease-out 0s; transition: all 0.3=s ease-out 0s; }
+.iq-sidebar-menu .iq-menu li a span {   font-weight: 600;text-transform: uppercase;white-space: nowrap; padding: 0; display: inline-block; float: left; -webkit-transition: all 0.3=s ease-out 0s; -moz-transition: all 0.3=s ease-out 0s; -ms-transition: all 0.3=s ease-out 0s; -o-transition: all 0.3=s ease-out 0s; transition: all 0.3=s ease-out 0s; }
 .iq-sidebar-menu .iq-menu li a .iq-arrow-right { margin-right: 0; margin-left: auto; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 .iq-sidebar-menu .iq-menu li a .badge { position: absolute; right: 15px; -webkit-transition: all 0.9s ease-out 0s; -moz-transition: all 0.9s ease-out 0s; -ms-transition: all 0.9s ease-out 0s; -o-transition: all 0.9s ease-out 0s; transition: all 0.9s ease-out 0s; }
 .iq-sidebar-menu .iq-menu li.active { border-bottom: none; }
@@ -233,7 +233,7 @@ border-radius: 10px; }
 .iq-sidebar-menu .iq-menu li .iq-submenu li>a::before { display: none; }
 
 /*------------------------*/
-.iq-sidebar-menu .iq-menu li ul { display: none; padding-left: 40px; }
+.iq-sidebar-menu .iq-menu li ul { display: none; padding-left: 55px; }
 .iq-sidebar-menu .iq-menu li ul li a { color: #777D74; background: transparent; padding: 12px 20px; }
 .iq-sidebar-menu .iq-menu li ul a:hover { color: #1c67a2; text-decoration: none; background: transparent; }
 
@@ -816,4 +816,32 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 }
 .font-size-32 {
     font-size: 40px;
+}
+.iq-submenu li.menu-open>a {
+  box-shadow: none !important;
+  background: #f2f4ff00 !important;
+}
+.iq-card .iq-card-header .iq-header-title .card-title {
+  
+    text-transform: capitalize;
+}
+.edit::after {
+    display: none !important;
+    
+}
+.edit i {
+  left: 6px;
+    display: block;
+    position: absolute;
+}
+.edit-record .dropdown-menu.show {
+    display: block;
+    position: absolute;
+    transform: translate3d(-90px, 0px, 0px);
+    top: 0px;
+    right: 0px;
+    will-change: transform;
+}
+.edit-record {
+  padding: 3px 13px !important;
 }

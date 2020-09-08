@@ -20,11 +20,58 @@
                <nav class="iq-sidebar-menu">
                   <ul class="iq-menu">
                      
-                     <li class="">
-                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-pencil-ruler-line"></i><span>Manage Stock</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul class="iq-submenu">
+                     <li class="<?php if ($page_name == "artboard") { echo "menu-open";} ?>">
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-device-line"></i><span>Boards</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul class="iq-submenu <?php if ($page_name == "artboard") { echo "menu-open";} ?>" style="<?php if ($page_name == "artboard") { echo "display: block;";} ?>">
+
                            <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
-                           <li class=""><a href="<?php echo HTTP_PATH; ?>home">Stocks Home</a></li>
+                           <li class="<?php if ($current_page_url_name == "art-board"){echo "active menu-open";} ?>"><a href="<?php echo HTTP_PATH; ?>art-board">Art Board</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>box-board">Box Board</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>ivery-board">Ivery Board</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>ice-board">Ice Board</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>bristal-board">Bristal Board</a></li>
+                        </ul>
+                     </li>
+                     <li class="<?php if ($page_name == "paperboard") { echo "menu-open";} ?>">
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Papers</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul class="iq-submenu <?php if ($page_name == "paperboard") { echo "menu-open";} ?>" style="<?php if ($page_name == "paperboard") { echo "display: block;";} ?>">
+                          
+                           <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
+                           <li class="<?php if ($current_page_url_name == "paper-board"){echo "active menu-open";} ?>"><a href="<?php echo HTTP_PATH; ?>paper-board">Art Board</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>ncr-paper">NCR Paper</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>demain-paper">Demain Paper</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>cover-paper">Cover Paper</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>bank-paper">Bank Paper</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>art-paper">Art Paper</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>sticker-paper">Sticker Paper</a></li>
+                        </ul>
+                     </li>
+                     <li class="<?php if ($page_name == "paint") { echo "menu-open";} ?>">
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-paint-brush-fill"></i><span>Paints</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul class="iq-submenu <?php if ($page_name == "paint") { echo "menu-open";} ?>" style="<?php if ($page_name == "paint") { echo "display: block;";} ?>">
+                          
+                           <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
+                           <li class="<?php if ($current_page_url_name == "paint"){echo "active menu-open";} ?>"><a href="<?php echo HTTP_PATH; ?>fire-red">Fire Red</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>demain-paper">Warm Red</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>cover-paper">Royal Blue</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>bank-paper">E/Green</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>art-paper">Cyen</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>sticker-paper">Yellow</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>sticker-paper">Black</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>sticker-paper">Gold</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>sticker-paper">Violet</a></li>
+                           <li class=""><a href="<?php echo HTTP_PATH; ?>sticker-paper">B/Orange</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="<?php if ($page_name == "chemicals") { echo "menu-open";} ?>">
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-contrast-drop-line"></i><span>Chemicals</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul class="iq-submenu <?php if ($page_name == "chemicals") { echo "menu-open";} ?>" style="<?php if ($page_name == "paint") { echo "display: block;";} ?>">
+                          
+                           <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
+                           <li class="<?php if ($current_page_url_name == "chemicals"){echo "active menu-open";} ?>"><a href="<?php echo HTTP_PATH; ?>fire-red">Fount</a></li>
+                           
+
                         </ul>
                      </li>
                      <li style="display: none;">

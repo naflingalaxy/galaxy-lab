@@ -1086,34 +1086,30 @@ var option15 = {
     dataLabels: {
         enabled: false
     },
-    colors: ['#1c67a2' ,'#f4828b','#00c99c'],
+    colors: ['#1c67a2'],
     series: [{
         name: 'Income',
-        type: 'column',
+        type: 'line',
         data: [14, 2, 25, 15, 25, 28, 38, 46]
     }, {
         name: 'Cashflow',
         type: 'column',
         data: [11, 3, 31, 4, 41, 49, 65, 85]
-    }, {
-        name: 'Revenue',
-        type: 'line',
-        data: [20, 29, 37, 36, 44, 45, 50, 58]
     }],
     stroke: {
-        width: [1, 1, 4]
+        width: [1, 4]
     },
     xaxis: {
-        categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+        categories: [2020],
         labels:{
             show:false
         }
     },
     yaxis: {
-        show: false
+        show: true
     },
     tooltip: {
-        theme: 'dark',
+        theme: 'light',
         fixed: {
             enabled: true,
             position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
