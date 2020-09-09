@@ -6,23 +6,23 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Art Board </h4>
+                              <h4 class="card-title"> Add Paint</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
                            
-                           <form method="post">
+                           <form>
                               <div class="form-row">
-                                 
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">GSM</label>
-                                    <select class="custom-select" name="gsm" required>
+                                    <label for="validationTooltip04">paint type</label>
+                                    <select class="custom-select" id="validationTooltip04" required>
                                        <option selected disabled value="">Choose...</option>
-
-                                       <option value="230">230</option>
-                                       <option value="260">260</option>
-                                       <option value="310">310</option>
-                                       <option value="N/A">N/A</option>
+                                       <?php 
+                                          $page_data_names = $db->query("SELECT item_name, item_id FROM tbl_galaxy_stock_items WHERE item_section = '3'");
+                                          if ($page_data) {
+                                              for ($s=0; $s < count($page_data_names); $s++) { ?>
+                                          <option value="<?php echo $page_data_names[$s]['item_id']; ?>"><?php echo $page_data_names[$s]['item_name']; ?></option>
+                                       <?php }} ?>
                                        
                                     </select>
                                     <div class="invalid-tooltip">
@@ -31,27 +31,28 @@
                                  </div>
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Brand</label>
-                                    <select class="custom-select" name="brand" required>
+                                    <select class="custom-select" id="validationTooltip04" required>
                                        <option selected disabled value="">Choose...</option>
-                                       <option value="gc">GC</option>
-                                       <option value="bohui">Bohui</option>
+                                       <option value="sithara">Sithara</option>
+                                       
+                                       
                                        <option value="N/A">N/A</option>
                                       
                                     </select>
                                     <div class="invalid-tooltip">
-                                       Please select a valid state.
+                                       Please select a valid brand.
                                     </div>
                                  </div>
                                  
                                  
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationDefault03">Price <code>(per unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="price" maxlength="6" required>
+                                    <label for="validationDefault03">Price <code>(per Kg)</code></label>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" maxlength="6" required>
                                     
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationDefault03">QTY <code>(unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" maxlength="6" required>
+                                    <label for="validationDefault03">QTY <code>(unit Kg)</code></label>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" maxlength="6" required>
 
                                           
                                  </div>
@@ -66,44 +67,10 @@
                               </div>
 
                            </form>
-                           <div class="alert text-white bg-success" role="alert">
-                              <div class="iq-alert-text">A simple <b>success</b> alert—check it out!</div>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="ri-close-line"></i>
-                              </button>
-                           </div>
                         </div>
-
                      </div>
-
-                     <?php if (isset($_COOKIE['errorMessage'])) {?>
-                         <div class="alert text-white bg-danger" role="alert">
-                         <div class="iq-alert-icon">
-                          <i class="ri-information-line"></i>
-                         </div>
-                         <div class="iq-alert-text">
-                             <?php echo $_COOKIE['errorMessage']; ?>
-                         </div>
-                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                           <i class="ri-close-line"></i>
-                           </button>
-                        </div>
-                     <?php } ?>
-                     <?php if (isset($_COOKIE['successMessage'])) {?>
-                         <div class="alert text-white bg-danger" role="alert">
-                         <div class="iq-alert-icon">
-                          <i class="ri-information-line"></i>
-                         </div>
-                         <div class="iq-alert-text">
-                             <?php echo $_COOKIE['successMessage']; ?>
-                         </div>
-                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                           <i class="ri-close-line"></i>
-                           </button>
-                        </div>
-                     <?php } ?>
+                     
                   </div>
-
                   <div class="col-lg-4 col-md-12 mb-5 mb-xl-0">
                      <div class="iq-card wow fadeInUp" data-wow-delay="0.8s">
                         

@@ -6,17 +6,17 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Art Board </h4>
+                              <h4 class="card-title"> Ice Gold </h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
                            
-                           <form method="post">
+                           <form>
                               <div class="form-row">
                                  
-                                 <div class="col-md-6 mb-3">
+                                <!--  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">GSM</label>
-                                    <select class="custom-select" name="gsm" required>
+                                    <select class="custom-select" id="validationTooltip04" required>
                                        <option selected disabled value="">Choose...</option>
 
                                        <option value="230">230</option>
@@ -31,11 +31,11 @@
                                  </div>
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Brand</label>
-                                    <select class="custom-select" name="brand" required>
+                                    <select class="custom-select" id="validationTooltip04" required>
                                        <option selected disabled value="">Choose...</option>
                                        <option value="gc">GC</option>
                                        <option value="bohui">Bohui</option>
-                                       <option value="N/A">N/A</option>
+                                       <option value="None">N/A</option>
                                       
                                     </select>
                                     <div class="invalid-tooltip">
@@ -45,13 +45,31 @@
                                  
                                  
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationDefault03">Price <code>(per unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="price" maxlength="6" required>
+                                    <label for="validationTooltip04">Color</label>
+                                    <select class="custom-select" id="validationTooltip04" required>
+                                       <option selected disabled value="">Choose...</option>
+                                       
+                                       <option value="White">White</option>
+                                       <option value="Green">Green</option>
+                                       <option value="Blue">Blue</option>
+                                       <option value="Pink">Pink</option>
+                                       <option value="Yellow">Yellow</option>
+                                       <option value="None">N/A</option>
+                                       
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                       Please select a valid state.
+                                    </div>
                                     
-                                 </div>
+                                 </div> -->
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationDefault03">QTY <code>(unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" maxlength="6" required>
+                                    <label for="validationDefault03">Price <code>(per unit)</code></label>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" maxlength="6" required>
+                                 </div>
+
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationDefault03">QTY  <code>(unit)</code></label>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" maxlength="6" required>
 
                                           
                                  </div>
@@ -66,52 +84,36 @@
                               </div>
 
                            </form>
-                           <div class="alert text-white bg-success" role="alert">
-                              <div class="iq-alert-text">A simple <b>success</b> alert—check it out!</div>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                              <i class="ri-close-line"></i>
-                              </button>
-                           </div>
                         </div>
-
                      </div>
-
-                     <?php if (isset($_COOKIE['errorMessage'])) {?>
-                         <div class="alert text-white bg-danger" role="alert">
-                         <div class="iq-alert-icon">
-                          <i class="ri-information-line"></i>
-                         </div>
-                         <div class="iq-alert-text">
-                             <?php echo $_COOKIE['errorMessage']; ?>
-                         </div>
-                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                           <i class="ri-close-line"></i>
-                           </button>
-                        </div>
-                     <?php } ?>
-                     <?php if (isset($_COOKIE['successMessage'])) {?>
-                         <div class="alert text-white bg-danger" role="alert">
-                         <div class="iq-alert-icon">
-                          <i class="ri-information-line"></i>
-                         </div>
-                         <div class="iq-alert-text">
-                             <?php echo $_COOKIE['successMessage']; ?>
-                         </div>
-                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                           <i class="ri-close-line"></i>
-                           </button>
-                        </div>
-                     <?php } ?>
+                     
                   </div>
-
                   <div class="col-lg-4 col-md-12 mb-5 mb-xl-0">
                      <div class="iq-card wow fadeInUp" data-wow-delay="0.8s">
-                        
+                        <div class="iq-card-header d-flex justify-content-between">
+                           <div class="iq-header-title">
+                              <h4 class="card-title">Stock Level</h4>
+                           </div>
+                           <div class="iq-card-header-toolbar d-flex align-items-center">
+                              <div class="dropdown">
+                                 <span class="dropdown-toggle text-primary" id="dropdownMenuButton4" data-toggle="dropdown">
+                                 <i class="ri-more-2-fill"></i>
+                                 </span>
+                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton4">
+                                    <a class="dropdown-item" href="#"><i class="ri-eye-fill mr-2"></i>View</a>
+                                    <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
+                                    <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
+                                    <a class="dropdown-item" href="#"><i class="ri-printer-fill mr-2"></i>Print</a>
+                                    <a class="dropdown-item" href="#"><i class="ri-file-download-fill mr-2"></i>Download</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                         <div class="iq-card-body">
                          
                            <div class="row">
                               <div class="col-md-6">
-                                 <div id="apex-column"></div>
+                                 <div id="chart-15"></div>
                               </div>
                               <div class="col-md-6 align-self-center">
                                  <div class="row">

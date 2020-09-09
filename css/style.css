@@ -845,3 +845,15 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 .edit-record {
   padding: 3px 13px !important;
 }
+.apexcharts-zoom-icon, .apexcharts-reset-zoom-icon, .apexcharts-menu-icon {
+    transform: scale(0.85);
+    display: none;
+}
+label {
+    color: #1d2438;
+    text-transform: capitalize;
+}
+.custom-select {
+    
+    text-transform: uppercase;
+  }
