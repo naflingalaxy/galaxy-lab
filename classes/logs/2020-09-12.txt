@@ -1,0 +1,7 @@
+Time : 08:36:11
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'galaxy_db_private_system.tbl_galaxy_boards' doesn't exist
+Raw SQL : SELECT * FROM tbl_galaxy_boards ORDER BY board_added_date_time DESC LIMIT 15
+
+Time : 07:21:57
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '* FROM tbl_galaxy_boards ORDER BY board_added_date_time DESC LIMIT 15' at line 1
+Raw SQL : SELECT DISTINCT board_price_per_unit, * FROM tbl_galaxy_boards ORDER BY board_added_date_time DESC LIMIT 15

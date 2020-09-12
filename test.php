@@ -5,7 +5,7 @@ include 'includes/auth.php';
 $main_menu_category = "board";
 $current_page_name_variable = "art-board";
 $product_name = "Art Board";
-$board_table_data = $db->query("SELECT * FROM tbl_galaxy_art_board ORDER BY board_added_date_time DESC LIMIT 15");
+$board_table_data = $db->query("SELECT DISTINCT board_price_per_unit FROM tbl_galaxy_boards ORDER BY board_added_date_time DESC LIMIT 15");
 if (isset($_POST['btn-add'])) {
 	$board_uniq_id = $uniq_id_artboard;
 	$board_name = $product_name;
@@ -18,12 +18,12 @@ if (isset($_POST['btn-add'])) {
 	$board_unit_qty = filter_var($_POST['qty'], FILTER_SANITIZE_STRING);
 	$board_price_per_unit = filter_var($_POST['price'], FILTER_SANITIZE_STRING);
 	$board_added_date_time = $current_date_time;
-	$board_status = "Pending";
+	$board_status = "Active";
 	$board_added_total_amount = $board_unit_qty*$board_price_per_unit;
 	$board_added_user_id = $_SESSION['user_id'];
 
 	$artboard_array = array('board_uniq_id' => $board_uniq_id, 'board_name' => $board_name, 'board_gsm' => $board_gsm, 'board_color' => $board_color, 'board_brand' => $board_brand, 'board_unit_qty' => $board_unit_qty, 'board_price_per_unit' => $board_price_per_unit, 'board_added_date_time' => $board_added_date_time, 'board_status' => $board_status, 'board_added_total_amount' => $board_added_total_amount, 'board_added_user_id' => $board_added_user_id);
-	$artboard_query = $db->query("INSERT INTO tbl_galaxy_art_board (board_uniq_id, board_name, board_gsm, board_color, board_brand, board_unit_qty, board_price_per_unit, board_added_date_time, board_status, board_added_total_amount, board_added_user_id) VALUES (:board_uniq_id, :board_name, :board_gsm, :board_color, :board_brand, :board_unit_qty, :board_price_per_unit, :board_added_date_time, :board_status, :board_added_total_amount, :board_added_user_id)", $artboard_array);
+	$artboard_query = $db->query("INSERT INTO tbl_galaxy_boards (board_uniq_id, board_name, board_gsm, board_color, board_brand, board_unit_qty, board_price_per_unit, board_added_date_time, board_status, board_added_total_amount, board_added_user_id) VALUES (:board_uniq_id, :board_name, :board_gsm, :board_color, :board_brand, :board_unit_qty, :board_price_per_unit, :board_added_date_time, :board_status, :board_added_total_amount, :board_added_user_id)", $artboard_array);
 
 	if ($artboard_query) {
 
@@ -39,6 +39,6 @@ if (isset($_POST['btn-add'])) {
 	}
 }
 
-$include_file = DOC_ROOT.'pages/art_board_page.php';
+$include_file = DOC_ROOT.'pages/test_page.php';
 include DOC_ROOT.'template.php';
 ?>

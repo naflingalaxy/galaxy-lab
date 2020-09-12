@@ -22,7 +22,7 @@
                                        <option value="230">230</option>
                                        <option value="260">260</option>
                                        <option value="310">310</option>
-                                       <!-- <option value="N/A">N/A</option> -->
+                                       <option value="N/A">N/A</option>
                                        
                                     </select>
                                     <div class="invalid-tooltip">
@@ -35,7 +35,7 @@
                                        <option selected disabled value="">Choose...</option>
                                        <option value="gc">GC</option>
                                        <option value="bohui">Bohui</option>
-                                       <!-- <option value="N/A">N/A</option> -->
+                                       <option value="N/A">N/A</option>
                                       
                                     </select>
                                     <div class="invalid-tooltip">
@@ -152,7 +152,6 @@
                                              <th scope="col">Price (per unit)</th>
                                              <th scope="col">Total</th>
                                              <th scope="col">Added User</th>
-                                             <th scope="col">Status</th>
                                              <th scope="col">Date & Time</th>
                                              <th scope="col">Options</th>
 
@@ -162,24 +161,17 @@
                                           <?php if ($board_table_data) {
                                                       for ($x=0; $x < count($board_table_data); $x++) { ?>
                                           <tr>
-                                             <td>#<?php echo $board_table_data[$x]['board_auto_id']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_uniq_id']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_gsm']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_brand']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_unit_qty']; ?></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
                                              <td><?php echo $board_table_data[$x]['board_price_per_unit']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_added_total_amount']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_added_user_id']; ?></td>
-                                             <td>
-                                                <?php if ($board_table_data[$x]['board_status'] == "Active") {?>
-                                                <div class="badge badge-pill badge-success"><?php  echo $board_table_data[$x]['board_status']; ?></td></div>
-                                             <?php } else { ?>
-                                                <div class="badge badge-pill badge-warning text-white"><?php  echo $board_table_data[$x]['board_status']; ?></td></div>
-                                             <?php } ?>
-                                             <td><?php echo $board_table_data[$x]['board_added_date_time']; ?></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
                                              <!-- <td><?php echo $board_table_data[$x]['board_auto_id']; ?></td> -->
                                              <td class="edit-record">
-                                                <?php if ($board_table_data[$x]['board_status'] == "Pending") {?>
                                                 <div class="dropdown">
                                                    <span class="dropdown-toggle edit text-primary" id="dropdownMenuButton5" data-toggle="dropdown">
                                                    <i class="ri-equalizer-line"></i>
@@ -191,7 +183,6 @@
                                                       
                                                    </div>
                                                 </div>
-                                             <?php } ?>
                                              </td>
                                           </tr>
                                           <?php }} ?>

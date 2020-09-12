@@ -32,7 +32,7 @@ ErrorDocument 403 /403.html
  deny from all
 </Files>
 
-
+ErrorDocument 404 http://localhost/galaxy-lab/404
 
 # Denying site to be used as a iFrame on another site
 Header set X-Frame-Options DENY

@@ -27,8 +27,8 @@ $current_date_time = date("Y-m-d h:i:sa");
 $mailArray = array("naflin566@gmail.com", "naflin456@gmail.com");
 
 // board uniq ids
-$uniq_id_artboard = "ART_B_GLX";
-$uniq_id_ivery = "IVERY_B_GLX";
-$uniq_id_ice = "ICE_B_GLX";
-$uniq_id_box = "BOX_B_GLX";
-$uniq_id_bristal = "BRISTAL_B_GLX";
+$uniq_id_artboard = "ARTB";
+$uniq_id_ivery = "IVERYB";
+$uniq_id_ice = "ICEB";
+$uniq_id_box = "BOXB";
+$uniq_id_bristal = "BRISTALB";

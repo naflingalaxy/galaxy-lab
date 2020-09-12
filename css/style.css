@@ -831,6 +831,7 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 }
 .edit i {
   left: 6px;
+  top: 10px;
     display: block;
     position: absolute;
 }

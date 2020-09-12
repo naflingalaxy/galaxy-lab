@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2020 at 01:44 PM
+-- Generation Time: Sep 12, 2020 at 10:02 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_galaxy_boards`
+-- Table structure for table `tbl_galaxy_art_board`
 --
 
-CREATE TABLE `tbl_galaxy_boards` (
+CREATE TABLE `tbl_galaxy_art_board` (
   `board_auto_id` int(11) NOT NULL,
   `board_uniq_id` varchar(2000) NOT NULL,
   `board_name` varchar(100) NOT NULL,
@@ -43,16 +43,86 @@ CREATE TABLE `tbl_galaxy_boards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tbl_galaxy_boards`
+-- Dumping data for table `tbl_galaxy_art_board`
 --
 
-INSERT INTO `tbl_galaxy_boards` (`board_auto_id`, `board_uniq_id`, `board_name`, `board_gsm`, `board_color`, `board_brand`, `board_unit_qty`, `board_price_per_unit`, `board_added_date_time`, `board_status`, `board_added_total_amount`, `board_added_user_id`) VALUES
+INSERT INTO `tbl_galaxy_art_board` (`board_auto_id`, `board_uniq_id`, `board_name`, `board_gsm`, `board_color`, `board_brand`, `board_unit_qty`, `board_price_per_unit`, `board_added_date_time`, `board_status`, `board_added_total_amount`, `board_added_user_id`) VALUES
 (1, 'ART_B_GLX', 'Art Board', 310, 'N/A', 'None', 344, 32, '2020-09-09 04:46:07', 'Active', 11008, '0'),
 (2, 'ART_B_GLX', 'Art Board', 0, 'N/A', 'bohui', 20, 10, '2020-09-09 04:49:44', 'Active', 200, '0'),
 (3, 'ART_B_GLX', 'Art Board', 0, 'N/A', 'gc', 34, 32, '2020-09-09 04:51:54', 'Active', 1088, '0'),
 (4, 'ART_B_GLX', 'Art Board', 260, 'N/A', 'gc', 100, 12, '2020-09-09 05:01:55', 'Active', 1200, 'naflin_01'),
 (5, 'ART_B_GLX', 'Art Board', 260, 'N/A', 'bohui', 34, 43, '2020-09-09 05:08:09', 'Active', 1462, 'naflin_01'),
-(6, 'ART_B_GLX', 'Art Board', 230, 'N/A', 'bohui', 44, 23, '2020-09-09 05:10:23', 'Active', 1012, 'naflin_01');
+(6, 'ART_B_GLX', 'Art Board', 230, 'N/A', 'bohui', 44, 23, '2020-09-09 05:10:23', 'Pending', 1012, 'naflin_01'),
+(7, 'ART_B_GLX', 'Art Board', 230, 'N/A', 'gc', 7, 89, '2020-09-10 09:19:36', 'Active', 623, 'naflin_01'),
+(8, 'ART_B_GLX', 'Art Board', 310, 'N/A', 'bohui', 9, 8, '2020-09-10 04:42:21', 'Active', 72, 'naflin_01'),
+(9, 'ART_B_GLX', 'Art Board', 260, 'N/A', 'bohui', 100, 32, '2020-09-11 10:15:31', 'Active', 3200, 'naflin_01'),
+(10, 'ART_B_GLX', 'Art Board', 260, 'N/A', 'N/A', 10, 12, '2020-09-11 02:18:04', 'Active', 120, 'naflin_01'),
+(11, 'ART_B_GLX', 'Art Board', 260, 'N/A', 'bohui', 22, 23, '2020-09-11 03:32:06', 'Active', 506, 'naflin_01'),
+(12, 'ARTBGLX', 'Art Board', 310, 'N/A', 'gc', 33, 10, '2020-09-12 11:32:27', 'Active', 330, 'naflin_01'),
+(13, 'ARTB', 'Art Board', 260, 'N/A', 'bohui', 100, 12, '2020-09-12 11:38:50', 'Active', 1200, 'naflin_01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_galaxy_box_board`
+--
+
+CREATE TABLE `tbl_galaxy_box_board` (
+  `board_auto_id` int(11) NOT NULL,
+  `board_uniq_id` varchar(2000) NOT NULL,
+  `board_name` varchar(100) NOT NULL,
+  `board_gsm` int(11) NOT NULL,
+  `board_color` varchar(100) NOT NULL,
+  `board_brand` varchar(100) NOT NULL,
+  `board_unit_qty` int(11) NOT NULL,
+  `board_price_per_unit` int(11) NOT NULL,
+  `board_added_date_time` datetime NOT NULL,
+  `board_status` varchar(100) NOT NULL,
+  `board_added_total_amount` int(11) NOT NULL,
+  `board_added_user_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_galaxy_bristal_board`
+--
+
+CREATE TABLE `tbl_galaxy_bristal_board` (
+  `board_auto_id` int(11) NOT NULL,
+  `board_uniq_id` varchar(2000) NOT NULL,
+  `board_name` varchar(100) NOT NULL,
+  `board_gsm` int(11) NOT NULL,
+  `board_color` varchar(100) NOT NULL,
+  `board_brand` varchar(100) NOT NULL,
+  `board_unit_qty` int(11) NOT NULL,
+  `board_price_per_unit` int(11) NOT NULL,
+  `board_added_date_time` datetime NOT NULL,
+  `board_status` varchar(100) NOT NULL,
+  `board_added_total_amount` int(11) NOT NULL,
+  `board_added_user_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_galaxy_icegold_board`
+--
+
+CREATE TABLE `tbl_galaxy_icegold_board` (
+  `board_auto_id` int(11) NOT NULL,
+  `board_uniq_id` varchar(2000) NOT NULL,
+  `board_name` varchar(100) NOT NULL,
+  `board_gsm` int(11) NOT NULL,
+  `board_color` varchar(100) NOT NULL,
+  `board_brand` varchar(100) NOT NULL,
+  `board_unit_qty` int(11) NOT NULL,
+  `board_price_per_unit` int(11) NOT NULL,
+  `board_added_date_time` datetime NOT NULL,
+  `board_status` varchar(100) NOT NULL,
+  `board_added_total_amount` int(11) NOT NULL,
+  `board_added_user_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -76,6 +146,27 @@ INSERT INTO `tbl_galaxy_items` (`item_id`, `item_name`, `item_section_id`) VALUE
 (3, 'Bill book', 1),
 (4, 'Lunch box', 1),
 (5, 'Special Box', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_galaxy_ivery_board`
+--
+
+CREATE TABLE `tbl_galaxy_ivery_board` (
+  `board_auto_id` int(11) NOT NULL,
+  `board_uniq_id` varchar(2000) NOT NULL,
+  `board_name` varchar(100) NOT NULL,
+  `board_gsm` int(11) NOT NULL,
+  `board_color` varchar(100) NOT NULL,
+  `board_brand` varchar(100) NOT NULL,
+  `board_unit_qty` int(11) NOT NULL,
+  `board_price_per_unit` int(11) NOT NULL,
+  `board_added_date_time` datetime NOT NULL,
+  `board_status` varchar(100) NOT NULL,
+  `board_added_total_amount` int(11) NOT NULL,
+  `board_added_user_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -174,9 +265,27 @@ INSERT INTO `tbl_galaxy_users` (`user_default_id`, `user_id`, `user_name`, `user
 --
 
 --
--- Indexes for table `tbl_galaxy_boards`
+-- Indexes for table `tbl_galaxy_art_board`
 --
-ALTER TABLE `tbl_galaxy_boards`
+ALTER TABLE `tbl_galaxy_art_board`
+  ADD PRIMARY KEY (`board_auto_id`);
+
+--
+-- Indexes for table `tbl_galaxy_box_board`
+--
+ALTER TABLE `tbl_galaxy_box_board`
+  ADD PRIMARY KEY (`board_auto_id`);
+
+--
+-- Indexes for table `tbl_galaxy_bristal_board`
+--
+ALTER TABLE `tbl_galaxy_bristal_board`
+  ADD PRIMARY KEY (`board_auto_id`);
+
+--
+-- Indexes for table `tbl_galaxy_icegold_board`
+--
+ALTER TABLE `tbl_galaxy_icegold_board`
   ADD PRIMARY KEY (`board_auto_id`);
 
 --
@@ -184,6 +293,12 @@ ALTER TABLE `tbl_galaxy_boards`
 --
 ALTER TABLE `tbl_galaxy_items`
   ADD PRIMARY KEY (`item_id`);
+
+--
+-- Indexes for table `tbl_galaxy_ivery_board`
+--
+ALTER TABLE `tbl_galaxy_ivery_board`
+  ADD PRIMARY KEY (`board_auto_id`);
 
 --
 -- Indexes for table `tbl_galaxy_ncr_layers`
@@ -208,16 +323,40 @@ ALTER TABLE `tbl_galaxy_users`
 --
 
 --
--- AUTO_INCREMENT for table `tbl_galaxy_boards`
+-- AUTO_INCREMENT for table `tbl_galaxy_art_board`
 --
-ALTER TABLE `tbl_galaxy_boards`
-  MODIFY `board_auto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `tbl_galaxy_art_board`
+  MODIFY `board_auto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `tbl_galaxy_box_board`
+--
+ALTER TABLE `tbl_galaxy_box_board`
+  MODIFY `board_auto_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_galaxy_bristal_board`
+--
+ALTER TABLE `tbl_galaxy_bristal_board`
+  MODIFY `board_auto_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_galaxy_icegold_board`
+--
+ALTER TABLE `tbl_galaxy_icegold_board`
+  MODIFY `board_auto_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_galaxy_items`
 --
 ALTER TABLE `tbl_galaxy_items`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_galaxy_ivery_board`
+--
+ALTER TABLE `tbl_galaxy_ivery_board`
+  MODIFY `board_auto_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_galaxy_ncr_layers`
