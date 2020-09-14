@@ -1,6 +1,68 @@
                <!-- Page Content  -->
          <div id="content-page" class="content-page">
+            <?php 
+            
+            $total_qty = '27';
+            $total_qty_db = 0;
+            $total_qty_db_assign = '0';
+                                 if ($board_table_data) {
+                                    
+                                       // echo $board_table_data[$x]['board_unit_qty']."  ";
+
+                                    if ($available_qty < $total_qty) { ?>
+                                     
+                                     <div class="alert text-white bg-primary" role="alert">
+                                          <div class="iq-alert-icon">
+                                             <i class="ri-alert-line"></i>
+                                          </div>
+                                          <div class="iq-alert-text">Insufficient Stock (<?php echo $available_qty; ?> unit Available)</div>
+                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                          <i class="ri-close-line"></i>
+                                          </button>
+                                       </div>  
+                                    <?php
+                                       
+                                    } else {
+                                       if ($total_qty <= $board_table_data[0]['board_unit_qty']) {
+                                          $deducated_value = $board_table_data[0]['board_unit_qty'] - $total_qty;
+                                          echo "Customer Asking TQ is smaller than our stock <br>".$total_qty."-".$board_table_data[0]['board_unit_qty']."=".$deducated_value;
+                                          echo "<br>Rows 1 Effected";
+                                          
+                                        }
+                                        else {
+
+                                          for ($x=0; $x < count($board_table_data); $x++) { 
+                                           $deducated_value = $total_qty - $board_table_data[$x]['board_unit_qty'];
+                                           echo "<br>#".$board_table_data[$x]['board_auto_id']." Customer Asking TQ is grater than our stock <br>".$total_qty."-".$board_table_data[$x]['board_unit_qty']."= ".abs($deducated_value)."";
+                                          $total_qty = $deducated_value;
+
+                                          if ($deducated_value >= 0) {
+                                             echo "<br>Can update / update".$deducated_value." > ".$board_table_data[$x]['board_unit_qty'];
+                                          } else {
+                                             echo "<br>Canot update 0 update".$deducated_value." > ".$board_table_data[$x]['board_unit_qty'];
+                                              
+                                          }
+                                           if ($deducated_value <= 0) {
+
+                                             break;
+                                           }
+                                          
+                                           
+                                          }
+                                        echo "<br>Rows ".++$x." Effected";
+                                          
+                                        } 
+                                    }
+                                       
+                                       
+                                        
+                                    
+                                   
+                                 }
+                                 
+                                  ?>
             <div class="container-fluid">
+
                <div class="row">
                   <div class="col-sm-12 col-lg-8">
                      <div class="iq-card">
@@ -9,11 +71,12 @@
                               <h4 class="card-title"> Art Board </h4>
                            </div>
                         </div>
+
                         <div class="iq-card-body">
                            
                            <form method="post">
                               <div class="form-row">
-                                 
+
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">GSM</label>
                                     <select class="custom-select" name="gsm" required>

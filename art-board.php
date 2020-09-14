@@ -5,7 +5,27 @@ include 'includes/auth.php';
 $main_menu_category = "board";
 $current_page_name_variable = "art-board";
 $product_name = "Art Board";
-$board_table_data = $db->query("SELECT * FROM tbl_galaxy_art_board ORDER BY board_added_date_time DESC LIMIT 15");
+$board_table_data = $db->query("SELECT * FROM tbl_galaxy_art_board WHERE board_gsm = '230' AND board_status = 'Active' ORDER BY board_added_date_time 
+	DESC");
+$board_table_data_count = $db->query("SELECT SUM(board_unit_qty) FROM tbl_galaxy_art_board WHERE board_gsm = '230' AND board_status = 'Active' ORDER BY board_added_date_time 
+	DESC");
+if ($board_table_data_count) {
+	$available_qty = $board_table_data_count[0]['SUM(board_unit_qty)'];
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 if (isset($_POST['btn-add'])) {
 	$board_uniq_id = $uniq_id_artboard;
 	$board_name = $product_name;
@@ -38,6 +58,8 @@ if (isset($_POST['btn-add'])) {
 		header("Location:".HTTP_PATH."art-board");
 	}
 }
+
+
 
 $include_file = DOC_ROOT.'pages/art_board_page.php';
 include DOC_ROOT.'template.php';

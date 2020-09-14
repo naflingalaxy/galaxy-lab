@@ -140,7 +140,7 @@
                               <div class="iq-card-body p-0 ">
                                  <div class="bg-primary p-3">
                                     <h5 class="mb-0 text-white line-height"><?php if (isset($_SESSION['user_full_name'])) {
-                                      echo $_SESSION['user_full_name'].$_SESSION['user_id'];
+                                      echo $_SESSION['user_full_name'];
                                     } ?></h5>
                                     <span class="text-white font-size-12">Available</span>
                                  </div>

@@ -83,7 +83,7 @@
                          
                            <div class="row">
                               <div class="col-md-6">
-                                 <div id="chart-15"></div>
+                                 <div id="apex-column"></div>
                               </div>
                               <div class="col-md-6 align-self-center">
                                  <div class="row">
