@@ -11,12 +11,12 @@
                         </div>
                         <div class="iq-card-body">
                            
-                           <form>
+                           <form method="post">
                               <div class="form-row">
                                  
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Color</label>
-                                    <select class="custom-select" id="validationTooltip04" required>
+                                    <select class="custom-select" id="validationTooltip04" name="color" required>
                                        <option selected disabled value="">Choose...</option>
                                        
                                        <option value="White">White</option>
@@ -34,12 +34,12 @@
                                  </div>
                                  <div class="col-md-6 mb-3">
                                     <label for="validationDefault03">Price <code>(per unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" maxlength="6" required>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" name="price" maxlength="6" required>
                                  </div>
 
                                  <div class="col-md-6 mb-3">
                                     <label for="validationDefault03">QTY <code>(unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" maxlength="6" required>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" name="qty" maxlength="6" required>
 
                                           
                                  </div>
@@ -54,6 +54,22 @@
                               </div>
 
                            </form>
+                           <?php if (isset($_COOKIE['errorMessage'])) {?>
+                              <div class="alert text-white bg-danger" role="alert">
+                              <div class="iq-alert-text"><?php echo $_COOKIE['errorMessage']; ?></div>
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="ri-close-line"></i>
+                              </button>
+                           </div>
+                           
+                           <?php } if (isset($_COOKIE['successMessage'])) {?>
+                              <div class="alert text-white bg-success" role="alert">
+                              <div class="iq-alert-text"><?php echo $_COOKIE['successMessage']; ?></div>
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <i class="ri-close-line"></i>
+                              </button>
+                           </div>
+                           <?php } ?>
                         </div>
                      </div>
                      
@@ -113,49 +129,63 @@
                                  <div class="iq-header-title">
                                     <h4 class="card-title">Recent Activity (<?php echo preg_replace("/[^a-zA-Z]/", " ", $current_page); ?>)</h4>
                                  </div>
-                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                       <span class="dropdown-toggle text-primary" id="dropdownMenuButton5" data-toggle="dropdown">
-                                       <i class="ri-more-2-fill"></i>
-                                       </span>
-                                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
-                                          <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
-                                          
-                                       </div>
-                                    </div>
+                                 <div class="count-number">
+                                    <button type="button" class="btn mb-1 btn-outline-success ml-3">
+                                       Active <span class="badge badge-success ml-2 shadow-none"><?php $status_text = "Active"; echo getstatuscount($status_text); ?></span>
+                                    </button>
+                                    <button type="button" class="btn mb-1 btn-outline-primary ml-3">
+                                       Pending <span class="badge badge-primary ml-2 shadow-none"><?php $status_text = "Pending"; echo getstatuscount($status_text); ?></span>
+                                    </button>
+                                    <button type="button" class="btn mb-1 btn-outline-danger ml-3">
+                                       Cancelled <span class="badge badge-danger ml-2 shadow-none"><?php $status_text = "Cancelled"; echo getstatuscount($status_text); ?></span>
+                                    </button>
+                                    
                                  </div>
+                                 
                               </div>
                               <div class="iq-card-body">
                                  <div class="table-responsive">
-                                    <table class="table mb-0 table-borderless">
+                                    <table id="datatable" class="table table-striped table-bordered">
                                        <thead>
                                           <tr>
-                                             <th scope="col">Server ID</th>
-                                             <th scope="col">Up Since</th>
-                                             <th scope="col">Last Reboot</th>
+                                             <th scope="col">Ref No</th>
+                                             <th scope="col">ID</th>
+                                             <th scope="col">GSM</th>
+                                             <th scope="col">Brand</th>
+                                             <th scope="col">Color</th>
+                                             <th scope="col">Qty</th>
+                                             <th scope="col">Price (per unit)</th>
+                                             <th scope="col">Total</th>
+                                             <th scope="col">Added User</th>
                                              <th scope="col">Status</th>
-                                             <th scope="col">Host</th>
-                                             <th scope="col">Utilization</th>
-                                             <th scope="col">Edit</th>
+                                             <th scope="col">Date & Time</th>
+                                             <th scope="col">Options</th>
 
                                           </tr>
                                        </thead>
                                        <tbody>
+                                          <?php if ($board_table_data) {
+                                                      for ($x=0; $x < count($board_table_data); $x++) { ?>
                                           <tr>
-                                             <td>#0879985</td>
-                                             <td>26/12/2019</td>
-                                             <td>30/12/2019</td>
+                                             <td>#<?php echo $board_table_data[$x]['board_auto_id']; ?></td>
+                                             <td><?php echo $board_table_data[$x]['board_uniq_id']; ?></td>
+                                             <td><?php if ($board_table_data[$x]['board_gsm'] == "0") {echo "N/A";} else {echo $board_table_data[$x]['board_gsm'];} ?></td>
+                                             <td><?php echo $board_table_data[$x]['board_brand']; ?></td>
+                                             <td><span class="badge <?php echo strtolower($board_table_data[$x]['board_color']); ?> badge-warning ml-3"><?php echo $board_table_data[$x]['board_color']; ?></span></td>
+                                             <td><?php echo $board_table_data[$x]['board_unit_qty']; ?></td>
+                                             <td><?php echo $board_table_data[$x]['board_price_per_unit']; ?></td>
+                                             <td><?php echo $board_table_data[$x]['board_added_total_amount']; ?></td>
+                                             <td><?php echo $board_table_data[$x]['board_added_user_id']; ?></td>
                                              <td>
-                                                <div class="badge badge-pill badge-success">Running</div>
-                                             </td>
-                                             <td>Victoria 8007 Australia</td>
-                                             <td>
-                                                <div class="iq-progress-bar">
-                                                   <span class="bg-success" data-percent="45"></span>
-                                                </div>
-                                             </td>
+                                                <?php if ($board_table_data[$x]['board_status'] == "Active") {?>
+                                                <div class="badge badge-pill badge-success"><?php  echo $board_table_data[$x]['board_status']; ?></td></div>
+                                             <?php } else { ?>
+                                                <div class="badge badge-pill badge-warning text-white"><?php  echo $board_table_data[$x]['board_status']; ?></td></div>
+                                             <?php } ?>
+                                             <td><?php echo $board_table_data[$x]['board_added_date_time']; ?></td>
+                                             <!-- <td><?php echo $board_table_data[$x]['board_auto_id']; ?></td> -->
                                              <td class="edit-record">
+                                                <?php if ($board_table_data[$x]['board_status'] == "Pending") {?>
                                                 <div class="dropdown">
                                                    <span class="dropdown-toggle edit text-primary" id="dropdownMenuButton5" data-toggle="dropdown">
                                                    <i class="ri-equalizer-line"></i>
@@ -167,64 +197,10 @@
                                                       
                                                    </div>
                                                 </div>
+                                             <?php } ?>
                                              </td>
                                           </tr>
-                                          <tr>
-                                             <td>#0879984</td>
-                                             <td>23/12/2019</td>
-                                             <td>27/12/2019</td>
-                                             <td>
-                                                <div class="badge badge-pill badge-warning text-white">Starting</div>
-                                             </td>
-                                             <td>Athens 2745 Greece</td>
-                                             <td>
-                                                <div class="iq-progress-bar">
-                                                   <span class="bg-warning" data-percent="70"></span>
-                                                </div>
-                                             </td>
-                                          </tr>
-                                          <tr>
-                                             <td>#0879983</td>
-                                             <td>18/12/2019</td>
-                                             <td>21/12/2019</td>
-                                             <td>
-                                                <div class="badge badge-pill badge-danger">Stopped</div>
-                                             </td>
-                                             <td>Victoria 8007 Australia</td>
-                                             <td>
-                                                <div class="iq-progress-bar">
-                                                   <span class="bg-danger" data-percent="48"></span>
-                                                </div>
-                                             </td>
-                                          </tr>
-                                          <tr>
-                                             <td>#0879982</td>
-                                             <td>14/12/2019</td>
-                                             <td>20/12/2019</td>
-                                             <td>
-                                                <div class="badge badge-pill badge-info">Maintenance</div>
-                                             </td>
-                                             <td>Delhi 0014 India</td>
-                                             <td>
-                                                <div class="iq-progress-bar">
-                                                   <span class="bg-info" data-percent="90"></span>
-                                                </div>
-                                             </td>
-                                          </tr>
-                                          <tr>
-                                             <td>#0879981</td>
-                                             <td>10/12/2019</td>
-                                             <td>18/12/2019</td>
-                                             <td>
-                                                <div class="badge badge-pill badge-success">Running</div>
-                                             </td>
-                                             <td>Alabama 2741 USA</td>
-                                             <td>
-                                                <div class="iq-progress-bar">
-                                                   <span class="bg-success" data-percent="45"></span>
-                                                </div>
-                                             </td>
-                                          </tr>
+                                          <?php }} ?>
                                        </tbody>
                                     </table>
                                  </div>

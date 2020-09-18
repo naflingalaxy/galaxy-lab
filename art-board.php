@@ -1,10 +1,16 @@
 <?php
+// Required pages & varibles ----------------------------
 include 'top.php';
 include 'includes/auth.php';
 // require_once DOC_ROOT.'classes/db_connection.php';
+$table_name = "tbl_galaxy_art_board";
+require_once DOC_ROOT.'includes/functions.php';
+
 $main_menu_category = "board";
 $current_page_name_variable = "art-board";
 $product_name = "Art Board";
+// Required pages & varibles ----------------------------
+
 $board_table_data = $db->query("SELECT * FROM tbl_galaxy_art_board WHERE board_gsm = '230' AND board_status = 'Active' ORDER BY board_added_date_time 
 	DESC");
 $board_table_data_count = $db->query("SELECT SUM(board_unit_qty) FROM tbl_galaxy_art_board WHERE board_gsm = '230' AND board_status = 'Active' ORDER BY board_added_date_time 
@@ -14,25 +20,14 @@ if ($board_table_data_count) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+// Data adding process start ---------------------------------------------------------
 if (isset($_POST['btn-add'])) {
 	$board_uniq_id = $uniq_id_artboard;
 	$board_name = $product_name;
 	$board_gsm = filter_var($_POST['gsm'], FILTER_SANITIZE_STRING);
-	if ($board_gsm == 0) {
-		$board_gsm ="N/A";
-	}
+	// if ($board_gsm == 0) {
+	// 	$board_gsm ="N/A";
+	// }
 	$board_color = "N/A";
 	$board_brand = filter_var($_POST['brand'], FILTER_SANITIZE_STRING);
 	$board_unit_qty = filter_var($_POST['qty'], FILTER_SANITIZE_STRING);
@@ -58,7 +53,7 @@ if (isset($_POST['btn-add'])) {
 		header("Location:".HTTP_PATH."art-board");
 	}
 }
-
+// Data adding process End ------------------------------------------------------------------------------
 
 
 $include_file = DOC_ROOT.'pages/art_board_page.php';

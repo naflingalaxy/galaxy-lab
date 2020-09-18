@@ -1,3 +1,0 @@
-Time : 14:12:09
-SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
-Raw SQL : INSERT INTO tbl_gallery (User_Id, Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Image_Status,Gallery_Image) VALUES (:UserId, :galleryCode, :galleryImageTitle, :galleryImageLinkPage, :galleryImageDescription, :galleryImageStatus, :galleryImagePrice, :gallerySize, :galleryImage )

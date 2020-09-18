@@ -1,7 +1,0 @@
-Time : 12:47:49
-SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'Gallery_Image' cannot be null
-Raw SQL : INSERT INTO tbl_gallery (User_Id, Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Image_Status, Gallery_Image) VALUES (:UserId, :galleryImageTitle, :galleryImageLinkPage, :galleryImageDescription, :galleryImageStatus, :galleryImage )
-
-Time : 12:41:01
-SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'User_Id' cannot be null
-Raw SQL : INSERT INTO tbl_gallery (User_Id, Gallery_Image_Title, Gallery_Image_Page, Gallery_Image_Description, Gallery_Image_Status, Gallery_Image) VALUES (:UserId, :galleryImageTitle, :galleryImageLinkPage, :galleryImageDescription, :galleryImageStatus, :galleryImage )

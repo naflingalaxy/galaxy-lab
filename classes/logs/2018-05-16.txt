@@ -1,7 +1,0 @@
-Time : 10:45:21
-SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
-Raw SQL : UPDATE tbl_slider SET Slider_Status = :status WHERE Slider_Id != :sliderid
-
-Time : 10:37:57
-SQLSTATE[HY000]: General error: 2031 
-Raw SQL : SELECT count(*) FROM tbl_slider WHERE Slider_Status = :status AND Slider_Linked_Page = :page

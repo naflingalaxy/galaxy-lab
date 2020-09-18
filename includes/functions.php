@@ -12,4 +12,16 @@
 //        }
       
 // }
+function getstatuscount($statusID){
+	global $db;
+	global $table_name;
+
+	
+		$array = array("Statusid"=> $statusID);
+		$select_status = $db->query("SELECT COUNT(board_status) FROM $table_name WHERE board_status = :Statusid", $array);
+		$status_count = $select_status[0]['COUNT(board_status)'];
+	
+	
+	return $status_count;
+}
 ?>

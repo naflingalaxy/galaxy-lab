@@ -1,0 +1,67 @@
+Time : 13:46:55
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'board_name' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_icegold_board (board_uniq_id, board_name, board_gsm, board_color, board_brand, board_unit_qty, board_price_per_unit, board_added_date_time, board_status, board_added_total_amount, board_added_user_id) VALUES (:board_uniq_id, :board_name, :board_gsm, :board_color, :board_brand, :board_unit_qty, :board_price_per_unit, :board_added_date_time, :board_status, :board_added_total_amount, :board_added_user_id)
+
+Time : 13:45:40
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'board_name' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_icegold_board (board_uniq_id, board_name, board_gsm, board_color, board_brand, board_unit_qty, board_price_per_unit, board_added_date_time, board_status, board_added_total_amount, board_added_user_id) VALUES (:board_uniq_id, :board_name, :board_gsm, :board_color, :board_brand, :board_unit_qty, :board_price_per_unit, :board_added_date_time, :board_status, :board_added_total_amount, :board_added_user_id)
+
+Time : 12:33:16
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'board_name' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_icegold_board (board_uniq_id, board_name, board_gsm, board_color, board_brand, board_unit_qty, board_price_per_unit, board_added_date_time, board_status, board_added_total_amount, board_added_user_id) VALUES (:board_uniq_id, :board_name, :board_gsm, :board_color, :board_brand, :board_unit_qty, :board_price_per_unit, :board_added_date_time, :board_status, :board_added_total_amount, :board_added_user_id)
+
+Time : 12:05:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM  WHERE board_status = :Statusid
+
+Time : 12:05:15
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM  WHERE board_status = :Statusid
+
+Time : 12:01:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''tbl_galaxy_ivery_board' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM 'tbl_galaxy_ivery_board' WHERE board_status = :Statusid
+
+Time : 11:59:36
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM '' WHERE board_status = :Statusid
+
+Time : 11:58:58
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM '' WHERE board_status = :Statusid
+
+Time : 11:32:21
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''tbl_galaxy_ivery_board' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM 'tbl_galaxy_ivery_board' WHERE board_status = :Statusid
+
+Time : 11:31:13
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''tbl_galaxy_ivery_board' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM 'tbl_galaxy_ivery_board' WHERE board_status = :Statusid
+
+Time : 11:29:49
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''tbl_galaxy_ivery_board WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM 'tbl_galaxy_ivery_board WHERE board_status = :Statusid
+
+Time : 11:28:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM ' WHERE board_status = :Statusid
+
+Time : 11:28:00
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM ' WHERE board_status = :Statusid
+
+Time : 11:27:29
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM ' WHERE board_status = :Statusid
+
+Time : 11:27:29
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM ' WHERE board_status = :Statusid
+
+Time : 11:27:28
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM ' WHERE board_status = :Statusid
+
+Time : 11:27:24
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' WHERE board_status = ?' at line 1
+Raw SQL : SELECT COUNT(board_status) FROM ' WHERE board_status = :Statusid

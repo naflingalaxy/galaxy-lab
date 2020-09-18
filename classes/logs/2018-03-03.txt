@@ -1,7 +1,0 @@
-Time : 08:33:10
-SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
-Raw SQL : SELECT * FROM tbl_user WHERE User_Name = :username AND User_Password = :md5password
-
-Time : 08:28:15
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 'Imahanshi' AND User_Password = 'e10adc3949ba59abbe56e057f20f883e'' at line 1
-Raw SQL : SELECT * FROM tbl_user WHERE User_Name == 'Imahanshi' AND User_Password = 'e10adc3949ba59abbe56e057f20f883e'

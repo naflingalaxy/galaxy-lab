@@ -1,7 +1,0 @@
-Time : 12:07:40
-SQLSTATE[HY000]: General error: 2031 
-Raw SQL : SELECT * FROM tbl_contact WHERE Contact_Status = :status AND Contact_Type = :contacttype ORDER BY Contact_Id DESC LIMIT 1
-
-Time : 10:16:05
-SQLSTATE[HY000]: General error: 2031 
-Raw SQL : SELECT * FROM tbl_contact WHERE Contact_Type = :contacttype AND Contact_Details = :contactdetails

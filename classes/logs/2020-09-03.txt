@@ -1,2 +1,0 @@
-Time : 12:42:28
-SQLSTATE[HY000] [1049] Unknown database 'db_esol_lk'

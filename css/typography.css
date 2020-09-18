@@ -216,7 +216,7 @@ loading
 /*----------------------------------------------
 Background Color
 ------------------------------------------------*/
-.bg-primary, .badge-primary { background-color: #1c67a2 !important; }
+.badge-primary { background-color: #f9ecad !important; }
 .bg-secondary, .badge-secondary { background-color: #777D74 !important; }
 .bg-success, .badge-success { background-color: #00c99c !important; }
 .bg-danger, .badge-danger { background-color: #f4828b !important; }
@@ -358,7 +358,8 @@ Buttons
 .btn-dark { background-color: #1d2438; border-color: #1d2438; }
 
 /*--------------*/
-.btn-outline-primary { color: #1c67a2; border-color: #1c67a2; }
+.btn-outline-primary { color: #e8c309;
+    border-color: #ffd400; }
 .btn-outline-secondary { color: #777D74; border-color: #777D74; }
 .btn-outline-success { color: #00c99c; border-color: #00c99c; }
 .btn-outline-danger { color: #f4828b; border-color: #f4828b; }

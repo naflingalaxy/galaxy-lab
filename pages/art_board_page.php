@@ -1,8 +1,10 @@
                <!-- Page Content  -->
          <div id="content-page" class="content-page">
+
+            <div style="display:none;">
             <?php 
             
-            $total_qty = '27';
+            $total_qty = '32';
             $total_qty_db = 0;
             $total_qty_db_assign = '0';
                                  if ($board_table_data) {
@@ -61,6 +63,7 @@
                                  }
                                  
                                   ?>
+            </div>
             <div class="container-fluid">
 
                <div class="row">
@@ -109,12 +112,12 @@
                                  
                                  <div class="col-md-6 mb-3">
                                     <label for="validationDefault03">Price <code>(per unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="price" maxlength="6" required>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="price" maxlength="6" autocomplete="off" required>
                                     
                                  </div>
                                  <div class="col-md-6 mb-3">
                                     <label for="validationDefault03">QTY <code>(unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" maxlength="6" required>
+                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" autocomplete="off" maxlength="6" required>
 
                                           
                                  </div>
@@ -189,18 +192,19 @@
                                  <div class="iq-header-title">
                                     <h4 class="card-title">Recent Activity (<?php echo preg_replace("/[^a-zA-Z]/", " ", $current_page); ?>)</h4>
                                  </div>
-                                 <div class="iq-card-header-toolbar d-flex align-items-center">
-                                    <div class="dropdown">
-                                       <span class="dropdown-toggle text-primary" id="dropdownMenuButton5" data-toggle="dropdown">
-                                       <i class="ri-more-2-fill"></i>
-                                       </span>
-                                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                          <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
-                                          <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
-                                          
-                                       </div>
+                                 <div class="count-number">
+                                    <button type="button" class="btn mb-1 btn-outline-success ml-3">
+                                       Active <span class="badge badge-success ml-2 shadow-none"><?php $status_text = "Active"; echo getstatuscount($status_text); ?></span>
+                                    </button>
+                                    <button type="button" class="btn mb-1 btn-outline-primary ml-3">
+                                       Pending <span class="badge badge-primary ml-2 shadow-none"><?php $status_text = "Pending"; echo getstatuscount($status_text); ?></span>
+                                    </button>
+                                    <button type="button" class="btn mb-1 btn-outline-danger ml-3">
+                                       Cancelled <span class="badge badge-danger ml-2 shadow-none"><?php $status_text = "Cancelled"; echo getstatuscount($status_text); ?></span>
+                                    </button>
+                                    
                                     </div>
-                                 </div>
+                                 
                               </div>
                               <div class="iq-card-body">
                                  <div class="table-responsive">
@@ -227,7 +231,7 @@
                                           <tr>
                                              <td>#<?php echo $board_table_data[$x]['board_auto_id']; ?></td>
                                              <td><?php echo $board_table_data[$x]['board_uniq_id']; ?></td>
-                                             <td><?php echo $board_table_data[$x]['board_gsm']; ?></td>
+                                             <td><?php if ($board_table_data[$x]['board_gsm'] == "0") {echo "N/A";} else {echo $board_table_data[$x]['board_gsm'];} ?></td>
                                              <td><?php echo $board_table_data[$x]['board_brand']; ?></td>
                                              <td><?php echo $board_table_data[$x]['board_unit_qty']; ?></td>
                                              <td><?php echo $board_table_data[$x]['board_price_per_unit']; ?></td>
@@ -266,4 +270,27 @@
                         </div>
                   </div>
             </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">
+                        ...
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Modal End-->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
          </div>
