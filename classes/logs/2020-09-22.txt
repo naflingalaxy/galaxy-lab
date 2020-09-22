@@ -1,0 +1,15 @@
+Time : 11:29:27
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'board_unit_qty' in 'field list'
+Raw SQL : SELECT SUM(board_unit_qty) FROM tbl_galaxy_job_card WHERE board_status = 'active' AND board_brand = :brand AND board_gsm = :gsm
+
+Time : 11:29:23
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'board_unit_qty' in 'field list'
+Raw SQL : SELECT SUM(board_unit_qty) FROM tbl_galaxy_job_card WHERE board_status = 'active' AND board_brand = :brand AND board_gsm = :gsm
+
+Time : 11:26:37
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'board_unit_qty' in 'field list'
+Raw SQL : SELECT SUM(board_unit_qty) FROM tbl_galaxy_job_card WHERE board_status = 'active' AND board_brand = :brand AND board_gsm = :gsm
+
+Time : 11:26:33
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'board_unit_qty' in 'field list'
+Raw SQL : SELECT SUM(board_unit_qty) FROM tbl_galaxy_job_card WHERE board_status = 'active' AND board_brand = :brand AND board_gsm = :gsm

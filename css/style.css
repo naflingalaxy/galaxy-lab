@@ -159,7 +159,7 @@ border-radius: 10px; }
 /*---------------------------------------------------------------------
                              Icon Box
 -----------------------------------------------------------------------*/
-.iq-icon-box { height: 60px; width: 60px; line-height: 60px; text-align: center; margin-right: 10px; font-size: 22px; text-decoration: none; box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.07), -20px -20px 20px rgba(255, 255, 255, 0.7), 6px 6px 6px rgba(0, 0, 0, 0.09), -6px -6px 6px rgba(255, 255, 255, 0.9); }
+.iq-icon-box { height: 30px; width: 30px; line-height: 28px; text-align: center; margin-right: 10px; font-size: 22px; text-decoration: none; box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.07), -20px -20px 20px rgba(255, 255, 255, 0.7), 6px 6px 6px rgba(0, 0, 0, 0.09), -6px -6px 6px rgba(255, 255, 255, 0.9); }
 .iq-icon-box:hover { text-decoration: none; }
 
 /*---------------------------------------------------------------------
@@ -234,7 +234,7 @@ border-radius: 10px; }
 
 /*------------------------*/
 .iq-sidebar-menu .iq-menu li ul { display: none; padding-left: 55px; }
-.iq-sidebar-menu .iq-menu li ul li a { color: #777D74; background: transparent; padding: 12px 20px; }
+.iq-sidebar-menu .iq-menu li ul li a { text-transform: capitalize;color: #777D74; background: transparent; padding: 12px 20px; }
 .iq-sidebar-menu .iq-menu li ul a:hover { color: #1c67a2; text-decoration: none; background: transparent; }
 
 /*---------Sidebar Dark---------------*/
@@ -917,4 +917,20 @@ label {
 }
 .cancel {
   background-color: #ea7c87 !important;
+}
+.iq-bg-success-white {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+.iq-bg-success-blue {
+    background: #5da2e8 !important;
+    color: #000000 !important;
+}
+.iq-bg-success-pink {
+    background: #f59aee !important;
+    color: #000000 !important;
+}
+.iq-bg-success-yellow {
+    background: #f3ee69 !important;
+    color: #000000 !important;
 }

@@ -2,7 +2,7 @@
 <div id="content-page" class="content-page">
 <div class="container-fluid">
    <div class="row">
-      <div class="col-sm-12 col-lg-8">
+      <div class="col-sm-12 col-lg-6">
          <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                <div class="iq-header-title">
@@ -17,12 +17,12 @@
                     
                      <div class="col-md-6 mb-3">
                         <label for="validationDefault03">Price <code>(per unit)</code></label>
-                              <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" name="price" maxlength="6" required>
+                              <input type="number" class="form-control" name="price" pattern="[0-9]+([\.,][0-9]+)?" autocomplete="off" step="0.01" maxlength="6" required>
                      </div>
 
                      <div class="col-md-6 mb-3">
                         <label for="validationDefault03">QTY <code>(unit)</code></label>
-                              <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" name="qty" maxlength="6" required>
+                              <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="validationDefault03" autocomplete="off" name="qty" maxlength="6" required>
 
                               
                      </div>
@@ -57,51 +57,29 @@
          </div>
          
       </div>
-      <div class="col-lg-4 col-md-12 mb-5 mb-xl-0">
-         <div class="iq-card wow fadeInUp" data-wow-delay="0.8s">
-            <div class="iq-card-header d-flex justify-content-between">
-               <div class="iq-header-title">
-                  <h4 class="card-title">Stock Level</h4>
-               </div>
-               <div class="iq-card-header-toolbar d-flex align-items-center">
-                  <div class="dropdown">
-                     <span class="dropdown-toggle text-primary" id="dropdownMenuButton4" data-toggle="dropdown">
-                     <i class="ri-more-2-fill"></i>
-                     </span>
-                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton4">
-                        <a class="dropdown-item" href="#"><i class="ri-eye-fill mr-2"></i>View</a>
-                        <a class="dropdown-item" href="#"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
-                        <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
-                        <a class="dropdown-item" href="#"><i class="ri-printer-fill mr-2"></i>Print</a>
-                        <a class="dropdown-item" href="#"><i class="ri-file-download-fill mr-2"></i>Download</a>
+      <div class="col-lg-6 col-md-12 mb-5 mb-xl-0">
+         <div class="row row-eq-height">
+                  <!-- Content Top Banner Start -->
+                  
+            <div class="col-lg-3 col-md-6">
+               <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
+                  <div class="iq-card-body">
+                     <div class="row">
+                        <div class="col-lg-12 mb-2 d-flex justify-content-between">
+                           <div class="icon iq-icon-box rounded-circle iq-bg-warning rounded-circle">
+                              <i class="ri-account-box-line"></i>
+                           </div>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                           <h6 class="card-title text-uppercase text-secondary mb-0">Ivery Board</h6>
+                           <span class="h2 text-dark mb-0 counter"><?php $gc = "N/A";$gsm = 0;  echo getstockcount($gc, $gsm); ?></span>
+                        </div>
                      </div>
+                     
                   </div>
                </div>
             </div>
-            <div class="iq-card-body">
-             
-               <div class="row">
-                  <div class="col-md-6">
-                     <div id="apex-column"></div>
-                  </div>
-                  <div class="col-md-6 align-self-center">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <h5 class="text-dark mb-0">Stock Item Quantity</h5>
-                           <h2 class="text-primary">85%<small class="ml-3">Traffic</small></h2>
-                        </div>
-                     </div>
-                     <hr>
-                     <div class="row">
-                        <div class="col-md-12">
-                           <h6 class="d-inline-block w-100 mb-2">Previous scores</h6>
-                           <h5>August<span class="ml-3 font-size-22 text-success">69%</span></h5>
-                           <h5>September<span class="ml-3 font-size-22 text-danger">40%</span></h5>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            
          </div>
       </div>
    </div>
@@ -180,8 +158,9 @@
                                  <?php } else if ($board_table_data[$x]['board_status'] == "cancelled") { ?>
                                     <div class="badge badge-pill badge-danger text-white"><?php  echo $board_table_data[$x]['board_status']; ?></td></div>
                                  <?php } else { ?>
-                                    <div class="badge badge-pill badge-warning text-white"><?php  echo $board_table_data[$x]['board_status']; ?></td></div>
+                                    <div class="badge badge-pill badge-warning text-white"><?php  echo $board_table_data[$x]['board_status']; ?></div>
                                  <?php } ?>
+                                 </td>
                                  <td><?php echo $board_table_data[$x]['board_added_date_time']; ?></td>
                                  <!-- <td><?php echo $board_table_data[$x]['board_auto_id']; ?></td> -->
                                  <td class="edit-record">

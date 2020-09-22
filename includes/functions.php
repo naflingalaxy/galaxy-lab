@@ -24,4 +24,31 @@ function getstatuscount($statusID){
 	
 	return $status_count;
 }
+
+function getstockcount($brand, $gsm){
+	global $db;
+	global $table_name;
+
+	
+		$array = array('brand' => $brand, 'gsm' => $gsm);
+		$select_count = $db->query("SELECT SUM(board_unit_qty) FROM $table_name WHERE board_status = 'active' AND board_brand = :brand AND board_gsm = :gsm", $array);
+		$item_count = $select_count[0]['SUM(board_unit_qty)'];
+	
+	
+	return $item_count;
+}
+
+function getstockcountbristal($color){
+	global $db;
+	global $table_name;
+
+	
+		$array = array('color' => $color);
+		$select_count = $db->query("SELECT SUM(board_unit_qty) FROM $table_name WHERE board_color = :color", $array);
+		$item_count = $select_count[0]['SUM(board_unit_qty)'];
+	
+	
+	return $item_count;
+}
 ?>
+
