@@ -76,12 +76,12 @@
                         </ul>
                      </li>
                      <li class="<?php if ($main_menu_category == "jobcard"){ echo "menu-open";} ?>">
-                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-contrast-drop-line"></i><span>Accounts</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-lightbulb-line"></i><span>Production</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu <?php if ($main_menu_category == "jobcard"){ echo "menu-open";} ?>" style="<?php if ($page_name == "jobcard") { echo "display: block;";} ?>">
                           
                            <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
                            <?php 
-                              $page_data = $db->query("SELECT account_url, account_name FROM tbl_galaxy_accounts");
+                              $page_data = $db->query("SELECT account_url, account_name FROM tbl_galaxy_production");
                               if ($page_data) {
                                   for ($s=0; $s < count($page_data); $s++) { ?>
                            <li class="<?php if ($current_page_name_variable == $page_data[$s]['account_url']) { echo "active menu-open";}?>"><a href="<?php echo HTTP_PATH.$page_data[$s]['account_url']; ?>"><?php echo $page_data[$s]['account_name']; ?></a></li>

@@ -2,11 +2,11 @@
          <div id="content-page" class="content-page">
             <div class="container-fluid">
                <div class="row">
-                  <div class="col-sm-12 col-lg-6">
+                  <div class="col-sm-12 col-lg-8">
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Box Board </h4>
+                              <h4 class="card-title"> Job Card </h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
@@ -15,54 +15,140 @@
                               <div class="form-row">
                                  
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">GSM</label>
-                                    <select class="custom-select" id="validationTooltip04" name="gsm" required>
-                                       <option selected disabled value="">Choose...</option>
+                                    <label for="validationTooltip04">Name</label>
+                                    
+                                    <input type="text" class="form-control" name="name" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Name.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Item</label>
+                                    
+                                    <input type="text" class="form-control" name="item" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Item.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Address</label>
+                                    
+                                    <input type="text" class="form-control" name="address" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Contact Number</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="number" id="" maxlength="10" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Number.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Email</label>
+                                    
+                                    <input type="email" class="form-control" name="email" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Email.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Quantity</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="quantity" id="" maxlength="10" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Number.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-6">
+                                    <label for="validationTooltip04">size</label>
+                                          <select class="custom-select" id="" name="brand" required>
+                                             <option selected disabled value="">Choose...</option>
+                                             <option value="A6">A6</option>
+                                             <option value="A5">A5</option>
+                                             <option value="A4">A4</option>
+                                             <option value="A3">A3</option>
+                                             <option value="A2">A2</option>
+                                             <option value="B5">B5</option>
+                                             <option value="B4">B4</option>
+                                             <option value="B3">B3</option>
+                                             <option value="legal">Legal</option>
+                                             <option value="letter">Letter</option>
+                                             <option value="3intoA4">3 into A4</option>
+                                             <option value="3intoA3">3 into A3</option>
+                                       </select>
+                                 </div>
+                                 <div class="col-md-6 mb-3 form-group">
+                                    
 
-                                       <option value="250">250</option>
-                                       <option value="300">300</option>
-                                       <option value="350">350</option>
-                                       <option value="400">400</option>
-                                       <option value="N/A">N/A</option>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                       <input type="radio" id="customRadio6" name="timespan" value="ongoing" class="custom-control-input" required> 
+                                       <label class="timespan custom-control-label" for="customRadio6"> One Color</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                       <input type="radio" id="customRadio2" name="timespan" value="history" class="timespan custom-control-input" required>
+                                       <label class="custom-control-label" for="customRadio2"> Two Color</label>
+                                    </div>
+                                 <div class="col-md-12 single">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                          <label for="validationTooltip04">One Side color</label>
+                                          <select class="custom-select" id="" name="brand" required>
+                                             <option selected disabled value="">Choose...</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                       </select>
+                                       <div class="invalid-tooltip">
+                                          Please select a valid state.
+                                       </div>
+                                       </div>
                                        
-                                    </select>
-                                    <div class="invalid-tooltip">
-                                       Please select a valid state.
                                     </div>
                                  </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Brand</label>
-                                    <select class="custom-select" id="validationTooltip04" name="brand" required>
-                                       <option selected disabled value="">Choose...</option>
-                                       <option value="sripathi">Sripathi</option>
-                                       <option value="agrawal">Agrawal</option>
-                                       <option value="N/A">N/A</option>
-                                      
-                                    </select>
-                                    <div class="invalid-tooltip">
-                                       Please select a valid state.
+                                 <div class="col-md-12 end_date">
+                                    <div class="row">
+                                       <div class="col-md-6">
+                                          <label for="validationTooltip04">front side color</label>
+                                          <select class="custom-select" id="" name="brand" required>
+                                             <option selected disabled value="">Choose...</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                       </select>
+                                       <div class="invalid-tooltip">
+                                          Please select a valid state.
+                                       </div>
+                                       </div>
+                                       <div class="col-md-6">
+                                          <label for="validationTooltip04">back side color</label>
+                                          <select class="custom-select" id="" name="brand" required>
+                                             <option selected disabled value="">Choose...</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                       </select>
+                                       <div class="invalid-tooltip">
+                                          Please select a valid state.
+                                       </div>
+                                       </div>
                                     </div>
+                                  </div>
+                                  
                                  </div>
                                  
-                                 
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationDefault03">Price <code>(per unit)</code></label>
-                                          <input type="number" class="form-control" name="price" pattern="[0-9]+([\.,][0-9]+)?" autocomplete="off" step="0.01" maxlength="6" required>
-                                 </div>
-
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationDefault03">QTY <code>(unit)</code></label>
-                                          <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="validationDefault03" maxlength="6" autocomplete="off" required>
-
-                                          
-                                 </div>
                                  
                                  
                                  
                               </div>
                               
 
-                              <div class="form-group">
+                              <div class="form-group" style="padding: 15px 0 0 0; margin: 0;">
                                  <button name="btn-add" class="btn btn-primary" type="submit">Add</button>
                               </div>
 
@@ -87,180 +173,18 @@
                      </div>
                      
                   </div>
-                  <div class="col-lg-6 col-md-12 mb-5 mb-xl-0">
-                     <div class="row row-eq-height">
-                  <!-- Content Top Banner Start -->
                   
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-success rounded-circle">
-                                          <i class="ri-timer-2-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Sripathi 250</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "sripathi";$gsm = 250;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-warning rounded-circle">
-                                          <i class="ri-account-box-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Sripathi 300</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "sripathi";$gsm = 300;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-success rounded-circle">
-                                          <i class="ri-timer-2-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Sripathi 350</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "sripathi";$gsm = 350;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-warning rounded-circle">
-                                          <i class="ri-account-box-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Sripathi 400</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "sripathi";$gsm = 400;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
-                                          <i class="ri-timer-2-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Agrawal 250</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "agrawal";$gsm = 250;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-warning rounded-circle">
-                                          <i class="ri-account-box-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Agrawal 300</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "agrawal";$gsm = 300;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-primary rounded-circle">
-                                          <i class="ri-timer-2-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Agrawal 350</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "agrawal";$gsm = 350;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                           <div class="iq-card wow zoomIn" style="visibility: visible; animation-name: zoomIn;">
-                              <div class="iq-card-body">
-                                 <div class="row">
-                                    <div class="col-lg-12 mb-2 d-flex justify-content-between">
-                                       <div class="icon iq-icon-box rounded-circle iq-bg-success rounded-circle">
-                                          <i class="ri-timer-2-line"></i>
-                                       </div>
-                                    </div>
-                                    <div class="col-lg-12 mt-3">
-                                       <h6 class="card-title text-uppercase text-secondary mb-0">Agrawal 400</h6>
-                                       <span class="h2 text-dark mb-0 counter"><?php $gc = "agrawal";$gsm = 400;  echo getstockcount($gc, $gsm); ?></span>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                           </div>
-                        </div>
-                        
-                        
-                     </div>
-                  </div>
                </div>
-               <div class="row">
+               <!-- <input type="radio" class="timespan" name="timespan" value="ongoing">On-going
+<input type="radio" class="timespan" name="timespan" value="history">Historical
+    <div class="end_date">End Date</div> -->
+
+
+
+               <div class="row" style="margin-top: 150px;">
                        <div class="col-lg-12">
                            <div class="iq-card">
-                              <div class="iq-card-header d-flex justify-content-between">
-                                 <div class="iq-header-title">
-                                    <h4 class="card-title">Recent Activity (<?php echo preg_replace("/[^a-zA-Z]/", " ", $current_page); ?>)</h4>
-                                 </div>
-                                 <div class="count-number">
-                                    <button type="button" class="btn mb-1 btn-outline-success ml-3">
-                                       Active <span class="badge badge-success ml-2 shadow-none"><?php $status_text = "Active"; echo getstatuscount($status_text); ?></span>
-                                    </button>
-                                    <button type="button" class="btn mb-1 btn-outline-primary ml-3">
-                                       Pending <span class="badge badge-primary ml-2 shadow-none"><?php $status_text = "Pending"; echo getstatuscount($status_text); ?></span>
-                                    </button>
-                                    <button type="button" class="btn mb-1 btn-outline-danger ml-3">
-                                       Cancelled <span class="badge badge-danger ml-2 shadow-none"><?php $status_text = "Cancelled"; echo getstatuscount($status_text); ?></span>
-                                    </button>
-                                    
-                                 </div>
-                                 
-                              </div>
+                              
                               <div class="iq-card-body">
                                  <?php if (isset($_COOKIE['editerrorMessage'])) {?>
                                     <div class="alert text-white bg-danger" role="alert">
@@ -341,4 +265,31 @@
                   </div>
             </div>
          </div>
+         
+
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+         <script>
+            $(document).ready(function() {
+             $('.end_date').hide();
+             $('.single').hide();
+                 $('.timespan').click(function () {
+                  var selected = $(this).val();  
+                     if(selected == 'history') {
+                      $('.end_date').show();
+                      $('.single').hide();
+                   } else {
+                      $('.single').show();
+                      $('.end_date').hide();
+                    }
+                   //  if(selected == 'ongoing') {
+                   //    $('.single').show();
+                      
+                   // } else {
+                   //    $('.single').hide();
+                      
+                   //  }
+             });       
+           });
+         </script>
+         
         

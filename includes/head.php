@@ -5,7 +5,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>GALAXY - <?php echo ucwords($current_page); ?></title>
+      <title>GALAXY - <?php echo strtoupper(ucwords($current_page)); ?></title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="images/logo.png" />
       <!-- Bootstrap CSS -->

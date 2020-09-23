@@ -852,7 +852,7 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 }
 label {
     color: #1d2438;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 .custom-select {
     
@@ -933,4 +933,10 @@ label {
 .iq-bg-success-yellow {
     background: #f3ee69 !important;
     color: #000000 !important;
+}
+.hidden {
+  display: none;
+}
+.style1 {
+    background: yellow;
 }
