@@ -943,3 +943,27 @@ label {
 .select2-container--default {
   width: 100% !important;
 }
+/*.seperate {
+  margin-bottom: 6em;
+}*/
+#hidden_div {
+    display: none;
+}
+.box {
+  color: #fff;
+  padding: 20px;
+  display: none;
+  margin-top: 20px;
+}
+
+.red {
+  background: #ff0000;
+}
+
+.green {
+  background: #228B22;
+}
+
+.blue {
+  background: #0000ff;
+}

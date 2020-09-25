@@ -75,9 +75,9 @@
 
                         </ul>
                      </li>
-                     <li class="<?php if ($main_menu_category == "jobcard"){ echo "menu-open";} ?>">
+                     <li class="<?php if ($main_menu_category == "production"){ echo "menu-open";} ?>">
                         <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-lightbulb-line"></i><span>Production</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul class="iq-submenu <?php if ($main_menu_category == "jobcard"){ echo "menu-open";} ?>" style="<?php if ($page_name == "jobcard") { echo "display: block;";} ?>">
+                        <ul class="iq-submenu <?php if ($main_menu_category == "production"){ echo "menu-open";} ?>" style="<?php if ($page_name == "jobcard") { echo "display: block;";} ?>">
                           
                            <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
                            <?php 

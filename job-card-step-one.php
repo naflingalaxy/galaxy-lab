@@ -6,7 +6,7 @@ include 'includes/auth.php';
 $table_name = "tbl_galaxy_art_board";
 require_once DOC_ROOT.'includes/functions.php';
 
-$main_menu_category = "jobcard";
+$main_menu_category = "production";
 $current_page_name_variable = "job-card";
 $product_name = "Job Card";
 // Required pages & varibles ----------------------------

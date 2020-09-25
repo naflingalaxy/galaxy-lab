@@ -6,63 +6,105 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Job Card Step 01</h4>
+                              <h4 class="card-title"> Costing</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
                            
                            <form method="post">
                               <div class="form-row">
-                                 
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Name</label>
+                                 <div class="col-md-6 mb-6 seperate">
+                                    <label for="validationTooltip04">Paper/Board</label>
+                                          <select class="custom-select" id="" name="size" onchange="showDiv('hidden_div', this)" required>
+                                             <option selected disabled value="">Choose...</option>
+                                             <?php if ($dropdown_data) {
+                                                for ($c=0; $c < count($dropdown_data); $c++) { ?>
+                                             <option value="<?php echo $dropdown_data[$c]['item_id']; ?>"><?php echo $dropdown_data[$c]['item_name']; ?></option>
+                                             <?php }} ?>
+                                       </select>
+                                       <div id="check" class="red box form-my">You have selected <strong>red option</strong> so i am here</div>
+  
+                                 </div>
+                                 <div class="col-md-6 mb-3" id="artboard">
                                     
-                                    <input type="text" class="form-control" name="name" id="" autocomplete="off" required>
+                                 </div>
+                                 <hr>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">artwork<code>(qty)</code></label>
+                                    
+                                    <input type="number" class="form-control" name="artwork" id="" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Name.
                                     </div>
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Item</label>
+                                    <label for="validationTooltip04">plate<code>(qty)</code></label>
                                     
-                                    <input type="text" class="form-control" name="item" id="" autocomplete="off" required>
+                                    <input type="number" class="form-control" name="plate" id="" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Item.
                                     </div>
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Address</label>
+                                    <label for="validationTooltip04">laminating<code>(qty)</code></label>
                                     
-                                    <input type="text" class="form-control" name="address" id="" autocomplete="off" required>
+                                    <input type="number" class="form-control" name="laminating" id="" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Address.
                                     </div>
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Contact Number</label>
+                                    <label for="validationTooltip04">die cutter<code>(cost)</code></label>
                                     
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="number" id="" maxlength="10" autocomplete="off" required>
+                                    <input type="number" class="form-control" name="die_cutter" id="" autocomplete="off" required>
                                     <div class="invalid-tooltip">
-                                       Please add a Number.
+                                       Please add a Address.
                                     </div>
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Email</label>
+                                    <label for="validationTooltip04">die cutting charge<code>(qty)</code></label>
                                     
-                                    <input type="mail" class="form-control" name="email" autocomplete="off" required>
+                                    <input type="number" class="form-control" name="die_cutting_charge" id="" autocomplete="off" required>
                                     <div class="invalid-tooltip">
-                                       Please add a Email.
+                                       Please add a Address.
                                     </div>
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Quantity</label>
+                                    <label for="validationTooltip04">perparization<code>(qty)</code></label>
                                     
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="quantity" id="" maxlength="10" autocomplete="off" required>
+                                    <input type="number" class="form-control" name="perparization" id="" autocomplete="off" required>
                                     <div class="invalid-tooltip">
-                                       Please add a Number.
+                                       Please add a Address.
                                     </div>
                                  </div>
-                                 <div class="col-md-6 mb-6">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">transport<code>(cost)</code></label>
+                                    
+                                    <input type="number" class="form-control" name="transport" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">other<code>(cost)</code></label>
+                                    
+                                    <input type="number" class="form-control" name="other" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">impression<code>(qty)</code></label>
+                                    
+                                    <input type="number" class="form-control" name="impression" id="" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 
+                                 
+                                 
+                                 <!-- <div class="col-md-6 mb-6">
                                     <label for="validationTooltip04">size</label>
                                           <select class="custom-select" id="" name="size" required>
                                              <option selected disabled value="">Choose...</option>
@@ -79,95 +121,8 @@
                                              <option value="3intoA4">3 into A4</option>
                                              <option value="3intoA3">3 into A3</option>
                                        </select>
-                                 </div>
+                                 </div> -->
                                  
-                                 <div class="col-md-6 mb-3 form-group">
-                                    <label for="validationTooltip04">Sides</label><br>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                       <input type="radio" id="customRadio6" name="timespan" value="single" class="custom-control-input" required> 
-                                       <label class="timespan custom-control-label" for="customRadio6"> Single</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                       <input type="radio" id="customRadio2" name="timespan" value="double" class="timespan custom-control-input">
-                                       <label class="custom-control-label" for="customRadio2"> Double</label>
-                                    </div>
-                                 <div class="col-md-12 single">
-                                    <div class="row">
-                                       <div class="col-md-6">
-                                          <label for="validationTooltip04">One Side color</label>
-                                          <select class="custom-select" id="colorcount" name="colorcount">
-                                             <option selected disabled value="">Choose...</option>
-                                             <option value="1">1</option>
-                                             <option value="2">2</option>
-                                             <option value="3">3</option>
-                                             <option value="4">4</option>
-                                       </select>
-                                       <div class="invalid-tooltip">
-                                          Please select a valid state.
-                                       </div>
-
-                                       <div class="form-group row">
-                                       <label for="validationTooltip04">Colors</label>
-                                          <div class="col-sm-12">
-                                             
-                                                <input type="text" class="form-control" name="singlesidecolor" id="color1" autocomplete="off">
-
-                                                
-                                             
-                                          </div>
-                                       </div>
-
-                                       </div>
-                                       
-                                    </div>
-                                 </div>
-                                 <div class="col-md-12 end_date">
-                                    <div class="row">
-                                       <div class="col-md-6">
-                                          <label for="validationTooltip04">front side color</label>
-                                          <select class="custom-select" id="colorcounttwo_f_side" name="colorcounttwo_f_side">
-                                             <option selected disabled value="">Choose...</option>
-                                             <option value="1">1</option>
-                                             <option value="2">2</option>
-                                             <option value="3">3</option>
-                                             <option value="4">4</option>
-                                       </select>
-                                       <div class="invalid-tooltip">
-                                          Please select a valid state.
-                                       </div>
-                                       <div class="form-group row">
-                                       <label for="validationTooltip02">Colors</label>
-                                          <div class="col-sm-12">
-                                            
-                                             <input type="text" class="form-control" id="color2" name="double_f_sidecolor" autocomplete="off">
-                                          </div>
-                                       </div>
-                                       </div>
-                                       <div class="col-md-6">
-                                          <label for="validationTooltip04">back side color</label>
-                                          <select class="custom-select" id="colorcounttwo_b_side" name="colorcounttwo_b_side">
-                                             <option selected disabled value="">Choose...</option>
-                                             <option value="1">1</option>
-                                             <option value="2">2</option>
-                                             <option value="3">3</option>
-                                             <option value="4">4</option>
-                                       </select>
-                                       <div class="invalid-tooltip">
-                                          Please select a valid state.
-                                       </div>
-                                       <div class="form-group row">
-                                       <label for="validationTooltip04">Colors</label>
-                                          <div class="col-sm-12">
-                                             
-                                             <input type="text" class="form-control" id="color3" name="double_b_sidecolor" autocomplete="off">
-                                          </div>
-                                       </div>
-                                       </div>
-                                    </div>
-                                  </div>
-                                  
-                                 </div>
                                  
                                  
                                  
@@ -297,32 +252,44 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
          <script>
             $(document).ready(function() {
-             $('.end_date').hide().prop('required',false);
-             $('.single').hide().prop('required',false);
-                 $('.timespan').click(function () {
-                  var selected = $(this).val();  
-                     if(selected == 'double') {
-                      $('.end_date').show().prop('required',true);
-                      $('.single').hide().prop('required',false);
-                      $('#colorcounttwo_f_side').prop('required', true);
-                      $('#colorcounttwo_b_side').prop('required', true);
-                      $('#color2').prop('required', true);
-                      $('#color3').prop('required', true);
-                   } else {
-                      $('.single').show().prop('required',true);;
-                      $('.end_date').hide().prop('required',false);
-                      $('#colorcount').prop('required', true);
-                      $('#color1').prop('required', true);
-                    }
-                   //  if(selected == 'ongoing') {
-                   //    $('.single').show();
-                      
-                   // } else {
-                   //    $('.single').hide();
-                      
-                   //  }
-             });       
-           });
+  $("select").change(function() {
+    $(this).find("option:selected").each(function() {
+      var optionValue = $(this).attr("value");
+      if (optionValue == "1") {
+        document.getElementById("artboard").innerHTML = '<label for="validationTooltip04">GSM</label><select class="custom-select" name="gsm" required><option selected disabled value="">Choose...</option><option value="230">230</option><option value="260">260</option><option value="310">310</option></select>';
+      } else {
+          document.getElementById("artboard").innerHTML = '';
+      }
+      if (optionValue == "5") {
+        $('.artboard').show();
+      }
+      if (optionValue == "6") {
+        $('.artboard').show();
+      }
+      if (optionValue == "10") {
+        $('.artboard').show();
+      }
+      if (optionValue == "11") {
+        $('.artboard').show();
+      }
+      if (optionValue == "13") {
+        $('.artboard').show();
+      }
+      if (optionValue == "19") {
+        $('.artboard').show();
+      }
+      if (optionValue == "21") {
+        $('.artboard').show();
+      }
+      if (optionValue == "23") {
+        $('.artboard').show();
+      }
+      if (optionValue == "27") {
+        $('.artboard').show();
+      }
+    });
+  }).change();
+});
          </script>
          
         
