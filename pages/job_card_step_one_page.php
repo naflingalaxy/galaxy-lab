@@ -6,7 +6,7 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Job Card </h4>
+                              <h4 class="card-title"> Job Card Step 01</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
@@ -49,7 +49,7 @@
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Email</label>
                                     
-                                    <input type="email" class="form-control" name="email" id="" autocomplete="off" required>
+                                    <input type="mail" class="form-control" name="email" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Email.
                                     </div>
@@ -64,7 +64,7 @@
                                  </div>
                                  <div class="col-md-6 mb-6">
                                     <label for="validationTooltip04">size</label>
-                                          <select class="custom-select" id="" name="brand" required>
+                                          <select class="custom-select" id="" name="size" required>
                                              <option selected disabled value="">Choose...</option>
                                              <option value="A6">A6</option>
                                              <option value="A5">A5</option>
@@ -81,21 +81,21 @@
                                        </select>
                                  </div>
                                  <div class="col-md-6 mb-3 form-group">
-                                    
+                                    <label for="validationTooltip04">Sides</label><br>
 
                                     <div class="custom-control custom-radio custom-control-inline">
-                                       <input type="radio" id="customRadio6" name="timespan" value="ongoing" class="custom-control-input" required> 
-                                       <label class="timespan custom-control-label" for="customRadio6"> One Color</label>
+                                       <input type="radio" id="customRadio6" name="timespan" value="single" class="custom-control-input" required> 
+                                       <label class="timespan custom-control-label" for="customRadio6"> Single</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                       <input type="radio" id="customRadio2" name="timespan" value="history" class="timespan custom-control-input" required>
-                                       <label class="custom-control-label" for="customRadio2"> Two Color</label>
+                                       <input type="radio" id="customRadio2" name="timespan" value="double" class="timespan custom-control-input">
+                                       <label class="custom-control-label" for="customRadio2"> Double</label>
                                     </div>
                                  <div class="col-md-12 single">
                                     <div class="row">
                                        <div class="col-md-6">
                                           <label for="validationTooltip04">One Side color</label>
-                                          <select class="custom-select" id="" name="brand" required>
+                                          <select class="custom-select" id="colorcount" name="colorcount">
                                              <option selected disabled value="">Choose...</option>
                                              <option value="1">1</option>
                                              <option value="2">2</option>
@@ -105,6 +105,17 @@
                                        <div class="invalid-tooltip">
                                           Please select a valid state.
                                        </div>
+
+                                       <div class="form-group row">
+                                       <label for="validationTooltip04">Colors</label>
+                                          <div class="col-sm-12">
+                                             <select id="color1" name="singlesidecolor" class="select2jsMultiSelect form-control select2-hidden-accessible" multiple="multiple" data-select2-id="inputEmail3" tabindex="-1" aria-hidden="true" ng-hide="for some condition" ng-pattern="some thing" >
+
+                                                
+                                             </select>
+                                          </div>
+                                       </div>
+
                                        </div>
                                        
                                     </div>
@@ -113,7 +124,7 @@
                                     <div class="row">
                                        <div class="col-md-6">
                                           <label for="validationTooltip04">front side color</label>
-                                          <select class="custom-select" id="" name="brand" required>
+                                          <select class="custom-select" id="colorcounttwo_f_side" name="colorcounttwo_f_side">
                                              <option selected disabled value="">Choose...</option>
                                              <option value="1">1</option>
                                              <option value="2">2</option>
@@ -122,11 +133,20 @@
                                        </select>
                                        <div class="invalid-tooltip">
                                           Please select a valid state.
+                                       </div>
+                                       <div class="form-group row">
+                                       <label for="validationTooltip02">Colors</label>
+                                          <div class="col-sm-12">
+                                             <select id="color2" name="double_f_sidecolor" class="select2jsMultiSelect form-control select2-hidden-accessible" multiple="multiple" data-select2-id="inputEmail2" tabindex="-1" aria-hidden="true" ng-hide="for some condition" ng-pattern="some thing" >
+
+                                                
+                                             </select>
+                                          </div>
                                        </div>
                                        </div>
                                        <div class="col-md-6">
                                           <label for="validationTooltip04">back side color</label>
-                                          <select class="custom-select" id="" name="brand" required>
+                                          <select class="custom-select" id="colorcounttwo_b_side" name="colorcounttwo_b_side">
                                              <option selected disabled value="">Choose...</option>
                                              <option value="1">1</option>
                                              <option value="2">2</option>
@@ -135,6 +155,15 @@
                                        </select>
                                        <div class="invalid-tooltip">
                                           Please select a valid state.
+                                       </div>
+                                       <div class="form-group row">
+                                       <label for="validationTooltip04">Colors</label>
+                                          <div class="col-sm-12">
+                                             <select id="color3" ng-show="displayCondition" ng-required="displayCondition" name="double_b_sidecolor" class="select2jsMultiSelect form-control select2-hidden-accessible" multiple="multiple" data-select2-id="inputEmail4" tabindex="-1" aria-hidden="true" ng-hide="for some condition" ng-pattern="some thing" >
+
+                                                
+                                             </select>
+                                          </div>
                                        </div>
                                        </div>
                                     </div>
@@ -270,16 +299,22 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
          <script>
             $(document).ready(function() {
-             $('.end_date').hide();
-             $('.single').hide();
+             $('.end_date').hide().prop('required',false);
+             $('.single').hide().prop('required',false);
                  $('.timespan').click(function () {
                   var selected = $(this).val();  
-                     if(selected == 'history') {
-                      $('.end_date').show();
-                      $('.single').hide();
+                     if(selected == 'double') {
+                      $('.end_date').show().prop('required',true);
+                      $('.single').hide().prop('required',false);
+                      $('#colorcounttwo_f_side').prop('required', true);
+                      $('#colorcounttwo_b_side').prop('required', true);
+                      $('#color2').prop('required', true);
+                      $('#color3').prop('required', true);
                    } else {
-                      $('.single').show();
-                      $('.end_date').hide();
+                      $('.single').show().prop('required',true);;
+                      $('.end_date').hide().prop('required',false);
+                      $('#colorcount').prop('required', true);
+                      $('#color1').prop('required', true);
                     }
                    //  if(selected == 'ongoing') {
                    //    $('.single').show();

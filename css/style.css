@@ -644,7 +644,7 @@ Mail Inbox
 #compose-email-popup .iq-card { border-radius: 5px 5px 0 0; }
 button.close-popup { background: transparent; color: #000; border: none; font-size: 20px; line-height: 20px; }
 .compose-bottom { border-top: 1px solid #777D74; }
-.select2-container--default .select2-selection--multiple { background: #bfbfbe; border: 0px solid #d7dbda; }
+.select2-container--default .select2-selection--multiple { background: #f8f9ff; border: 0px solid #d7dbda; }
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple { color: #1d2438; background-color: #e8f0f6; box-shadow: none; }
 
 /* colors changes in radio button, checkbox, switch */
@@ -939,4 +939,7 @@ label {
 }
 .style1 {
     background: yellow;
+}
+.select2-container--default {
+  width: 100% !important;
 }
