@@ -1,0 +1,35 @@
+Time : 09:43:52
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 09:42:57
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 09:39:50
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 09:38:50
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 09:33:41
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_parent_name' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_parent (cost_parent_name, cost_parent_desc, cost_parent_qty, cost_parent_artwork, cost_parent_plate, cost_parent_laminating, cost_parent_cutter, cost_parent_cutter_charge, cost_parent_preparization, cost_parent_transport, cost_parent_other, cost_parent_impression, cost_parent_added_date_time, cost_parent_added_user_id) VALUES (:name, :descr, :qty, :artwork, :plate, :laminating, :die_cutter, :die_cutting_charge, :perparization, :transport, :other, :impression, :date_time, :added_user_id)
+
+Time : 09:20:50
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_parent_name' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_parent (cost_parent_name, cost_parent_desc, cost_parent_qty, cost_parent_artwork, cost_parent_plate, cost_parent_laminating, cost_parent_cutter, cost_parent_cutter_charge, cost_parent_preparization, cost_parent_transport, cost_parent_other, cost_parent_impression, cost_parent_added_date_time, cost_parent_added_user_id) VALUES (:name, :descr, :qty, :artwork, :plate, :laminating, :die_cutter, :die_cutting_charge, :perparization, :transport, :other, :impression, :date_time, :added_user_id)
+
+Time : 09:11:41
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 09:07:17
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 07:58:49
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)

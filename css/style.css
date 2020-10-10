@@ -967,3 +967,209 @@ label {
 .blue {
   background: #0000ff;
 }
+.js-form {
+  float: left;
+}
+.line {
+  border-top: 2px solid #d4e3ef;
+    margin: 20px 0px;
+}
+/*.cost-main-menu {
+  background: #2d72a9 !important;
+    
+    color: #f2f4ff !important;
+}*/
+#artboard {
+  width: 100%;
+}
+.cost-seperate {
+  background: #e3e7fb;
+    margin-top: 15px;
+    padding: 15px 5px;
+    border-radius: 5px;
+}
+.mb-3, .my-3 {
+    float: left;
+    
+}
+.btn-add {
+  margin: 36px 40px;
+}
+#confirm {
+  display: none;
+  background-color: #F3F5F6;
+  color: #000000;
+  border: 1px solid #aaa;
+  position: fixed;
+  width: 300px;
+  height: 100px;
+  left: 40%;
+  top: 40%;
+  box-sizing: border-box;
+  text-align: center;
+}
+#confirm button {
+  background-color: #FFFFFF;
+  display: inline-block;
+  border-radius: 12px;
+  border: 4px solid #aaa;
+  padding: 5px;
+  text-align: center;
+  width: 60px;
+  cursor: pointer;
+}
+#confirm .message {
+  text-align: left;
+}
+.validate {
+      border: 2px solid #ff0000;
+}
+.result {
+      font-size: 18px;
+    font-weight: 600;
+}
+.table thead th {
+    text-transform: uppercase;
+    
+}
+.result-panel label {
+  margin-top: 5px;
+}
+.table th {
+    
+    text-transform: uppercase;
+}
+.btn-add-ivery {
+    margin: 7px 28px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar-item-limit {
+  visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #a92d2d;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px 45px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-weight: 500;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar-item-limit.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+#snackbar-item-limit i {
+  font-size: 20px;
+    margin: 5px 15px 5px 5px;
+}
+.table td, .table th {
+    
+    text-transform: capitalize;
+    
+}
+table#mytbl > tbody > tr > td:first-child , table#mytbl > tbody > th {
+    /*font-weight: bold;*/
+    
+    width: 45%;
+}
+table.second > tbody > tr > td:first-child , table.second > tbody > th {
+    /*font-weight: bold;*/
+    
+    width: 45%;
+}
+table#mytbl > tbody > tr > td:second-child , table#mytbl > tbody > th{
+    font-weight: bold;
+    
+    width: 20%;
+}
+table#mytbl > tbody > tr > td:third-child , table#mytbl > tbody > th {
+    font-weight: bold;
+    
+    width: 20%;
+}
+table#mytbl > tbody > tr > td:fourth-child , table#mytbl > tbody > th {
+    font-weight: bold;
+   
+    width: 20%;
+}
+#mytbl td, #mytbl th, .second td, .second th {
+    padding: 0.55rem .5rem;
+    text-align: right;
+    width: 16%;}
+.net {
+      background: #cbe8ff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.net td {
+      
+    text-transform: uppercase;
+}
+.mgn {
+      background: #b2d4ef !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.mgn td {
+      
+    text-transform: uppercase;
+}
+.gros {
+    background: #91b5d2 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.unit {
+    background: #5282a9 !important;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ffffff !important;
+   
+}
+#loadd {
+  background: #e3e7fb !important;
+}
+#maincat:focus {
+    color: #ffffff !important;
+    background-color: #4280b2 !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}

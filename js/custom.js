@@ -669,10 +669,10 @@ $(document).ready(function () {
 -----------------------------------------------------------------------*/
 $(function() {
 
-        $(".displayCalendar").flatpickr({
-            inline: true,
-            invisible: true
-        });
+        // $(".displayCalendar").flatpickr({
+        //     inline: true,
+        //     invisible: true
+        // });
 
         $('.btn-next').click(function() { 
             var numStep = $(this).attr( "num-step" );

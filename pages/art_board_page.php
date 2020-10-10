@@ -88,12 +88,10 @@
                                        <option value="230">230</option>
                                        <option value="260">260</option>
                                        <option value="310">310</option>
-                                       <!-- <option value="N/A">N/A</option> -->
+                                       
                                        
                                     </select>
-                                    <div class="invalid-tooltip">
-                                       Please select a valid state.
-                                    </div>
+                                    
                                  </div>
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Brand</label>
@@ -101,12 +99,10 @@
                                        <option selected disabled value="">Choose...</option>
                                        <option value="gc">GC</option>
                                        <option value="bohui">Bohui</option>
-                                       <!-- <option value="N/A">N/A</option> -->
+                                       
                                       
                                     </select>
-                                    <div class="invalid-tooltip">
-                                       Please select a valid state.
-                                    </div>
+                                    
                                  </div>
                                  
                                  

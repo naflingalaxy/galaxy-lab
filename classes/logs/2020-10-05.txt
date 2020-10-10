@@ -1,0 +1,23 @@
+Time : 14:02:07
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_name' cannot be null
+Raw SQL : INSERT INTO cost (cost_name, cost_qty, cost_cost, cost_pro) VALUES (:name, :qty, :cost, :profit)
+
+Time : 13:56:12
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_name' cannot be null
+Raw SQL : INSERT INTO cost (cost_name, cost_qty, cost_cost, cost_pro) VALUES (:name, :qty, :cost, :profit)
+
+Time : 13:55:07
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_name' cannot be null
+Raw SQL : INSERT INTO cost (cost_name, cost_qty, cost_cost, cost_pro) VALUES (:name, :qty, :cost, :profit)
+
+Time : 13:50:23
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_name' cannot be null
+Raw SQL : INSERT INTO cost (cost_name, cost_qty, cost_cost, cost_pro) VALUES (:name, :qty, :cost, :profit)
+
+Time : 13:49:05
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_name' cannot be null
+Raw SQL : INSERT INTO cost (cost_name, cost_qty, cost_cost, cost_pro) VALUES (:name, :qty, :cost, :profit)
+
+Time : 13:41:51
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_name' cannot be null
+Raw SQL : INSERT INTO cost (cost_name, cost_qty, cost_cost, cost_pro) VALUES (:name, :qty, :cost, :profit)
