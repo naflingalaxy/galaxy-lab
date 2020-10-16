@@ -20,7 +20,7 @@
       <!-- Footer END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="<?php echo HTTP_PATH; ?>js/jquery.min.js"></script>
+      <script src="<?php echo HTTP_PATH; ?>js/jquery.min.js"></script> 
       <script src="<?php echo HTTP_PATH; ?>js/popper.min.js"></script>
       <script src="<?php echo HTTP_PATH; ?>js/bootstrap.min.js"></script>
       <!-- Appear JavaScript -->
@@ -50,6 +50,8 @@
       <script src="<?php echo HTTP_PATH; ?>js/chart-custom.js"></script>
       <!-- Custom JavaScript -->
       <script src="<?php echo HTTP_PATH; ?>js/custom.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script> 
+
    </body>
 
 

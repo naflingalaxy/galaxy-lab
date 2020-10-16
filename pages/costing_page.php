@@ -2,7 +2,7 @@
          <div id="content-page" class="content-page">
             <div class="container-fluid">
                <div class="row">
-                  <div class="col-sm-12 col-lg-6">
+                  <div class="col-sm-12 col-md-6 col-lg-7">
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
@@ -117,6 +117,7 @@
                                        Please add a Address.
                                     </div>
                                  </div>
+
                                  <div class="col-md-4 mb-3">
                                     <label for="validationTooltip04">transport<code>(cost)</code></label>
                                     
@@ -144,7 +145,7 @@
                                  <div class="col-md-4 mb-3">
                                     <label for="validationTooltip04">Margin<code>(Percentage)</code></label>
                                     
-                                    <input type="number" class="form-control" name="margin" id="margin" autocomplete="off" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" required>
+                                    <input type="text" class="form-control" maxlength="2" pattern="([0-9]|[0-9]|[0-9])" name="margin" id="margin" required>
                                     <div class="invalid-tooltip">
                                        Please add a Address.
                                     </div>
@@ -152,18 +153,18 @@
                                  
                               </div>
                               <div class="form-row">
-                                 <div class="col-md-2 mb-3">
-                                 <input type="hidden" value="hii" id="btnClickedValue_0" name="valuee" style="width: 100%;" value="" />
+                                 <!-- <div class="col-md-2 mb-3">
+                                 <input type="hidden" value="hii" id="btnClickedValue_0" name="valuee" style="width: 100%;" value="" /> -->
 
-                              <div class="form-group" style="padding: 15px 0 0 0; margin: 0;">
+                              <!-- <div class="form-group" style="padding: 15px 0 0 0; margin: 0;"> -->
                                  
-                                 <button name="btn-add" class="btn btn-primary" onclick="myadBtn()" id="submitt" type="submit" disabled="disabled">Add</button><!-- <input type="submit" value="Join"> -->
+                                 <!-- <button name="btn-add" class="btn btn-primary" onclick="myadBtn()" id="submitt" type="submit">Add</button> --><!-- <input type="submit" value="Join"> -->
 
-                              </div>
-                              </div> 
+                              <!-- </div> -->
+                              <!-- </div>  -->
                               <div class="col-md-4 mb-3">
                               <div class="form-group" style="padding: 15px 0 0 0; margin: 0;">
-                                 <button type="button" name="view-result" onclick="settotable()" id="setup" class="btn mb-3 btn-primary btn-js-add" disabled="disabled"><i class="ri-bill-fill"></i>View Result</button>
+                                 <button type="button" name="view-result" onclick="settotable()" id="setup" class="btn mb-3 btn-primary btn-js-add"><i class="ri-bill-fill"></i>View Result</button>
                               </div>
                                 
                               </div>
@@ -189,23 +190,50 @@
                      </div>
                      
                   </div>
-                  <div class="col-sm-12 col-lg-1"></div>
-                  <div class="col-sm-12 col-lg-5">
+                  
+                  <div class="col-sm-12 col-md-6 col-lg-5">
                   
                      <!-- Table start -->
-                        <div class="iq-card">
+                        <div class="iq-card" id="pdf">
                            <!-- <div class="iq-card-header d-flex justify-content-between">
                               <div class="iq-header-title">
                                  <h4 class="card-title">Details</h4>
                               </div>
                            </div> -->
                            <div class="iq-card-body">
-                              
-                              <table class="table table-striped one" onclick="myFun(event)" id="mytbl">
+                              <img src="<?php echo HTTP_PATH; ?>images/logo-galaxy.png" style="width: 125px;margin-bottom: 30px;">
+                              <table id="tbldesc" style="margin-bottom: 15px;">
+                                 <tr>
+                                   <td><b>NAME</b> &emsp;</td>
+                                   <td><span id="displayname"></span></td>
+                                   <td><b>&emsp;&emsp;DESCRIPTION</b> &emsp;</td>
+                                   <td><span id="displaydesc"></span></td>
+                                 </tr>
+                                 <tr>
+                                   <td><b>QTY</b> &emsp;</td>
+                                   <td><span id="displayqty"></span></td>
+                                   <td><b>&emsp;&emsp;DATE &amp; TIME</b> &emsp;</td>
+                                   <td><span id="dtime"></span></td>
+                                 </tr>
+                                 
+                              </table>
+                              <table class="table table-striped one" id="mytbl">
+                                 <div class="row">
+                                    
+                                 
+                                
+                                 </div>
+                                 
+                                 <!-- <div class="col-md-3 mb-3"><h5>METERIALS : </h5></div> -->
+                                 
+                                 
+                                 
+
                                  <thead>
                                     <tr>
-                                       <th scope="col">description</th>
-                                       <th scope="col">Qty</th>
+                                       <!-- <th scope="col">Option</th> -->
+                                       <th scope="col">Description</th>
+                                       <th scope="col">Quantity</th>
                                        <!-- <th scope="col">Cost</th>
                                        <th scope="col">S/P</th> -->
                                        <th scope="col">Actual Price</th>
@@ -219,28 +247,43 @@
                                    
                                  </tbody>
                                  <div class="totals"></div>
+                                 
+                                 
                               </table>
-
-                              <table class="table table-striped second" onclick="" id="">
+                              <div class="row">
+                                    <div class="col-md-12">
+                                       <h6>Remarks :- ......................................................................................................................................................</h6>
+                                       
+                                       <h6>......................&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;......................&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;......................<br>Prepared by&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Checked By&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Approved by</h6>
+                                       
+                                    </div>
+                                    
+                                 </div>
+                              <!-- <table class="table table-striped second" onclick="" id="">
                                  
                                  <tbody>
                                    
                                     
                                    
                                  </tbody>
-                              </table>
-                              
+                              </table> -->
                            </div>
                            </div>
+                           <iframe id="txtArea1" style="display:none"></iframe>
+                           <button id="btnExport" onclick="fnExcelReport();"> EXEL </button>
+                           <!-- <button id="btnpdf">PDF</button>
+                               <button onclick="javascript:demoFromHTML();">generate PDF</button> -->
+                               <input type="button" value="Create PDF" 
+            id="btPrint" onclick="createPDF()" />
                            <!-- Table end -->
                            <!-- Use a button to open the snackbar -->
                            <form method="post">
-<p><input type="button" id="bt"  style="visibility: hidden;" value="Show Table Data"/></p>
-    <p id="info" style="visibility: hidden;"></p>
+   <p><input type="button" id="bt"  style="visibility: hidden;" value="Show Table Data"/></p>
+       <p id="info" style="visibility: hidden;"></p>
 
 
-<input type="submit" name="btn-add-final" onclick="" value="subbb"  style="visibility: hidden;">
-</form>
+   <input type="submit" name="btn-add-final" onclick="" value="subbb"  style="visibility: hidden;">
+   </form>
 <!-- The actual snackbar -->
                      <div id="snackbar-item-limit"><i class="fa fa-exclamation-triangle"></i>You Can Only ad 5 Items</div>
                   </div>
@@ -630,11 +673,8 @@
 
 
 </script>
-<script>
-    
-       
-    
-</script>
+
+
 <script src="<?php echo HTTP_PATH; ?>js/bristalboard.js"></script>
 <script src="<?php echo HTTP_PATH; ?>js/boxboard.js"></script>
 <script src="<?php echo HTTP_PATH; ?>js/icegold.js"></script>
@@ -645,6 +685,99 @@
 <script src="<?php echo HTTP_PATH; ?>js/cover.js"></script>
 <script src="<?php echo HTTP_PATH; ?>js/bank.js"></script>
 <script src="<?php echo HTTP_PATH; ?>js/artpaper.js"></script>
+<script src="<?php echo HTTP_PATH; ?>js/sticker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 <script src="<?php echo HTTP_PATH; ?>js/valueconvert.js"></script>
+
+    <script> 
          
+        var button = document.getElementById("setup"); 
+        var textBox = document.getElementById("margin"); 
+  
+        // This event is fired when button is clicked 
+       
+  
+        textBox.addEventListener("keydown", function (event) { 
+  
+            // Checking if key pressed is ENTER or not 
+            // if the key pressed is ENTER 
+            // click listener on button is called 
+            if (event.keyCode == 13) { 
+                button.click(); 
+            } 
+        }); 
+    </script> 
+
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript">
+        $("body").on("click", "#btnpdf", function () {
+            html2canvas($('#second')[0], {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("cutomer-details.pdf");
+                }
+            });
+        });
+    </script>
+         
+   <script>
+    function createPDF() {
+         var today = new Date();
+         var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+         var dateTime = date+' '+time;
+         document.getElementById('dtime').innerHTML = dateTime;
+
+        var sTable = document.getElementById('pdf').innerHTML;
+
+        var style = "<style>";
+        style = style + "table {width: 100%;font: 13px Calibri;}";
+        style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+        style = style + "padding: 2px 3px;text-align: right;}";
+        style = style + ".gros {background: #b2d4ef;}";
+        style = style + ".net {background: #b2d3ef;}";
+        style = style + ".unit {background: #6089ab;color: #ffffff;}";
+        style = style + ".removebtn {display:none;}";
+        style = style + "</style>";
+
+         
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=700,width=500');
+
+        win.document.write('<html><head>');
+        win.document.write('<title></title>');   // <title> FOR PDF HEADER.
+        win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+        win.document.write('</body></html>');
+
+        win.document.close();    // CLOSE THE CURRENT WINDOW.
         
+        win.print();    // PRINT THE CONTENTS.
+        // win.save("Test.pdf");
+    }
+
+var inputBox = document.getElementById('name');
+var inputdesc = document.getElementById('desc');
+var inputqty = document.getElementById('qty_main');
+
+inputBox.onkeyup = function(){
+    document.getElementById('displayname').innerHTML = inputBox.value;
+}
+inputdesc.onkeyup = function(){
+    document.getElementById('displaydesc').innerHTML = inputdesc.value;
+}
+inputqty.onkeyup = function(){
+    document.getElementById('displayqty').innerHTML = inputqty.value;
+}
+
+</script>  

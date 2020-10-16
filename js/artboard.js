@@ -41,7 +41,8 @@ function artboardchange() {
 
 
 function artboardBtnOnclick() {
-  $(".second tr").remove();
+  // $(".second tr").remove();
+
   if($("select option:selected").length < 0){
       $("js-form").addClass('was-validated');
     }
@@ -55,7 +56,7 @@ function artboardBtnOnclick() {
    
    
 
-      if ($('table.one').find('tr').length < 6) {
+      if ($('table.one').find('tr.one').length < 5) {
          if ($('#gsm').val() && $('#brand').val() && $('#qty').val()) {
          main_cat = $("#maincat option:selected").text();
          artboardgsm = $('#gsm').val();
@@ -65,13 +66,15 @@ function artboardBtnOnclick() {
          artboardqty = $('#qty').val();
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr><td>" + artboardgsm + "_GSM_" + "Art_Board" + "_" + artboardbrand + "</td><td>" + artboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $(".table.one > tbody").append("<tr class='one'><td><input type='button' class='removebtn btn-danger' value='X'>" + artboardgsm + "_GSM_" + "Art_Board" + "_" + artboardbrand + "</td><td>" + artboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
          $("#gsm").val("0");
          $("#brand").val("0");
          $('#qty').val('');
          $('#qty').prop('disabled', true);
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
+         // Set table values for one time and call it again and again
+         if (global_variable == "global") {settotable();}
          }
 
       } else {
@@ -84,5 +87,7 @@ function artboardBtnOnclick() {
               // After 3 seconds, remove the show class from DIV
               setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
       }
+
+
       
 }

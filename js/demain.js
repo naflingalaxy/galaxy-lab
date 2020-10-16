@@ -45,14 +45,14 @@ function demainBtnOnclick() {
    } else { 
 
       $('#qty').removeClass('validate');
-      if ($('table.one').find('tr').length < 6) { 
+      if ($('table.one').find('tr.one').length < 5) { 
          boardqty = $('#qty').val();
          demain = $('#demain').val();
 
          
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr><td>" + demain + "</td><td>" + boardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $(".table.one > tbody").append("<tr class='one'><td>" + demain + "</td><td>" + boardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
          $('#qty').val('');
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
@@ -60,6 +60,7 @@ function demainBtnOnclick() {
          
          $('#qty').val('');
          $('#qty').prop('disabled', true);
+         if (global_variable == "global") {settotable();}
 
       }  else {
                // Get the snackbar DIV

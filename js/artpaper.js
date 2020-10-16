@@ -48,7 +48,7 @@ function artBtnOnclick() {
    
    
 
-      if ($('table.one').find('tr').length < 6) {
+      if ($('table.one').find('tr.one').length < 5) {
          if ($('#artpaper').val() && $('#qty').val()) {
          main_cat = $("#maincat option:selected").text();
          artpaper = $('#artpaper').val();
@@ -58,13 +58,14 @@ function artBtnOnclick() {
          artboardqty = $('#qty').val();
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr><td>" + artpaper + "</td><td>" + artboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
-         $("#bank").val("0");
+         $(".table.one > tbody").append("<tr class='one'><td>" + artpaper + "</td><td>" + artboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $("#artpaper").val("0");
          $("#brand").val("0");
          $('#qty').val('');
          $('#qty').prop('disabled', true);
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
+         if (global_variable == "global") {settotable();}
          }
 
       } else {

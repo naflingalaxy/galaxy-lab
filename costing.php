@@ -121,7 +121,7 @@ if (isset($_POST['btn-add'])) {
 		
 	}
 	} else {
-		$errorMessage = "Error in Adding Data.!";
+		$errorMessage = "Error in Adding Data final.!";
 		setcookie("errorMessage", $errorMessage, time() + (5 * 1), "/"); // 1 minute
 		header("Location:".HTTP_PATH."costing");
 	}

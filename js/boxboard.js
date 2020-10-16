@@ -53,14 +53,14 @@ function boxboardBtnOnclick() {
    } else { 
 
       $('#qty').removeClass('validate');
-      if ($('table.one').find('tr').length < 6) { 
+      if ($('table.one').find('tr.one').length < 5) { 
          boxboardqty = $('#qty').val();
          boxboardgsm = $('#gsm').val();
 
          boxboardbrand = $('#brand').val();
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr><td>" + boxboardgsm + "_GSM_Box_Board_" + boxboardbrand + "</td><td>" + boxboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $(".table.one > tbody").append("<tr class='one'><td>" + boxboardgsm + "_GSM_Box_Board_" + boxboardbrand + "</td><td>" + boxboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
          $('#qty').val('');
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
@@ -68,6 +68,7 @@ function boxboardBtnOnclick() {
          $("#brand").val("0");
          $('#qty').val('');
          $('#qty').prop('disabled', true);
+         if (global_variable == "global") {settotable();}
 
       }  else {
                // Get the snackbar DIV

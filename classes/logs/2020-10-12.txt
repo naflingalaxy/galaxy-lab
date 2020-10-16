@@ -1,0 +1,11 @@
+Time : 07:43:54
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 06:43:36
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)
+
+Time : 06:32:27
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'cost_qty' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_cost_child (cost_parent_id, cost_name, cost_qty, cost_cost, cost_pro) VALUES (:parent_id, :name, :qty, :cost, :profit)

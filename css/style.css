@@ -221,7 +221,7 @@ border-radius: 10px; }
 .iq-sidebar-menu { position: relative; }
 .iq-sidebar-menu .iq-menu { margin: 0; padding: 0; list-style-type: none; }
 .iq-sidebar-menu .iq-menu li { list-style-type: none;/* border-bottom: 1px solid #1c67a214;*/}
-.iq-sidebar-menu .iq-menu li a { font-size: 14px; white-space: nowrap; display: block; color: #777D74; position: relative; padding: 15px 20px 15px 30px; line-height: 18px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
+.iq-sidebar-menu .iq-menu li a { font-size: 12px; white-space: nowrap; display: block; color: #777D74; position: relative; padding: 15px 20px 15px 30px; line-height: 18px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 .iq-sidebar-menu .iq-menu li a i { font-size: 20px; margin-right: 10px; vertical-align: middle; width: 20px; display: inline-block; float: left; }
 .iq-sidebar-menu .iq-menu li a span {   font-weight: 600;text-transform: uppercase;white-space: nowrap; padding: 0; display: inline-block; float: left; -webkit-transition: all 0.3=s ease-out 0s; -moz-transition: all 0.3=s ease-out 0s; -ms-transition: all 0.3=s ease-out 0s; -o-transition: all 0.3=s ease-out 0s; transition: all 0.3=s ease-out 0s; }
 .iq-sidebar-menu .iq-menu li a .iq-arrow-right { margin-right: 0; margin-left: auto; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
@@ -992,9 +992,9 @@ label {
     float: left;
     
 }
-.btn-add {
+/*.btn-add {
   margin: 36px 40px;
-}
+}*/
 #confirm {
   display: none;
   background-color: #F3F5F6;
@@ -1106,12 +1106,12 @@ input::-webkit-inner-spin-button {
 table#mytbl > tbody > tr > td:first-child , table#mytbl > tbody > th {
     /*font-weight: bold;*/
     
-    width: 45%;
+    
 }
 table.second > tbody > tr > td:first-child , table.second > tbody > th {
     /*font-weight: bold;*/
     
-    width: 45%;
+    width: 46%;
 }
 table#mytbl > tbody > tr > td:second-child , table#mytbl > tbody > th{
     font-weight: bold;
@@ -1128,10 +1128,11 @@ table#mytbl > tbody > tr > td:fourth-child , table#mytbl > tbody > th {
    
     width: 20%;
 }
+
 #mytbl td, #mytbl th, .second td, .second th {
     padding: 0.55rem .5rem;
     text-align: right;
-    width: 16%;}
+    }
 .net {
       background: #cbe8ff;
     font-weight: bold;
@@ -1173,3 +1174,72 @@ table#mytbl > tbody > tr > td:fourth-child , table#mytbl > tbody > th {
     background-color: #4280b2 !important;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+#displayname {
+  text-transform: capitalize;
+}
+.removebtn {
+  margin-right: 17px;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+    font-weight: bolder;
+    float: left;
+}
+/*Media Queries*/
+@media only screen and (min-width: 320px) {
+  body {  font-size: 12px;
+  }
+  .btn-add {
+    margin: 36px 40px;
+  }
+}
+@media only screen and (min-width: 460px) {
+  body {  font-size: 12px;
+  }
+  .btn-add {
+    margin: 36px 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {  font-size: 12px;
+  }
+  .btn-add {
+    margin: 36px 40px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body {  font-size: 11px;
+  }
+  .btn-add {
+    margin: 36px 40px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {  font-size: 12px;
+  }
+  .btn-add {
+    margin: 29px 15px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  body {  font-size: 12px;
+  }
+  .btn-add {
+    margin: 32px 40px;
+  }
+}
+
+/* @media print {
+    .bg-danger {
+      background-color: #f2dede !important;
+    }
+
+    table td {
+      background-color: #000000 !important;
+    }
+  }*/

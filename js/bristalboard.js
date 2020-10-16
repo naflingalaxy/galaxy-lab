@@ -56,14 +56,14 @@ function bristalboardBtnOnclick() {
    } else { 
 
       $('#qty').removeClass('validate');
-      if ($('table.one').find('tr').length < 6) { 
+      if ($('table.one').find('tr.one').length < 5) { 
          boardqty = $('#qty').val();
          boardclr = $('#clr').val();
 
          boardbrand = $('#brand').val();
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr><td>" + boardclr + "_Bristal_Board_" + boardbrand + "</td><td>" + boardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $(".table.one > tbody").append("<tr class='one'><td>" + boardclr + "_Bristal_Board_" + boardbrand + "</td><td>" + boardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
          $('#qty').val('');
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
@@ -71,6 +71,7 @@ function bristalboardBtnOnclick() {
          $("#brand").val("0");
          $('#qty').val('');
          $('#qty').prop('disabled', true);
+         if (global_variable == "global") {settotable();}
 
       }  else {
                // Get the snackbar DIV

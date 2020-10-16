@@ -81,7 +81,7 @@
                           
                            <!-- <li class=""><a href="<?php echo HTTP_PATH; ?>add-job-card">Add Job Card</a></li> -->
                            <?php 
-                              $page_data = $db->query("SELECT account_url, account_name FROM tbl_galaxy_production");
+                              $page_data = $db->query("SELECT account_url, account_name FROM tbl_galaxy_accounts");
                               if ($page_data) {
                                   for ($s=0; $s < count($page_data); $s++) { ?>
                            <li class="<?php if ($current_page_name_variable == $page_data[$s]['account_url']) { echo "active menu-open";}?>"><a href="<?php echo HTTP_PATH.$page_data[$s]['account_url']; ?>"><?php echo $page_data[$s]['account_name']; ?></a></li>
