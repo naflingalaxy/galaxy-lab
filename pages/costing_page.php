@@ -1,4 +1,25 @@
                <!-- Page Content  -->
+         <script>
+   function showUser(str) {
+            if (str == "") {
+              document.getElementById("pricing").innerHTML = "";
+              return;
+            } else {
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("pricing").innerHTML = this.responseText;
+
+                }
+              };
+              xmlhttp.open("GET","pricedata.php?q="+str,true);
+              xmlhttp.send();
+               
+            }
+           
+             
+          }
+</script>
          <div id="content-page" class="content-page">
             <div class="container-fluid">
                <div class="row">
@@ -10,7 +31,15 @@
                            </div>
                         </div>
                         <div class="iq-card-body">
-                           
+                           <!-- <form>
+                           <select name="users" onchange="">
+                             <option value="">Select a person:</option>
+                             <option value="ARTP100CH">Peter Griffin</option>
+                             <option value="ARTP100CK">jilll</option>
+                             
+                             </select>
+                           </form>
+                           <div id="txtHint"><b>Person info will be listed here.</b></div> -->
                            <form method="post">
                               <div class="form-row details">
                                  <div class="col-md-4 mb-3">
@@ -142,6 +171,7 @@
                                        Please add a Address.
                                     </div>
                                  </div>
+                                 
                                  <div class="col-md-4 mb-3">
                                     <label for="validationTooltip04">Margin<code>(Percentage)</code></label>
                                     
@@ -151,7 +181,20 @@
                                     </div>
                                  </div>
                                  
+                                 
+                                 
                               </div>
+                              <div class="line"></div>
+                                 <div class="row">
+                                   <div class="col-md-4 mb-3">
+                                    <label for="validationTooltip04">Quoted Price<code>(cost)</code></label>
+                                    
+                                    <input type="number" class="form-control" name="qprice" id="qprice" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 </div>
                               <div class="form-row">
                                  <!-- <div class="col-md-2 mb-3">
                                  <input type="hidden" value="hii" id="btnClickedValue_0" name="valuee" style="width: 100%;" value="" /> -->
@@ -297,10 +340,13 @@
                
             </div>
          </div>
-         
+         <input type="hidden" pattern="^\d+(?:\.\d{1,2})?$" step="0.01" name="price" class="form-control js-form" value="" id="price" autocomplete="off" disabled>
+         <button type="hidden" name="add" id="add" class="btn mb-3 btn-primary btn-js-add"></button>
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
          <script>
+            window.globalvar = "costpage";
+
             $(document).ready(function() {
   $("select").change(function() {
     $(this).find("option:selected").each(function() {
@@ -315,7 +361,7 @@
          
          
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">GSM</label><select class="custom-select gsm" name="gsm" onChange="artboardchange();" id="gsm" required><option selected disabled value="">Choose...</option><option value="230">230</option><option value="260">260</option><option value="310">310</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="artboardchange();" name="brand" id="brand" required><option selected disabled value="">Choose...</option><option value="gc">GC</option><option value="bohui">Bohui</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="artboardBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">GSM</label><select class="custom-select gsm" name="gsm" onChange="artboardchange();" id="gsm" required><option selected disabled value="">Choose...</option><option value="230">230</option><option value="260">260</option><option value="270">270</option><option value="310">310</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="artboardchange();" name="brand" id="brand" required><option selected disabled value="">Choose...</option><option value="gc">GC</option><option value="bohui">Bohui</option><option value="unbrand">Unbrand</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="artboardBtnOnclick()" class="btn mb-2 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
          // Art board getting cost and selling price-------------------------------
             
                $(document).ready(function(){
@@ -336,12 +382,7 @@
                    });
                });
       
-
-                   
-                     
-                    
-                    
-               
+ 
             //-----------------------------------------------------------------------------
         
       } else {
@@ -359,10 +400,18 @@
          
          
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"></div><div class="col-md-3 mb-3 js-form"></div><div class="col-md-6 mb-6"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required></div><div class="col-md-3 mb-3"><button type="button" onclick="iveryBtnOnclick()" class="btn mb-3 btn-primary btn-add-ivery" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
-        // Art board getting cost and selling price-------------------------------
-         
+        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required></div><div class="col-md-3 mb-3"><button type="button" onclick="iveryBtnOnclick()" class="btn mb-3 btn-primary btn-add-ivery" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        // IVERY Board getting cost and selling price-------------------------------
+      
+      // IVERY Board
          $(document).ready(function(){
+            window.item_id = "IVERY";
+            if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
                    $("#qty").on("input", function(){
                   //creates a listener for when you press a key-------------------------------
                      window.onkeyup = keyup;
@@ -374,8 +423,8 @@
                        inputTextValue = $("#qty").val();
                        $('#qty').text(inputTextValue);
                        $('#qty').removeClass('validate');
-                       document.getElementById('costprice').value = (inputTextValue*48.5).toFixed(2);
-                       document.getElementById('sellingprice').value = (inputTextValue*60.625).toFixed(2);
+                       document.getElementById('costprice').value = (inputTextValue*window.actual_costprice).toFixed(2);
+                       document.getElementById('sellingprice').value = (inputTextValue*window.actual_sellingprice).toFixed(2);
                      }
                    });
                });
@@ -393,10 +442,18 @@
 
          $('.artboard').show();
 
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"></div><div class="col-md-3 mb-3 js-form"></div><div class="col-md-6 mb-6"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required></div><div class="col-md-3 mb-3"><button type="button" onclick="icegoldBtnOnclick()" class="btn mb-3 btn-primary btn-add-ivery" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
-        // Art board getting cost and selling price-------------------------------
+        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required disabled></div><div class="col-md-3 mb-3"><button type="button" onclick="icegoldBtnOnclick()" class="btn mb-3 btn-primary btn-add-ivery" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+
+        // ICE GOLD getting cost and selling price-------------------------------
          
         $(document).ready(function(){
+            window.item_id = "ICEG";
+            if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
                    $("#qty").on("input", function(){
                   //creates a listener for when you press a key-------------------------------
                      window.onkeyup = keyup;
@@ -408,8 +465,8 @@
                        inputTextValue = $("#qty").val();
                        $('#qty').text(inputTextValue);
                        $('#qty').removeClass('validate');
-                       document.getElementById('costprice').value = (inputTextValue*50).toFixed(2);
-                       document.getElementById('sellingprice').value = (inputTextValue*62.5).toFixed(2);
+                       document.getElementById('costprice').value = (inputTextValue*window.actual_costprice).toFixed(2);
+                       document.getElementById('sellingprice').value = (inputTextValue*window.actual_sellingprice).toFixed(2);
                      }
                    });
                });
@@ -425,7 +482,7 @@
          document.getElementById('sellingprice').value = '';
 
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">GSM</label><select class="custom-select" onChange="boxboardchange();" id="gsm" name="gsm" required><option selected disabled value="">Choose...</option><option value="250">250</option><option value="300">300</option><option value="350">350</option><option value="400">400</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="boxboardchange();" id="brand" name="brand" required><option selected disabled value="">Choose...</option><option value="sripathi">Sripathi</option><option value="unbrand">Unbrand</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="boxboardBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">GSM</label><select class="custom-select" onChange="boxboardchange();" id="gsm" name="gsm" required><option selected disabled value="">Choose...</option><option value="250">250</option><option value="300">300</option><option value="350">350</option><option value="400">400</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="boxboardchange();" id="brand" name="brand" required><option selected disabled value="">Choose...</option><option value="sripathi">Sripathi</option><option value="sripathi">Sripathi</option><option value="kerani">Kerani</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-2 mb-2  js-form"><button type="button" onclick="boxboardBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
            
            $(document).ready(function(){
                    $("#qty").on("input", function(){
@@ -457,7 +514,7 @@
          document.getElementById('sellingprice').value = '';
 
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Color</label><select class="custom-select" id="clr" onChange="bristalboardchange();" name="color" required><option selected disabled value="">Choose...</option><option value="white">White</option><option value="green">Green</option><option value="blue">Blue</option><option value="pink">Pink</option><option value="yellow">Yellow</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="bristalboardchange();" name="brand" id="brand" required><option selected disabled value="">Choose...</option><option value="spb">SPB</option><option value="unbrand">Unbrand</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="bristalboardBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Color</label><select class="custom-select" id="clr" onChange="bristalboardchange();" name="color" required><option selected disabled value="">Choose...</option><option value="white">White</option><option value="green">Green</option><option value="blue">Blue</option><option value="pink">Pink</option><option value="yellow">Yellow</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="bristalboardchange();" name="brand" id="brand" required><option selected disabled value="">Choose...</option><option value="spb">SPB</option><option value="unbrand">Unbrand</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-2 mb-2 js-form"><button type="button" onclick="bristalboardBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
 
         
                $(document).ready(function(){
@@ -488,7 +545,7 @@
          document.getElementById('sellingprice').value = '';
 
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">NCR</label><select class="custom-select gsm" name="ncr" onChange="ncrboardchange();" id="ncr" required><option selected disabled value="">Choose...</option><option value="NCR_Top_white_(carbonized)">NCR Top white (carbonized)</option><option value="NCR_Middle_Blue_(carbonized)">NCR Middle Blue (carbonized)</option><option value="NCR_middle_pink_(carbonized)">NCR middle pink (carbonized)</option><option value="NCR_middle_green">NCR middle green</option><option value="NCR_Bottom_yellow">NCR Bottom yellow</option><option value="NCR_Bottom_pink">NCR Bottom pink</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="ncrboardchange();" name="brand" id="brand" required><option selected disabled value="">Choose...</option><option value="Pindo 2000">Pindo 2000</option><option value="adler">Adler</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="ncrBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">NCR</label><select class="custom-select gsm" name="ncr" onChange="ncrboardchange();" id="ncr" required><option selected disabled value="">Choose...</option><option value="NCR_Top_white_(carbonized)">NCR Top white (carbonized)</option><option value="NCR_Middle_Blue_(carbonized)">NCR Middle Blue (carbonized)</option><option value="NCR_middle_pink_(carbonized)">NCR middle pink (carbonized)</option><option value="NCR_middle_green">NCR middle green</option><option value="NCR_Bottom_yellow">NCR Bottom yellow</option><option value="NCR_Bottom_pink">NCR Bottom pink</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" onChange="ncrboardchange();" name="brand" id="brand" required><option selected disabled value="">Choose...</option><option value="Pindo 2000">Pindo 2000</option><option value="adler">Adler</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-2 mb-2  js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-2 mb-2 js-form"><button type="button" onclick="ncrBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
 
               $(document).ready(function(){
                    $("#qty").on("input", function(){
@@ -518,7 +575,7 @@
          document.getElementById('sellingprice').value = '';
 
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Demain</label><select class="custom-select gsm" name="demain" onChange="demainchange();" id="demain" required><option selected disabled value="">Choose...</option><option value="Yellow_Demain_(Udawatta)">Yellow Demain (Udawatta)</option><option value="NP_48_White_Demain_(General)">N/P 48 White Demain (General)</option><option value="NP_48_White_Demain_(Ranpath)">N/P 48 White Demain (Ranpath)</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="demainBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Demain</label><select class="custom-select gsm" name="demain" onChange="demainchange();" id="demain" required><option selected disabled value="">Choose...</option><option value="Yellow_Demain_(Udawatta)">Yellow Demain (Udawatta)</option><option value="pink_demain">Pink Demain</option><option value="NP_48_White_Demain_(Ranpath)">N/P 48 White Demain (Ranpath)</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3 js-form"><button type="button" onclick="demainBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
             
             $(document).ready(function(){
                    $("#qty").on("input", function(){
@@ -549,9 +606,12 @@
          document.getElementById('sellingprice').value = '';
 
         $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-4 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required></div><div class="col-md-3 mb-3"><button type="button" onclick="coverBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Cover Paper</label><select class="custom-select gsm" name="cover" onChange="coverchange();" id="cover" required><option selected disabled value="">Choose...</option><option value="cover_paper_pink">Cover Paper (Pink)</option><option value="cover_paper_green">Cover Paper (Green)</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required  disabled></div><div class="col-md-3 mb-3 js-form"><button type="button" onclick="coverBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
 
              $(document).ready(function(){
+               
+               $('#pricing').append($(window.test));
+
                    $("#qty").on("input", function(){
                   //creates a listener for when you press a key-------------------------------
                      window.onkeyup = keyup;
@@ -563,8 +623,8 @@
                        inputTextValue = $("#qty").val();
                        $('#qty').text(inputTextValue);
                        $('#qty').removeClass('validate');
-                       document.getElementById('costprice').value = (inputTextValue*9).toFixed(2);
-                       document.getElementById('sellingprice').value = (inputTextValue*11.25).toFixed(2);
+                       document.getElementById('costprice').value = (inputTextValue*window.actual_costprice).toFixed(2);
+                       document.getElementById('sellingprice').value = (inputTextValue*window.actual_sellingprice).toFixed(2);
                      }
                    });
                });
@@ -579,7 +639,7 @@
          document.getElementById('sellingprice').value = '';
 
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">GSM</label><select class="custom-select" name="bank" id="bank" onChange="bankchange();"   id="validationTooltip04" required><option selected disabled value="">Choose...</option><option value="60(short)">60 (Short)</option><option value="60(long)">60 (Long)</option><option value="70">70</option><option value="80">80</option><option value="100">100</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" id="brand" onChange="bankchange();" required><option selected disabled value="">Choose...</option><option value="INDAHKIAT_BILT">INDAH KIAT-BILT</option><option value="Built">Built<option value="Unbrand">Unbrand</option></select></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="bankBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">GSM</label><select class="custom-select" name="bank" id="bank" onChange="bankchange();" id="validationTooltip04" required><option selected disabled value="">Choose...</option><option value="60(short)">60 (Short)</option><option value="60(long)">60 (Long)</option><option value="70">70</option><option value="80">80</option><option value="100">100</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Brand</label><select class="custom-select" id="brand" onChange="bankchange();" required><option selected disabled value="">Choose...</option><option value="INDAHKIAT_BILT">INDAH KIAT-BILT</option><option value="Built">Built<option value="Unbrand">Unbrand</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-2 mb-2 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-2 mb-2 js-form"><button type="button" onclick="bankBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
       
                $(document).ready(function(){
                    $("#qty").on("input", function(){
@@ -609,7 +669,7 @@
          document.getElementById('sellingprice').value = '';
 
          $('.artboard').show();
-        document.getElementById("artboard").innerHTML = '<div class="col-md-4 mb-3 js-form"><label for="validationTooltip04">Art paper</label><select class="custom-select" name="artpaper" onChange="artchange();" id="artpaper" required><option selected disabled value="">Choose...</option><option value="Art_paper_100_GSM_(Chinese)">Art paper 100 GSM (Chinese)</option><option value="Art_paper_120_GSM_(Chinese)">Art paper 120 GSM (Chinese)</option><option value="Art_paper_150_GSM_(Nevia)">Art paper 150 GSM (Nevia)</option></select></div></div><div class="col-md-3 mb-3"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3"><button type="button" onclick="artBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Art paper</label><select class="custom-select" name="artpaper" onChange="artchange();" id="artpaper" required><option selected disabled value="">Choose...</option><option value="Art_paper_100_GSM_(Chinese)">Art paper 100 GSM (Chinese)</option><option value="Art_paper_120_GSM_(Chinese)">Art paper 120 GSM (Chinese)</option><option value="Art_paper_150_GSM_(Nevia)">Art paper 150 GSM (Nevia)</option></select></div></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-3 mb-3 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" disabled required></div><div class="col-md-3 mb-3 js-form"><button type="button" onclick="artBtnOnclick()" class="btn mb-3 btn-primary btn-add" id="btn-add-data" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
          
         $(document).ready(function(){
                    $("#qty").on("input", function(){
@@ -639,10 +699,16 @@
 
          $('.artboard').show();
 
-        document.getElementById("artboard").innerHTML = '<div class="col-md-3 mb-3 js-form"></div><div class="col-md-3 mb-3 js-form"></div><div class="col-md-6 mb-6"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required></div><div class="col-md-3 mb-3"><button type="button" onclick="stickerBtnOnclick()" class="btn mb-3 btn-primary btn-add-ivery" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
+        document.getElementById("artboard").innerHTML = '<div class="col-md-4 mb-4 js-form"><label for="validationTooltip04">Price</label><select class="custom-select" name="pricing" onChange="pricechange()" id="pricing" required><option selected disabled value="">Choose...</option></select></div><div class="col-md-4 mb-4 js-form"><label for="validationTooltip04">Qty<code>(qty)</code></label><input type="number" class="form-control js-form qty" name="qty" id="qty" autocomplete="off" required disabled></div><div class="col-md-4 mb-4 js-form"><button type="button" onclick="stickerBtnOnclick()" class="btn mb-3 btn-primary btn-add-ivery" id="btn-add-data"><i class="ri-bill-fill"></i>Add</button></div>';
         // Art board getting cost and selling price-------------------------------
          
         $(document).ready(function(){
+         window.item_id = "STCKR";
+               if (window.globalvar == "costpage") {
+                    showUser(window.item_id);
+                    $('#pricing').append($(window.test));
+                    pricechange();
+                }
                    $("#qty").on("input", function(){
                   //creates a listener for when you press a key-------------------------------
                      window.onkeyup = keyup;
@@ -654,8 +720,8 @@
                        inputTextValue = $("#qty").val();
                        $('#qty').text(inputTextValue);
                        $('#qty').removeClass('validate');
-                       document.getElementById('costprice').value = (inputTextValue*40).toFixed(2);
-                       document.getElementById('sellingprice').value = (inputTextValue*50).toFixed(2);
+                       document.getElementById('costprice').value = (inputTextValue*actual_costprice).toFixed(2);
+                       document.getElementById('sellingprice').value = (inputTextValue*actual_sellingprice).toFixed(2);
                      }
                    });
                });

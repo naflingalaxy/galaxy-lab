@@ -83,7 +83,7 @@ label { color: #1d2438; }
 border-radius: 5px; }
 .form-control:focus { color: #1d2438; background-color: #ffffff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
 
-.custom-select { height: 37px; line-height: 35px; background: #f2f4ff; border: 0px solid #d7dbda; font-size: 14px; color: #777D74;  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); -webkit-border-radius: 5px;
+.custom-select { height: 37px; line-height: 26px; background: #f2f4ff; border: 0px solid #d7dbda; font-size: 14px; color: #777D74;  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;  }
 .custom-select:focus { color: #1d2438; background-color: #ffffff; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }

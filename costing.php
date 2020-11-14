@@ -6,7 +6,7 @@ include 'includes/auth.php';
 $table_name = "tbl_galaxy_art_board";
 require_once DOC_ROOT.'includes/functions.php';
 
-$main_menu_category = "production";
+$main_menu_category = "accounts";
 $current_page_name_variable = "costing";
 $product_name = "costing";
 // Required pages & varibles ----------------------------
@@ -17,6 +17,7 @@ $board_table_data_count = $db->query("SELECT SUM(board_unit_qty) FROM tbl_galaxy
 
 $dropdown_data = $db->query("SELECT item_id ,item_name FROM tbl_galaxy_stock_items WHERE item_cost_id = 1 ORDER BY item_id ASC LIMIT 11");
 
+// Ajax Load
 
 
 // $myString = filter_var($_POST['btnClickedValuee'], FILTER_SANITIZE_STRING);

@@ -1,0 +1,3 @@
+Time : 10:05:22
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_galaxy_sales_job_card SET job_card_status = 1 WHERE job_card_uniq_id = :delete_id

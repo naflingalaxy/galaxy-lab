@@ -1,0 +1,7 @@
+Time : 08:50:47
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ARTP100CH' in 'where clause'
+Raw SQL : SELECT * FROM tbl_galaxy_price_list WHERE price_list_item_id = ARTP100CH
+
+Time : 05:49:32
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'item_uniq_id' in 'order clause'
+Raw SQL : SELECT * FROM tbl_galaxy_price_list ORDER BY item_uniq_id DESC

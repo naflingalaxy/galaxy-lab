@@ -1,38 +1,96 @@
 // Art board getting cost and selling price-------------------------------
+
+
 function artboardchange() {
 
    if ($('#gsm').val() && $('#brand').val()) {
       $('#qty').prop('disabled', false);
-      $('#qty').val('');
+      // $('#qty').val('');
+      $('#pricing').find('option').remove();
 
       
       document.getElementById('costprice').value = '';
       document.getElementById('sellingprice').value = '';
+      document.getElementById('price').value = '';
 
       if ($('#gsm').val() == "230" && $('#brand').val() == "gc") {
-         window.actual_costprice = 32.5;
-         window.actual_sellingprice = 40.625;
+         window.item_id = "ABGC230";
+         // var simple = '<?php echo json_encode($data); ?>';
+         // document.getElementById('sellingprice').value = simple;
+
+         // window.test = "<option>23</option><option>33</option><option>12</option><option>90</option><option>3</option><option>12.5</option>";
+    // document.getElementById("data1").value = test;
+    // var test = document.getElementById("data1").value;
+          if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
-      else if ($('#gsm').val() == "260" && $('#brand').val() == "gc") {
-         window.actual_costprice = 39.9;
-         window.actual_sellingprice = 49.875;
+      else if ($('#gsm').val() == "260" && $('#brand').val() == "unbrand") {
+        window.item_id = "ABUN260";
+         showUser(window.item_id);
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#gsm').val() == "310" && $('#brand').val() == "gc") {
-         window.actual_costprice = 42.25;
-         window.actual_sellingprice = 56.5625;
+        window.item_id = "ABGC310";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#gsm').val() == "230" && $('#brand').val() == "bohui") {
-         window.actual_costprice = 32.5;
-         window.actual_sellingprice = 40.625;
+        window.item_id = "ABBH230";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
+      }
+      else if ($('#gsm').val() == "270" && $('#brand').val() == "unbrand") {
+        window.item_id = "ABUN270";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
+         document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else {
-         window.actual_costprice = 0;
-         window.actual_sellingprice = 0;
+         window.item_id = "0000";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
          document.getElementById("btn-add-data").disabled = true;
+         document.getElementById("add").disabled = true;
+         
       }
       
    }
@@ -51,13 +109,15 @@ function artboardBtnOnclick() {
 
    if(!$('#brand').val()) { $('.js-form').addClass('was-validated'); 
    }
+   if(!$('#pricing').val()) { $('.js-form').addClass('was-validated'); 
+   }
    if(!$('#qty').val()) { $('#qty').addClass('validate');
    } else { $('#qty').removeClass('validate');}
    
    
 
       if ($('table.one').find('tr.one').length < 5) {
-         if ($('#gsm').val() && $('#brand').val() && $('#qty').val()) {
+         if ($('#gsm').val() && $('#brand').val() && $('#qty').val() && $('#pricing').val()) {
          main_cat = $("#maincat option:selected").text();
          artboardgsm = $('#gsm').val();
          main_cat = main_cat.replace(/ /g,"_");
@@ -70,6 +130,7 @@ function artboardBtnOnclick() {
          $("#gsm").val("0");
          $("#brand").val("0");
          $('#qty').val('');
+         $('#pricing').find('option').remove();
          $('#qty').prop('disabled', true);
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
@@ -90,4 +151,15 @@ function artboardBtnOnclick() {
 
 
       
+}
+
+function pricechange() {
+
+  if ($('#pricing').val()) {$('#qty').prop('disabled', false);} else { $('#qty').prop('disabled', false); }
+  
+    $('#qty').val('');
+    window.actual_costprice = $( "#pricing" ).val();
+   window.actual_sellingprice = Number(window.actual_costprice)+Number(window.actual_costprice*0.25);
+   document.getElementById('costprice').value = '';
+   document.getElementById('sellingprice').value = '';
 }

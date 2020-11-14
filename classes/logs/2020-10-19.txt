@@ -1,0 +1,7 @@
+Time : 10:34:25
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO tbl_galaxy_sales_job_card (job_card_customer_id, job_card_customer_name, job_card_address, job_card_customer_number, job_card_job_type, job_card_amount, job_card_date_time, job_card_added_user_id) VALUES (:customer_id, :name, :address, :cnumber, :job, :date_time, :user_id)
+
+Time : 10:33:43
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'galaxy_db_private_system.job_card_customer_name' doesn't exist
+Raw SQL : INSERT INTO job_card_customer_name (job_card_customer_id, job_card_customer_name, job_card_address, job_card_customer_number, job_card_job_type, job_card_amount, job_card_date_time, job_card_added_user_id) VALUES (:customer_id, :name, :address, :cnumber, :job, :date_time, :user_id)

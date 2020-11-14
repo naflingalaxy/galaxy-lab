@@ -205,7 +205,7 @@ border-radius: 10px; }
 /*---------------------------------------------------------------------
                                 Sidebar
 -----------------------------------------------------------------------*/
-.iq-sidebar { position: fixed; z-index: 999; top: 0; width: 260px; overflow: hidden; height: 100%; background: #f2f4ff; transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -webkit-box-shadow: inset 0px 0px 10px 0px rgba(29, 36, 56, 0.1); -moz-box-shadow: inset 0px 0px 10px 0px rgba(29, 36, 56, 0.1); box-shadow: inset 0px 0px 10px 0px rgba(29, 36, 56, 0.1); }
+.iq-sidebar { position: fixed; z-index: 999; top: 0; width: 196px; overflow: hidden; height: 100%; background: #f2f4ff; transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -webkit-box-shadow: inset 0px 0px 10px 0px rgba(29, 36, 56, 0.1); -moz-box-shadow: inset 0px 0px 10px 0px rgba(29, 36, 56, 0.1); box-shadow: inset 0px 0px 10px 0px rgba(29, 36, 56, 0.1); }
 .iq-sidebar .iq-sidebar-logo { float: none; width: 100%; }
 .iq-sidebar #sidebar-scrollbar { margin-top: 40px; }
 
@@ -234,7 +234,7 @@ border-radius: 10px; }
 
 /*------------------------*/
 .iq-sidebar-menu .iq-menu li ul { display: none; padding-left: 55px; }
-.iq-sidebar-menu .iq-menu li ul li a { text-transform: capitalize;color: #777D74; background: transparent; padding: 12px 20px; }
+.iq-sidebar-menu .iq-menu li ul li a { text-transform: uppercase;color: #777D74; background: transparent; padding: 12px 20px; }
 .iq-sidebar-menu .iq-menu li ul a:hover { color: #1c67a2; text-decoration: none; background: transparent; }
 
 /*---------Sidebar Dark---------------*/
@@ -332,7 +332,7 @@ border-radius: 10px; }
 /*---------------------------------------------------------------------
                               Content Page
 -----------------------------------------------------------------------*/
-.content-page { margin-left: 260px; overflow: hidden; padding: 100px 15px 0; min-height: 100vh; -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; }
+.content-page { margin-left: 185px; overflow: hidden; padding: 100px 15px 0; min-height: 100vh; -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; }
 .iq-user-dropdown { width: 350px; }
 body.sidebar-main .content-page, body.sidebar-main .iq-footer { margin-left: 80px; }
 body.sidebar-main .iq-sidebar-logo { width: 80px; }
@@ -342,7 +342,7 @@ body.sidebar-main .iq-sidebar-menu .iq-menu .iq-menu-title i { font-size: 20px; 
 body.sidebar-main .iq-menu-bt { opacity: 0; display: none; }
 body.sidebar-main .iq-sidebar { width: 80px; }
 body.sidebar-main .iq-sidebar-menu .iq-menu li a .iq-arrow-right { margin-right: 0; display: none; }
-body.sidebar-main .iq-sidebar:hover, body.sidebar-main .iq-sidebar:hover .iq-sidebar-logo { width: 260px; }
+body.sidebar-main .iq-sidebar:hover, body.sidebar-main .iq-sidebar:hover .iq-sidebar-logo { width: 196px; }
 body.sidebar-main .iq-sidebar:hover .iq-sidebar-menu .iq-menu li a .iq-arrow-right { margin-right: 0; display: inline-block; }
 body.sidebar-main .iq-sidebar:hover .iq-sidebar-menu .iq-menu li a span, body.sidebar-main .iq-sidebar:hover .iq-sidebar-logo a span, body.sidebar-main .iq-sidebar:hover .iq-sidebar-menu .iq-menu li a .badge, body.sidebar-main .iq-sidebar:hover .iq-menu-bt { opacity: 1; display: inline-block; }
 body.sidebar-main .iq-sidebar .iq-sidebar-menu .iq-menu li ul { display: none; }
@@ -603,7 +603,7 @@ Animation Card
 /*---------------------------------------------------------------------
 Footer
 -----------------------------------------------------------------------*/
-.iq-footer { padding: 15px; margin-left: 260px; -webkit-box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06); -moz-box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06); box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06); -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; border-top: 1px solid #ece5ff; }
+.iq-footer { padding: 15px; margin-left: 196px; -webkit-box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06); -moz-box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06); box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06); -webkit-transition: all 0.3s ease-out 0s; -moz-transition: all 0.3s ease-out 0s; -ms-transition: all 0.3s ease-out 0s; -o-transition: all 0.3s ease-out 0s; transition: all 0.3s ease-out 0s; border-top: 1px solid #ece5ff; }
 .iq-footer ul li a { color: #777D74; }
 .iq-footer ul li a:hover { color: #1c67a2; text-decoration: none; }
 .bg-banner-image.style-three { height: 150px; background: url('../images/bg-03.jpg'); }
@@ -823,7 +823,7 @@ div#chatuser-detail-popup { height: calc(100vh - 17.15rem); width: 290px; border
 }
 .iq-card .iq-card-header .iq-header-title .card-title {
   
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 .edit::after {
     display: none !important;
@@ -1040,7 +1040,7 @@ label {
     text-transform: uppercase;
 }
 .btn-add-ivery {
-    margin: 7px 28px;
+    margin: 27px 28px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -1099,7 +1099,7 @@ input::-webkit-inner-spin-button {
     margin: 5px 15px 5px 5px;
 }
 .table td, .table th {
-    
+    font-weight: 500;
     text-transform: capitalize;
     
 }
@@ -1220,7 +1220,7 @@ table#mytbl > tbody > tr > td:fourth-child , table#mytbl > tbody > th {
   }
 }
 @media only screen and (min-width: 1200px) {
-  body {  font-size: 12px;
+  body {  font-size: 11px;
   }
   .btn-add {
     margin: 29px 15px;
@@ -1243,3 +1243,45 @@ table#mytbl > tbody > tr > td:fourth-child , table#mytbl > tbody > th {
       background-color: #000000 !important;
     }
   }*/
+
+  .none {
+    display: none;
+  }
+  .btn-hide {
+    visibility: hidden;
+  }
+
+  .my .list-group-item {
+    
+    font-weight: 700;
+    text-transform: uppercase;
+    
+}
+
+.mb-1, .my-1 {
+    
+    text-transform: uppercase;
+}
+.fa-trash, .fa-edit {
+  color: #ffffff;
+   
+}
+.delbtn {
+     margin: auto;
+    /*display: block;*/
+    /* position: absolute; */
+    vertical-align: middle;
+}
+.highlight {
+    background: #3578add6 !important;
+    color: #ffffff !important;
+    font-weight: 700;
+}
+.fa-check {
+  color:#ffffff !important;
+}
+
+.table thead th {
+    font-weight: bold;
+    
+}

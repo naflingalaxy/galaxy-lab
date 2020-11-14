@@ -1,0 +1,14 @@
+Time : 04:44:01
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'galaxy_db_private_system.tbl_galaxy_sales' doesn't exist
+Raw SQL : SELECT * FROM tbl_galaxy_sales 
+		_job_card WHERE job_card_uniq_id = :job_card_uniq_id
+
+Time : 04:40:37
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'galaxy_db_private_system.tbl_galaxy_sales' doesn't exist
+Raw SQL : SELECT * FROM tbl_galaxy_sales 
+		_job_card WHERE job_card_uniq_id = :job_card_uniq_id
+
+Time : 04:39:53
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'galaxy_db_private_system.tbl_galaxy_sales' doesn't exist
+Raw SQL : SELECT * FROM tbl_galaxy_sales 
+		_job_card WHERE job_card_uniq_id = :job_card_uniq_id

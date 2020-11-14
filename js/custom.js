@@ -705,3 +705,6 @@ $(function() {
 
     });
 
+// hard refresh
+// location.reload(true);
+

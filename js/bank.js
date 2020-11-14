@@ -6,41 +6,91 @@ function bankchange()
       $('#qty').val('');
       document.getElementById('costprice').value = '';
       document.getElementById('sellingprice').value = '';
+      document.getElementById('price').value = '';
 
       if ($('#bank').val() == "60(short)" && $('#brand').val() == "Unbrand") {
-         window.actual_costprice = 6;
-         window.actual_sellingprice = 7.5;
+         window.item_id = "BNKUN60SH";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#bank').val() == "60(long)" && $('#brand').val() == "Built") {
-         window.actual_costprice = 7.45;
-         window.actual_sellingprice = 9.3125;
+         window.item_id = "BNKB60";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#bank').val() == "60(long)" && $('#brand').val() == "Unbrand") {
-         window.actual_costprice = 7.5;
-         window.actual_sellingprice = 9.375;
+         window.item_id = "BNKUN60LG";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#bank').val() == "70" && $('#brand').val() == "Built") {
-         window.actual_costprice = 7.15;
-         window.actual_sellingprice = 8.9375;
+         window.item_id = "BNKB70";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#bank').val() == "80" && $('#brand').val() == "INDAHKIAT_BILT") {
-         window.actual_costprice = 9;
-         window.actual_sellingprice = 11.25;
+         window.item_id = "BNKIB80";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#bank').val() == "100" && $('#brand').val() == "Unbrand") {
-         window.actual_costprice = 12.2;
-         window.actual_sellingprice = 15.25;
+         window.item_id = "BNKUN100";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else {
-         window.actual_costprice = 0;
-         window.actual_sellingprice = 0;
+         window.item_id = "";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = true;
+         document.getElementById("add").disabled = true;
       }
       
    }
@@ -73,10 +123,11 @@ function bankBtnOnclick() {
          artboardqty = $('#qty').val();
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr class='one'><td>" + bankpaper + "_" + main_cat + "_" + brand + "</td><td>" + artboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $(".table.one > tbody").append("<tr class='one'><td><input type='button' class='removebtn btn-danger' value='X'>" + bankpaper + "_" + main_cat + "_" + brand + "</td><td>" + artboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
          $("#bank").val("0");
          $("#brand").val("0");
          $('#qty').val('');
+         $('#pricing').find('option').remove();
          $('#qty').prop('disabled', true);
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
@@ -94,4 +145,15 @@ function bankBtnOnclick() {
               setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
       }
       
+}
+
+function pricechange() {
+
+  if ($('#pricing').val()) {$('#qty').prop('disabled', false);} else { $('#qty').prop('disabled', true); }
+  
+    $('#qty').val('');
+    window.actual_costprice = $( "#pricing" ).val();
+   window.actual_sellingprice = Number(window.actual_costprice)+Number(window.actual_costprice*0.25);
+   document.getElementById('costprice').value = '';
+   document.getElementById('sellingprice').value = '';
 }

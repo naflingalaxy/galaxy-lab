@@ -1,0 +1,7 @@
+Time : 11:45:14
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT * FROM tbl_galaxy_invoice WHERE
+
+Time : 09:51:14
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_job_card_id, invoice_id, invoice_customer_name,invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:job_id, :invoice_id, :cname, :description, :qty, :rate, :discount, :date_time, :user_id, :status)

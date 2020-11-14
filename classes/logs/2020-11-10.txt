@@ -1,0 +1,7 @@
+Time : 05:40:09
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_galaxy_sales_job_card SET job_card_customer_id = :customer_id, job_card_customer_name = :name, job_card_address = :address, job_card_customer_number = :cnumber, job_card_job_type = :job, job_card_amount = :amount WHERE job_card_uniq_id = :uniq_id
+
+Time : 05:38:07
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE tbl_galaxy_sales_job_card SET job_card_customer_id = :customer_id, job_card_customer_name = :name, job_card_address = :address, job_card_customer_number = :cnumber, job_card_job_type = :job, job_card_amount = :amount WHERE job_card_uniq_id = :uniq_id

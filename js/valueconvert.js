@@ -114,6 +114,7 @@ $('#mytbl tbody tr.one').each(function () {
          var other = (other_value*1).toFixed(2);
          var impression = document.getElementById("impression").value;
          var qty_units = document.getElementById("qty_main").value;
+         var qprice = document.getElementById("qprice").value;
          var mgn = document.getElementById("margin").value;
          var mgn_percent = mgn/100;
          var impression_cost = (impression*500).toFixed(2);
@@ -139,7 +140,7 @@ $('#mytbl tbody tr.one').each(function () {
          $(".one > tbody").append("<tr class='mgn second'><td>MGN (" + mgn + "%)</td><td></td><td>" + addThousandsSeparator(net_value_cost_mgn) + "</td><td>" + addThousandsSeparator(net_value_sell_mgn)+ "</td></tr>");
          $(".one > tbody").append("<tr class='gros second'><td>Gross Amount</td><td></td><td>" + addThousandsSeparator(gros_amount_cost) + "</td><td>" + addThousandsSeparator(gros_amount_sell) + "</td></tr>");
          $(".one > tbody").append("<tr class='unit second'><td>Unit Price (" + qty_units + ")</td><td></td><td>" + addThousandsSeparator(unit_price_cost) + "</td><td>" + addThousandsSeparator(unit_price_sell) + "</td></tr>");
-         $(".one > tbody").append("<tr class='second'><td>Quarter Price</td><td></td></tr>");
+         $(".one > tbody").append("<tr class='second'><td>Quoted Price</td><td>" + qprice + "</td></tr>");
          
 
 }

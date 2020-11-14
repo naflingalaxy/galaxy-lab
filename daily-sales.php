@@ -6,7 +6,7 @@ include 'includes/auth.php';
 $table_name = "tbl_galaxy_daily_sales";
 require_once DOC_ROOT.'includes/functions.php';
 
-$main_menu_category = "production";
+$main_menu_category = "accounts";
 $current_page_name_variable = "daily-sales";
 $product_name = "dailysales";
 // Required pages & varibles ----------------------------

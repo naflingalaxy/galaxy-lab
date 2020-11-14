@@ -2,36 +2,72 @@
 function boxboardchange()
 {
    if ($('#gsm').val() && $('#brand').val()) {
-      $('#qty').prop('disabled', false);
+      // $('#qty').prop('disabled', false);
       $('#qty').val('');
       document.getElementById('costprice').value = '';
       document.getElementById('sellingprice').value = '';
+      document.getElementById('price').value = '';
 
       
-      if ($('#gsm').val() == "300" && $('#brand').val() == "sripathi") {
-         window.actual_costprice = 32;
-         window.actual_sellingprice = 40;
+      if ($('#gsm').val() == "300" && $('#brand').val() == "kerani") {
+         window.item_id = "BXBKER300";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#gsm').val() == "350" && $('#brand').val() == "sripathi") {
-         window.actual_costprice = 37.5;
-         window.actual_sellingprice = 46.875;
+         window.item_id = "BXBSRI350";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else if ($('#gsm').val() == "400" && $('#brand').val() == "sripathi") {
-         window.actual_costprice = 46;
-         window.actual_sellingprice = 57.5;
+         window.item_id = "BXBSRI400";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
-      else if ($('#gsm').val() == "250" && $('#brand').val() == "unbrand") {
-         window.actual_costprice = 28;
-         window.actual_sellingprice = 35;
+      else if ($('#gsm').val() == "250" && $('#brand').val() == "kerani") {
+         window.item_id = "BXBKER250";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = false;
+         document.getElementById("add").disabled = false;
       }
       else {
-         window.actual_costprice = 0;
-         window.actual_sellingprice = 0;
+         window.item_id = "";
+         
+         if (window.globalvar == "costpage") {
+              showUser(window.item_id);
+              $('#pricing').append($(window.test));
+              pricechange();
+          }
+          
          document.getElementById("btn-add-data").disabled = true;
+         document.getElementById("add").disabled = true;
       }
       
    }
@@ -60,13 +96,14 @@ function boxboardBtnOnclick() {
          boxboardbrand = $('#brand').val();
          var costprice = document.getElementById("costprice").value;
          var sellingprice = document.getElementById("sellingprice").value;
-         $(".table.one > tbody").append("<tr class='one'><td>" + boxboardgsm + "_GSM_Box_Board_" + boxboardbrand + "</td><td>" + boxboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
+         $(".table.one > tbody").append("<tr class='one'><td><input type='button' class='removebtn btn-danger' value='X'>" + boxboardgsm + "_GSM_Box_Board_" + boxboardbrand + "</td><td>" + boxboardqty + "</td><td>" + costprice + "</td><td>" + sellingprice + "</td></tr>");
          $('#qty').val('');
          document.getElementById('costprice').value = '';
          document.getElementById('sellingprice').value = '';
          $("#gsm").val("0");
          $("#brand").val("0");
          $('#qty').val('');
+         $('#pricing').find('option').remove();
          $('#qty').prop('disabled', true);
          if (global_variable == "global") {settotable();}
 
@@ -83,4 +120,15 @@ function boxboardBtnOnclick() {
 }
 
    
+}
+
+function pricechange() {
+
+  if ($('#pricing').val()) {$('#qty').prop('disabled', false);} else { $('#qty').prop('disabled', true); }
+  
+    $('#qty').val('');
+    window.actual_costprice = $( "#pricing" ).val();
+   window.actual_sellingprice = Number(window.actual_costprice)+Number(window.actual_costprice*0.25);
+   document.getElementById('costprice').value = '';
+   document.getElementById('sellingprice').value = '';
 }
