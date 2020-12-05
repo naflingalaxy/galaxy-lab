@@ -12,7 +12,7 @@ $product_name = "editInvoice";
 // Required pages & varibles ----------------------------
 $invoice_table_data = $db->query("SELECT * FROM tbl_galaxy_invoice ORDER BY invoice_uniq_id DESC");
 $invoice_max_id = $db->query("SELECT MAX(invoice_uniq_id) FROM tbl_galaxy_invoice");
-$job_table_data = $db->query("SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1");
+$job_table_data = $db->query("SELECT job_card_id, job_card_customer_id FROM tbl_galaxy_sales_job_card WHERE job_card_status = 2");
 
 if ($invoice_max_id) { $invoice_id = $invoice_max_id[0]['MAX(invoice_uniq_id)'];}
 // Update data of Invoice-------------------------------------------------------------------

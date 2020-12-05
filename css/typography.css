@@ -218,10 +218,10 @@ Background Color
 ------------------------------------------------*/
 .badge-primary { background-color: #f9ecad !important; }
 .bg-secondary, .badge-secondary { background-color: #777D74 !important; }
-.bg-success, .badge-success { background-color: #00c99c !important; }
-.bg-danger, .badge-danger { background-color: #f4828b !important; }
+.bg-success, .badge-success { background-color: #0bb510 !important; }
+.bg-danger, .badge-danger { background-color: #ec0416 !important; }
 .bg-warning, .badge-warning { background-color: #ffd400 !important; }
-.bg-info, .badge-info { background-color: #50baff !important; }
+.bg-info, .badge-info { background-color: #0c8bde !important; }
 .bg-light, .badge-light { background-color: #bfbfbe !important; }
 .bg-dark, .badge-dark { background-color: #1d2438 !important; }
 .bg-white { background-color: #f2f4ff !important; }

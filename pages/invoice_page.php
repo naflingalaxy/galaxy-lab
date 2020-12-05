@@ -1,3 +1,29 @@
+<script>
+   function showAdvance(str) {
+            if (str == "") {
+              document.getElementById("ajax").innerHTML = "";
+
+              return;
+            } else {
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("ajax").innerHTML = this.responseText;
+                  
+                  
+                }
+              };
+              xmlhttp.open("GET","advancepayment.php?q="+str,true);
+              
+              xmlhttp.send();
+              
+            }
+           
+           
+             
+          }
+</script> 
+         
                <!-- Page Content  -->
          <div id="content-page" class="content-page">
             <div class="container-fluid">
@@ -12,11 +38,11 @@
                         <div class="iq-card-body">
                            
                            <form method="post">
-                              <div class="form-row">
+                              <div class="form-row" id="">
                                  
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Job Card No</label>
-                                       <select class="custom-select cost-main-menu" id="jobid" name="jobid" required>
+                                    <label for="validationTooltip04">Job Card No (Closed)</label>
+                                       <select class="custom-select cost-main-menu" id="jobid" name="jobid" onChange="jobcardchange();" required>
                                              <option selected="" disabled="" value="">Choose...</option>
                                              <?php if ($job_table_data) {
                                                       for ($z=0; $z < count($job_table_data); $z++) { 
@@ -26,7 +52,7 @@
                                                          if (!$jb_sql) {
                                                          ?>
 
-                                             <option value="<?php echo $job_table_data[$z]['job_card_id']; ?>"><?php echo $job_table_data[$z]['job_card_id']." (".$job_table_data[$z]['job_card_customer_name'].")"; ?></option>
+                                             <option value="<?php echo $job_table_data[$z]['job_card_id']; ?>"><?php echo $job_table_data[$z]['job_card_id']." (".getcusname($job_table_data[$z]['job_card_customer_id']).")"; ?></option>
 
                                              <?php } }} ?>                                             
                                        </select>
@@ -36,56 +62,9 @@
                                     </div>
                                     
                                  </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Customer Name</label>
-                                    
-                                    <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Item.
-                                    </div>
-                                 </div>
+                                 <div id="ajax"></div>
                                  
                                  
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Description</label>
-                                    
-                                    <input type="text" class="form-control" name="description" id="description" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Qty</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="qty" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Rate</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^.0-9]/g,'');" name="rate" id="rate" maxlength="10" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Number.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Discount<code> (%)</code></label>
-                                    
-                                    <input type="text" class="form-control" maxlength="2" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="discount" id="discount" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Number.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Advance Paid</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="advance" id="advance" maxlength="10" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Number.
-                                    </div>
-                                 </div>
                                  
                               </div>
                               
@@ -117,7 +96,7 @@
                   </div>
                  <div class="col-sm-12 col-lg-6">
                      
-                     <div class="iq-card" id="pdf">
+                     <div class="iq-card" id="pdf" style="visibility: hidden;">
                            <!-- <div class="iq-card-header d-flex justify-content-between">
                               <div class="iq-header-title">
                                  <h4 class="card-title">Details</h4>
@@ -187,10 +166,10 @@
                                     <td><span id="tbletotal"></span></td>
                                  </tr>
                                  <tr class="second">
-                                    <td>Discount (<span id="tblediscount"></span>%)</td>
+                                    <td>Discount</td>
                                     <td></td>
                                     <td></td>
-                                    <td><span id="tblediscountamount"></span></td>
+                                    <td><span id="tblediscount"></span></td>
                                  </tr>
                                  <tr class="second">
                                     <td>Advance Paid</td>
@@ -265,7 +244,7 @@
                                     </button>
                                  </div>
                                  <?php } ?>
-                                 <div class="table-responsive" style="height: 60vh;">
+                                 <div class="table-responsive" style="<?php if ($invoice_table_data) {echo "height: 60vh;";} ?>">
                                     <table id="datatable" class="table table-striped table-bordered">
                                        <thead>
                                           <tr>
@@ -276,6 +255,7 @@
                                              <th scope="col">Customer Description</th>
                                              <th scope="col">QTY</th>
                                              <th scope="col">Rate</th>
+                                             <th scope="col" style="background: #ace0ae;color: #000000;text-align: right;font-weight: bold;">Total</th>
                                              <th scope="col">Discount</th>
                                              <th scope="col">Advance Paid</th>
                                              <th scope="col">Date & Time</th>
@@ -298,9 +278,10 @@
                                              <td><?php echo $invoice_table_data[$x]['invoice_customer_name']; ?></td>
                                              <td><?php echo $invoice_table_data[$x]['invoice_description']; ?></td>
                                              <td><?php echo $invoice_table_data[$x]['invoice_qty']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_rate']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_discount']."%"; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_advance']; ?></td>
+                                             <td style="text-align: right;"><?php echo number_format($invoice_table_data[$x]['invoice_rate'], 2); ?></td>
+                                             <td style="background: #ace0ae;color: #000000;text-align: right;font-weight: bold;"><?php echo number_format($invoice_table_data[$x]['invoice_rate']*$invoice_table_data[$x]['invoice_qty'], 2); ?></td>
+                                             <td style="text-align: right;"><?php echo number_format($invoice_table_data[$x]['invoice_discount'], 2); ?></td>
+                                             <td style="text-align: right;"><?php echo number_format($invoice_table_data[$x]['invoice_advance'], 2); ?></td>
                                              
                                              <td><?php echo $invoice_table_data[$x]['invoice_date_time']; ?></td>
                                              <td><?php echo $invoice_table_data[$x]['invoice_added_user']; ?></td>
@@ -314,7 +295,7 @@
                                                 <div class="d-inline-block">
                                                 <?php if ($invoice_table_data[$x]['invoice_status'] != "1") { ?>
 
-                                                <a href="<?php echo HTTP_PATH; ?>edit-invoice?editid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn approve"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                                <a href="<?php echo HTTP_PATH; ?>edit-invoice?editid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn approve" style="display:none;"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                                 <a href="<?php echo HTTP_PATH; ?>invoice?confirmid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn btn-primary" onclick="return confirm('Are you sure you want to confirm Invoice #<?php echo $invoice_table_data[$x]['invoice_id']; ?> ?')"><i class="fa fa-check" aria-hidden="true"></i></a>
                                              <?php } ?>
                                              
@@ -322,7 +303,7 @@
                                              </td>
                                              <td>
                                                 <?php if ($invoice_table_data[$x]['invoice_status'] != "0") { ?>
-                                                <a href="<?php echo HTTP_PATH; ?>pdf-view?invoiceid=<?php echo $invoice_table_data[$x]['invoice_id']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
+                                                <a href="<?php echo HTTP_PATH; ?>pdf-view?invoiceid=<?php echo $invoice_table_data[$x]['invoice_uniq_id']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                                              <?php } ?>
 
                                              </td>
@@ -397,11 +378,18 @@ var rate = document.getElementById('rate');
     document.getElementById('tblerate').innerHTML = window.rate.value;
     sumlist();
 }
-var advance = document.getElementById('advance');
-   advance.onkeyup = function(){
-    document.getElementById('tbleadvance').innerHTML = window.advance.value;
+
+function advancechange() {
+  var advance = $("#advance option:selected").text();
+    
+document.getElementById('tbleadvance').innerHTML = window.advance.value;
     sumlist();
-}
+   }
+
+
+   
+    
+
 var discount = document.getElementById('discount');
    discount.onkeyup = function(){
     document.getElementById('tblediscount').innerHTML = window.discount.value;
@@ -411,12 +399,12 @@ var discount = document.getElementById('discount');
 function sumlist() {
    var total = qty.value*rate.value;
    var discountmargin = window.discount.value;
-   var discount = total*(discountmargin/100);
+   var discount = discountmargin*1;
    var advance = window.advance.value*1;
    var blnce = (total-discount)-advance;
    document.getElementById('tbletotal').innerHTML = addThousandsSeparator(total.toFixed(2));
    document.getElementById('tbletotalmain').innerHTML = addThousandsSeparator(total.toFixed(2));
-   document.getElementById('tblediscountamount').innerHTML = addThousandsSeparator(discount.toFixed(2));
+   document.getElementById('tblediscount').innerHTML = addThousandsSeparator(discount.toFixed(2));
    document.getElementById('tbleadvance').innerHTML = addThousandsSeparator(advance.toFixed(2));
    document.getElementById('tblebalance').innerHTML = addThousandsSeparator(blnce.toFixed(2));
      
@@ -488,5 +476,17 @@ function addThousandsSeparator(input) {
 
 
 </script> 
+<script>
+   function jobcardchange() {
+      
          
+         window.jobid = $('#jobid').val();
+
+         showAdvance(window.jobid);
+
+         $.getJSON('details.php',function(data){
+        $(".qty").html(data.name);
         
+    });
+   }
+</script>        

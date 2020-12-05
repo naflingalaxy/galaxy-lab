@@ -1,0 +1,15 @@
+Time : 06:38:58
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?, ?, ?, ?, ?)' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_job_card_id, invoice_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:job_id, :invoice_id, :cus_id :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 06:13:28
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'receipt_cus_id' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_receipt (receipt_id, receipt_jobcard_id, receipt_invoice_id, receipt_cus_id, receipt_amount, receipt_amount_letters, receipt_cheque_number, receipt_cheque_amount, receipt_cheque_bank, receipt_cheque_date, receipt_direct_deposit_ref_number, receipt_direct_deposit_amount, receipt_direct_deposit_bank, receipt_direct_deposit_date_time, receipt_date_time, receipt_added_user, receipt_status) VALUES (:receipt_id, :job_id, :invoice_id, :customer_id, :cash_amount, :receipt_amount_letters, :cheque_number, :cheque_amount, :cheque_bank, :cheque_date, :direct_ref, :direct_amount, :direct_bank, :direct_date, :added_date, :user_id, :status)
+
+Time : 06:13:20
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'receipt_cus_id' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_receipt (receipt_id, receipt_jobcard_id, receipt_invoice_id, receipt_cus_id, receipt_amount, receipt_amount_letters, receipt_cheque_number, receipt_cheque_amount, receipt_cheque_bank, receipt_cheque_date, receipt_direct_deposit_ref_number, receipt_direct_deposit_amount, receipt_direct_deposit_bank, receipt_direct_deposit_date_time, receipt_date_time, receipt_added_user, receipt_status) VALUES (:receipt_id, :job_id, :invoice_id, :customer_id, :cash_amount, :receipt_amount_letters, :cheque_number, :cheque_amount, :cheque_bank, :cheque_date, :direct_ref, :direct_amount, :direct_bank, :direct_date, :added_date, :user_id, :status)
+
+Time : 06:09:27
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'receipt_cus_id' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_receipt (receipt_id, receipt_jobcard_id, receipt_invoice_id, receipt_cus_id, receipt_amount, receipt_amount_letters, receipt_cheque_number, receipt_cheque_amount, receipt_cheque_bank, receipt_cheque_date, receipt_direct_deposit_ref_number, receipt_direct_deposit_amount, receipt_direct_deposit_bank, receipt_direct_deposit_date_time, receipt_date_time, receipt_added_user, receipt_status) VALUES (:receipt_id, :job_id, :invoice_id, :customer_id, :cash_amount, :receipt_amount_letters, :cheque_number, :cheque_amount, :cheque_bank, :cheque_date, :direct_ref, :direct_amount, :direct_bank, :direct_date, :added_date, :user_id, :status)

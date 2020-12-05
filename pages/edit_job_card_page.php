@@ -6,7 +6,7 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title">Edit Job Card</h4>
+                              <h4 class="card-title">Edit Job Card (<?php echo $edit_job_card[0]['job_card_id']; ?>)</h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
@@ -20,10 +20,14 @@
                                        if(isset($name)) {echo $name;} ?>" name="customer" list="numbers" autocomplete="off" oninput="hideList(this)" required>
 
                                        <datalist id="numbers" class="none">
+                                          <option selected value="<?php if(isset($name)) {echo $name;} ?>"><?php if(isset($name)) {echo $name;} ?></option>
                                           <?php if ($data_list) {
-                                            for ($x=0; $x < count($data_list); $x++) {?>
-                                          <option value="<?php echo $data_list[$x]['job_card_customer_name']; ?>"><?php echo $data_list[$x]['job_card_customer_name']; ?></option>
-                                          <?php }} ?>
+                                            for ($x=0; $x < count($data_list); $x++) {
+                                             if(isset($name)) {
+                                             if ($data_list[$x]['customer_name'] != $name) {?>
+
+                                          <option value="<?php echo $data_list[$x]['customer_name']; ?>"><?php echo $data_list[$x]['customer_name']; ?></option>
+                                          <?php }} }} ?>
                                        </datalist>
                                     
                                     <div class="invalid-tooltip">
@@ -31,21 +35,19 @@
                                     </div>
                                     
                                  </div>
-                                 <div class="col-md-6 mb-3">
+                                 <div class="col-md-6 mb-3 address">
                                     <label for="validationTooltip04">Address</label>
                                     
-                                    <input type="text" class="form-control" name="address" id="" value="<?php 
-                                       if(isset($address)) {echo $address;} ?>" autocomplete="off" required>
+                                    <input type="text" class="form-control" name="address" id="address" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Item.
                                     </div>
                                  </div>
                                  
-                                 <div class="col-md-6 mb-3">
+                                 <div class="col-md-6 mb-3 number">
                                     <label for="validationTooltip04">Contact Number</label>
                                     
-                                    <input type="text" class="form-control" value="<?php 
-                                       if(isset($number)) {echo $number;} ?>" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="number" id="" maxlength="10" autocomplete="off" required>
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="number" id="number" maxlength="10" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Number.
                                     </div>
@@ -69,7 +71,41 @@
                                        Please add a Number.
                                     </div>
                                  </div>
-                                 
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">QTY</label>
+                                    
+                                    <input type="text" class="form-control" value="<?php 
+                                       if(isset($qty)) {echo $qty;} ?>" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="" maxlength="6" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                       Please add a Number.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                 <label for="validationTooltip04">Sales Man</label>
+                                          <select class="custom-select cost-main-menu" id="salesman" name="salesman" required>
+                                             <option disabled value="">Choose...</option>
+                                             <?php if (isset($sales_man_name)) {?>
+                                             <option <?php if ($sales_man_name == "General") {echo "selected";}?> value="General">General</option>
+                                             <option <?php if ($sales_man_name == "GM") {echo "selected";}?> value="GM">GM</option>
+                                             <option <?php if ($sales_man_name == "Amjath") {echo "selected";}?> value="Amjath">Amjath</option>
+                                             <option <?php if ($sales_man_name == "Naflan") {echo "selected";}?> value="Naflan">Naflan</option>
+                                             <option <?php if ($sales_man_name == "Lionel") {echo "selected";}?> value="Lionel">Lionel</option>
+                                             <option <?php if ($sales_man_name == "Nipun") {echo "selected";}?> value="Nipun">Nipun</option>
+                                             <option <?php if ($sales_man_name == "Jayathilake") {echo "selected";}?> value="Jayathilake">Jayathilake</option>
+                                             <option <?php if ($sales_man_name == "Aneer") {echo "selected";}?> value="Aneer">Aneer</option>
+                                             <option <?php if ($sales_man_name == "Naflin") {echo "selected";}?> value="Naflin">Naflin</option>
+                                             <option <?php if ($sales_man_name == "Azeem") {echo "selected";}?> value="Azeem">Azeem</option>
+                                             <option <?php if ($sales_man_name == "Dilshan") {echo "selected";}?> value="Dilshan">Dilshan</option>
+                                             <option <?php if ($sales_man_name == "Kasun") {echo "selected";}?> value="Kasun">Kasun</option>
+                                             <option <?php if ($sales_man_name == "Hasantha") {echo "selected";}?> value="Hasantha">Hasantha</option>
+                                             <option <?php if ($sales_man_name == "Shashika") {echo "selected";}?> value="Shashika">Shashika</option>
+                                             <option <?php if ($sales_man_name == "Indika") {echo "selected";}?> value="Indika">Indika</option>
+                                             <option <?php if ($sales_man_name == "Adhikari") {echo "selected";}?> value="Adhikari">Adhikari</option>
+                                          <?php } ?>
+                                             
+                                            
+                                       </select>
+                                 </div>
                                  
                               </div>
                               
@@ -137,5 +173,33 @@
                         $(this).addClass("highlight");
             });
             </script>
-         
+          <script>
+              $(document).on('change', '#customer', function(){
+                var options = $('datalist')[0].options;
+                $datalistval= $('#customer').val();
+                
+                   if ($('option[value="'+$datalistval+'"]').length != 0) 
+                     {
+                        $('.address').hide();
+                         $('.number').hide();
+                        $('#address').hide().prop('required',false);
+                         $('#number').hide().prop('required',false);
+                     } else {
+                        $('.address').show();
+                         $('.number').show();
+                        $('#address').show().prop('required',true);
+                         $('#number').show().prop('required',true);
+                     }
+
+                
+            });
+            </script>
+            <script>
+               $(document).ready(function(){
+               $('.address').hide();
+                  $('.number').hide();
+                  $('#address').hide().prop('required',false);
+                  $('#number').hide().prop('required',false);
+                })
+            </script>
         

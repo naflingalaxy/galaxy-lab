@@ -6,137 +6,10 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Receipt #</h4>
+                              <h4 class="card-title"> Receipt #<?php echo $receipt_max_id[0]['MAX(receipt_id)']; ?></h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
-                           
-                           <form method="post">
-                               <h4 class="card-title" style="padding-bottom: 15px;">CASH PAYMENT</h4>
-                              <div class="form-row">
-                                
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Job Card No</label>
-                                       <select class="custom-select cost-main-menu" id="jobid" name="jobid" required>
-                                             <option selected="" disabled="" value="">Choose...</option>
-                                             <?php if ($job_table_data) {
-                                                      for ($z=0; $z < count($job_table_data); $z++) { ?>
-
-                                             <option value="<?php echo $job_table_data[$z]['job_card_id']; ?>"><?php echo $job_table_data[$z]['job_card_id']." (".$job_table_data[$z]['job_card_customer_name'].")"; ?></option>
-
-                                             <?php }} ?>                                             
-                                       </select>
-                                    
-                                    <div class="invalid-tooltip">
-                                       Please add a Name.
-                                    </div>
-                                    
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Customer Name</label>
-                                    
-                                    <input type="text" class="form-control" name="name" id="name" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Item.
-                                    </div>
-                                 </div>
-                                 
-                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Amount</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="qty" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Amount In Letters</label>
-                                    
-                                    <input type="text" class="form-control" name="description" id="description" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="line"></div>
-                              <h4 class="card-title" style="padding-bottom: 15px;">CHEQUE PAYMENT</h4>
-                              
-                              <div class="form-row">
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Cheque Number</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="qty" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Cheque Amount</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="qty" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Bank Name</label>
-                                    
-                                    <input type="text" class="form-control" name="description" id="description" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Date</label>
-                                    
-                                    <input type="date" class="form-control" id="exampleInputdate" value="" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="line"></div>
-                              <h4 class="card-title" style="padding-bottom: 15px;">DIRECT DEPOSIT</h4>
-                              
-                              <div class="form-row">
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Ref Number</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="qty" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Amount</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="qty" id="qty" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Bank Name</label>
-                                    
-                                    <input type="text" class="form-control" name="description" id="description" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Date</label>
-                                    
-                                    <input type="date" class="form-control" id="exampleInputdate" value="" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Address.
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="form-group" style="padding: 15px 0 0 0; margin: 0;">
-                                 <button name="btn-add" class="btn btn-primary" type="submit">ADD RECEIPT &emsp;#</button>
-                              </div>
-
-                           </form>
                            <?php if (isset($_COOKIE['errorMessage'])) {?>
                               <div class="alert text-white bg-danger" role="alert">
                               <div class="iq-alert-text"><?php echo $_COOKIE['errorMessage']; ?></div>
@@ -153,6 +26,171 @@
                               </button>
                            </div>
                            <?php } ?>
+                           <form method="post">
+                               <h4 class="card-title" style="padding-bottom: 15px;">CASH PAYMENT</h4>
+                               <div class="custom-control custom-radio custom-control-inline">
+                                       <input type="radio" id="customRadio6" name="timespan" value="invoiceoption" class="custom-control-input" required> 
+                                       <label class="timespan custom-control-label" for="customRadio6"> Invoice</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                       <input type="radio" id="customRadio2" name="timespan" value="useroption" class="timespan custom-control-input">
+                                       <label class="custom-control-label" for="customRadio2"> Customer Name</label>
+                                    </div>
+                              <div class="form-row" style="margin-top: 10px;">
+                                
+                                 <div class="col-md-6 mb-3 invoiceid">
+                                    
+
+                                    <label for="validationTooltip04">Invoice No</label>
+                                       <select class="custom-select cost-main-menu" id="invoiceid" name="invoiceid">
+                                             <option selected="" disabled="" value="">Choose...</option>
+                                             <?php if ($invoice_table_data) {
+                                                      for ($z=0; $z < count($invoice_table_data); $z++) { ?>
+
+                                             <option value="<?php echo $invoice_table_data[$z]['invoice_id']; ?>"><?php echo $invoice_table_data[$z]['invoice_id']." (".$invoice_table_data[$z]['invoice_customer_name'].")"; ?></option>
+
+                                             <?php }} ?>
+                                             <!-- <option value="5">Advance Payment</option> -->                                             
+                                       </select>
+                                    
+                                    <div class="invalid-tooltip">
+                                       Please add a Name.
+                                    </div>
+                                    
+                                 </div>
+                                 <div class="col-md-6 mb-3 customer">
+                                    <label for="validationTooltip04">Customer</label>
+                                       <input type="text" id="customer" class="form-control" name="customer" list="numbers" autocomplete="off" oninput="hideList(this)">
+
+                                       <datalist id="numbers" class="none">
+                                          <?php if ($data_list) {
+                                            for ($x=0; $x < count($data_list); $x++) {?>
+                                          <option value="<?php echo $data_list[$x]['customer_name']; ?>"><?php echo $data_list[$x]['customer_name']; ?></option>
+                                          <?php }} ?>
+                                       </datalist>
+                                    
+                                    <div class="invalid-tooltip">
+                                       Please add a Name.
+                                    </div>
+                                    
+                                 </div>
+                                 <div class="col-md-6 mb-3 address">
+                                    <label for="validationTooltip04">Address</label>
+                                    
+                                    <input type="text" class="form-control word" name="address" id="address" autocomplete="off">
+                                    <div style="visibility: hidden;" id="word"></div>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3 number">
+                                    <label for="validationTooltip04">Number</label>
+                                    
+                                    <input type="text" class="form-control word" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="10" name="number" id="number" autocomplete="off">
+                                    <div style="visibility: hidden;" id="word"></div>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                  <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Amount</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="cash_amount" id="cash_amount" autocomplete="off" onkeyup="word.innerHTML=convertNumberToWords(this.value)" required>
+
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Amount In Letters</label>
+                                    
+                                    <input type="text" class="form-control word" name="amount_description" id="amount_description" autocomplete="off" readonly required>
+                                    <div style="visibility: hidden;" id="word"></div>
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="line"></div>
+                              <h4 class="card-title" style="padding-bottom: 15px;">CHEQUE PAYMENT</h4>
+                              
+                              <div class="form-row">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Cheque Number</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="cheque_number" id="cheque_number" autocomplete="off" value="0">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Cheque Amount</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="cheque_amount" id="cheque_amount" autocomplete="off" value="0">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Bank Name</label>
+                                    
+                                    <input type="text" class="form-control" name="cheque_bank" id="cheque_bank" autocomplete="off" value="0">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Date</label>
+                                    
+                                    <input type="date" class="form-control" id="cheque_date" name="cheque_date" value="0000-00-00">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="line"></div>
+                              <h4 class="card-title" style="padding-bottom: 15px;">DIRECT DEPOSIT</h4>
+                              
+                              <div class="form-row">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Ref Number</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="direct_ref" id="direct_ref" autocomplete="off" value="0">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Amount</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="direct_amount" id="direct_amount" autocomplete="off" value="0">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Bank Name</label>
+                                    
+                                    <input type="text" class="form-control" name="direct_bank" id="direct_bank" autocomplete="off" value="0">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Date</label>
+                                    
+                                    <input type="date" class="form-control" id="direct_date" name="direct_date" value="0000-00-00">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group" style="padding: 15px 0 0 0; margin: 0;">
+                                 <button name="btn-add-receipt" class="btn btn-primary" type="submit">ADD RECEIPT &emsp;#<?php echo $receipt_max_id[0]['MAX(receipt_id)']; ?></button>
+                              </div>
+
+                           </form>
+                           
                         </div>
                      </div>
                      
@@ -312,18 +350,18 @@
                                        <thead>
                                           <tr>
                                              <th scope="col" style="display:none;">Ref No</th>
-                                             <th scope="col">Invoice Number</th>
-                                             <th scope="col">Invoice Job Card Number</th>
-                                             <th scope="col">Customer Name</th>
-                                             <th scope="col">Customer Description</th>
-                                             <th scope="col">QTY</th>
-                                             <th scope="col">Rate</th>
-                                             <th scope="col">Discount</th>
-                                             <th scope="col">Advance Paid</th>
+                                             <th scope="col">Receipt Num</th>
+                                             <th scope="col">Receipt JC Number</th>
+                                             <th scope="col">Cus Name</th>
+                                             <th scope="col" style="background: #ace0ae;color: #000000;text-align: right;font-weight: bold;">Amount</th>
+                                             <th scope="col">Cheque Number</th>
+                                             <th scope="col" style="background: #acd4e0;color: #000000;text-align: right;font-weight: bold;">Cheque Amount</th>
+                                             <th scope="col">Direct Deposit Ref Num</th>
+                                             <th scope="col" style="background: #c0ace0;color: #000000;text-align: right;font-weight: bold;">Direct Deposit Amount</th>
                                              <th scope="col">Date & Time</th>
                                              <th scope="col">Added User</th>
                                              <th scope="col">Status</th>
-                                             <th scope="col">Edit / Confirm</th>
+                                             <th scope="col">Confirm / Delete</th>
                                              <th scope="col">PDF PRINT</th>
                                              <!-- <th scope="col">Status</th>
                                              <th scope="col">Edit / Confirm</th> -->
@@ -331,40 +369,41 @@
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          <?php if ($invoice_table_data) {
-                                                      for ($x=0; $x < count($invoice_table_data); $x++) { ?>
+                                          <?php if ($receipt_table_data) {
+                                                      for ($x=0; $x < count($receipt_table_data); $x++) { ?>
                                           <tr>
-                                             <td style="display:none;">#<?php echo $invoice_table_data[$x]['invoice_uniq_id']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_id']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_job_card_id']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_customer_name']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_description']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_qty']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_rate']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_discount']."%"; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_advance']; ?></td>
+                                             <td style="display:none;">#<?php echo $receipt_table_data[$x]['receipt_uniq_id']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_id']; ?></td>
+                                             <td><?php if ($receipt_table_data[$x]['receipt_jobcard_id'] == "0") { echo "Advance";} else {echo $receipt_table_data[$x]['receipt_jobcard_id'];} ?></td>
+                                             <td><?php if ($receipt_table_data[$x]['receipt_cus_id'] == "0") {echo getcusname(getcusidbyjcid($receipt_table_data[$x]['receipt_jobcard_id']));} else {echo getcusname($receipt_table_data[$x]['receipt_cus_id']);} ?></td>
+                                             <td style="background: #ace0ae;color: #000000;text-align: right;font-weight: bold;"><?php echo number_format($receipt_table_data[$x]['receipt_amount'], 2); ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_cheque_number']; ?></td>
+                                             <td style="background: #acd4e0;color: #000000;text-align: right;font-weight: bold;"><?php echo number_format($receipt_table_data[$x]['receipt_cheque_amount'], 2); ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_direct_deposit_ref_number']; ?></td>
+                                             <td style="background: #c0ace0;color: #000000;text-align: right;font-weight: bold;"><?php echo number_format($receipt_table_data[$x]['receipt_direct_deposit_amount'], 2); ?></td>
                                              
-                                             <td><?php echo $invoice_table_data[$x]['invoice_date_time']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_added_user']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_date_time']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_added_user']; ?></td>
                                              <td>
-                                                <?php if ($invoice_table_data[$x]['invoice_status'] == "0") { ?>
+                                                <?php if ($receipt_table_data[$x]['receipt_status'] == "0") { ?>
                                                 <div class="badge badge-pill badge-warning text-white">pending</div></td>
                                              <?php } else { ?>
                                                 <div class="badge badge-pill badge-success">active</div>
                                              <?php } ?>
                                              <td>
                                                 <div class="d-inline-block">
-                                                <?php if ($invoice_table_data[$x]['invoice_status'] != "1") { ?>
+                                                <?php if ($receipt_table_data[$x]['receipt_status'] != "1") { ?>
 
-                                                <a href="<?php echo HTTP_PATH; ?>edit-invoice?editid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn approve"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                                <a href="<?php echo HTTP_PATH; ?>invoice?confirmid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn btn-primary" onclick="return confirm('Are you sure you want to confirm Invoice #<?php echo $invoice_table_data[$x]['invoice_id']; ?> ?')"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a href="<?php echo HTTP_PATH; ?>receipt?confirmid=<?php echo $receipt_table_data[$x]['receipt_uniq_id'];?>" class="badge edit-btn btn-primary" onclick="return confirm('Are you sure you want to confirm Receipt #<?php echo $receipt_table_data[$x]['receipt_id']; ?> ?')"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a href="<?php echo HTTP_PATH; ?>receipt?deleteid=<?php echo $receipt_table_data[$x]['receipt_uniq_id'];?>" class="badge edit-btn badge-danger" onclick="return confirm('Are you sure you want to delete Receipt #<?php echo $receipt_table_data[$x]['receipt_id']; ?> ?')"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                
                                              <?php } ?>
                                              
                                                  </div>
                                              </td>
                                              <td>
-                                                <?php if ($invoice_table_data[$x]['invoice_status'] != "0") { ?>
-                                                <a href="<?php echo HTTP_PATH; ?>pdf-view?invoiceid=<?php echo $invoice_table_data[$x]['invoice_id']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
+                                                <?php if ($receipt_table_data[$x]['receipt_status'] != "0") { ?>
+                                                <a href="<?php echo HTTP_PATH; ?>pdf-view?receiptid=<?php echo $receipt_table_data[$x]['receipt_id']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                                              <?php } ?>
 
                                              </td>
@@ -529,6 +568,151 @@ function addThousandsSeparator(input) {
 
 
 
-</script> 
+</script>
+<script>
+   function convertNumberToWords(amount) {
+    var words = new Array();
+    words[0] = '';
+    words[1] = 'One';
+    words[2] = 'Two';
+    words[3] = 'Three';
+    words[4] = 'Four';
+    words[5] = 'Five';
+    words[6] = 'Six';
+    words[7] = 'Seven';
+    words[8] = 'Eight';
+    words[9] = 'Nine';
+    words[10] = 'Ten';
+    words[11] = 'Eleven';
+    words[12] = 'Twelve';
+    words[13] = 'Thirteen';
+    words[14] = 'Fourteen';
+    words[15] = 'Fifteen';
+    words[16] = 'Sixteen';
+    words[17] = 'Seventeen';
+    words[18] = 'Eighteen';
+    words[19] = 'Nineteen';
+    words[20] = 'Twenty';
+    words[30] = 'Thirty';
+    words[40] = 'Forty';
+    words[50] = 'Fifty';
+    words[60] = 'Sixty';
+    words[70] = 'Seventy';
+    words[80] = 'Eighty';
+    words[90] = 'Ninety';
+    amount = amount.toString();
+    var atemp = amount.split(".");
+    var number = atemp[0].split(",").join("");
+    var n_length = number.length;
+    var words_string = "";
+    if (n_length <= 9) {
+        var n_array = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0);
+        var received_n_array = new Array();
+        for (var i = 0; i < n_length; i++) {
+            received_n_array[i] = number.substr(i, 1);
+        }
+        for (var i = 9 - n_length, j = 0; i < 9; i++, j++) {
+            n_array[i] = received_n_array[j];
+        }
+        for (var i = 0, j = 1; i < 9; i++, j++) {
+            if (i == 0 || i == 2 || i == 4 || i == 7) {
+                if (n_array[i] == 1) {
+                    n_array[j] = 10 + parseInt(n_array[j]);
+                    n_array[i] = 0;
+                }
+            }
+        }
+        value = "";
+        for (var i = 0; i < 9; i++) {
+            if (i == 0 || i == 2 || i == 4 || i == 7) {
+                value = n_array[i] * 10;
+            } else {
+                value = n_array[i];
+            }
+            if (value != 0) {
+                words_string += words[value] + " ";
+            }
+            if ((i == 1 && value != 0) || (i == 0 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Crores ";
+            }
+            if ((i == 3 && value != 0) || (i == 2 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Lakhs ";
+            }
+            if ((i == 5 && value != 0) || (i == 4 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Thousand ";
+            }
+            if (i == 6 && value != 0 && (n_array[i + 1] != 0 && n_array[i + 2] != 0)) {
+                words_string += "Hundred and ";
+            } else if (i == 6 && value != 0) {
+                words_string += "Hundred ";
+            }
+        }
+        words_string = words_string.split("  ").join(" ");
+        
+    }
+    document.getElementById('amount_description').value = words_string;
+    return words_string;
+    
+}
+</script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+            $(document).ready(function() {
+             
+             $('.invoiceid').hide().prop('required',false);
+             $('.customer').hide().prop('required',false);
+                 $('.timespan').click(function () {
+                  var selected = $(this).val();  
+                     if(selected == 'useroption') {
+                      $('.customer').show().prop('required',true);
+                      $('#address').show().prop('required',true);
+                      $('#number').show().prop('required',true);
+                      $('.invoiceid').hide().prop('required',false);
+                      $('#customer').show().prop('required',true);
+                      $('#invoiceid').hide().prop('required',false);
+                      $('.address').show();
+                         $('.number').show();
+                   } else {
+                     document.getElementById('customer').value = "";
+                     $('.address').hide();
+                         $('.number').hide();
+                      $('.invoiceid').show().prop('required',true);
+                      $('.customer').hide().prop('required',false);
+                      $('#invoiceid').show().prop('required',true);
+                      $('#customer').hide().prop('required',false);
+                      $('#address').hide().prop('required',false);
+                      $('#number').hide().prop('required',false);
+                    }
+                   //  if(selected == 'ongoing') {
+                   //    $('.single').show();
+                      
+                   // } else {
+                   //    $('.single').hide();
+                      
+                   //  }
+             });       
+           });
+         </script>
+         <script>
+              $(document).on('change', '#customer', function(){
+                var options = $('datalist')[0].options;
+                $datalistval= $('#customer').val();
+                
+                   if ($('option[value="'+$datalistval+'"]').length != 0) 
+                     {
+                        $('.address').hide();
+                         $('.number').hide();
+                        $('#address').hide().prop('required',false);
+                         $('#number').hide().prop('required',false);
+                     } else {
+                        $('.address').show();
+                         $('.number').show();
+                        $('#address').show().prop('required',true);
+                         $('#number').show().prop('required',true);
+                     }
+
+                
+            });
+            </script>
          
         

@@ -21,8 +21,22 @@
             <div id="sidebar-scrollbar">
                <nav class="iq-sidebar-menu">
                   <ul class="iq-menu">
-                     
-                     <li class="<?php if ($main_menu_category == "board"){ echo "menu-open";} ?>">
+                     <li class="<?php if ($main_menu_category == "store"){ echo "menu-open";} ?>">
+                        <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-file-chart-line"></i><span>Store</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul class="iq-submenu <?php if ($main_menu_category == "store"){ echo "menu-open";} ?>" style="<?php if ($page_name == "products") { echo "display: block;";} ?>">
+                          
+                           
+                           <?php 
+                              $page_data = $db->query("SELECT account_url, account_name FROM tbl_galaxy_accounts WHERE account_group = '4'");
+                              if ($page_data) {
+                                  for ($s=0; $s < count($page_data); $s++) { ?>
+                           <li class="<?php if ($current_page_name_variable == $page_data[$s]['account_url']) { echo "active menu-open";}?>"><a href="<?php echo HTTP_PATH.$page_data[$s]['account_url']; ?>"><?php echo $page_data[$s]['account_name']; ?></a></li>
+                           <?php }} ?>
+                           
+
+                        </ul>
+                     </li>
+                     <li class="<?php if ($main_menu_category == "board"){ echo "menu-open";} ?>" style="display:none;">
                         <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-device-line"></i><span>Boards</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu <?php if ($main_menu_category == "board"){ echo "menu-open";} ?>" style="<?php if ($current_page_name_variable == "art-board") { echo "display: block;";} ?>">
 
@@ -36,7 +50,7 @@
                            
                         </ul>
                      </li>
-                     <li class="<?php if ($main_menu_category == "paper"){ echo "menu-open";} ?>">
+                     <li class="<?php if ($main_menu_category == "paper"){ echo "menu-open";} ?>" style="display:none;">
                         <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-file-fill"></i><span>Papers</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu <?php if ($main_menu_category == "paper"){ echo "menu-open";} ?>" style="<?php if ($page_name == "paper-board") { echo "display: block;";} ?>">
                           
@@ -49,7 +63,7 @@
                            
                         </ul>
                      </li>
-                     <li class="<?php if ($main_menu_category == "paint"){ echo "menu-open";} ?>">
+                     <li class="<?php if ($main_menu_category == "paint"){ echo "menu-open";} ?>" style="display:none;">
                         <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-paint-brush-fill"></i><span>Paints</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu <?php if ($main_menu_category == "paint"){ echo "menu-open";} ?>" style="<?php if ($page_name == "paint") { echo "display: block;";} ?>">
                           
@@ -60,7 +74,7 @@
 
                         </ul>
                      </li>
-                     <li class="<?php if ($main_menu_category == "chemicals"){ echo "menu-open";} ?>">
+                     <li class="<?php if ($main_menu_category == "chemicals"){ echo "menu-open";} ?>" style="display:none;">
                         <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-contrast-drop-line"></i><span>Chemicals</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu <?php if ($main_menu_category == "chemicals"){ echo "menu-open";} ?>" style="<?php if ($page_name == "chemicals") { echo "display: block;";} ?>">
                           
@@ -105,6 +119,7 @@
 
                         </ul>
                      </li>
+                     
                      <li style="display: none;">
                         <a href="javascript:void(0);" class="iq-waves-effect"><i class="ri-mail-line"></i><span>Email</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul class="iq-submenu">
@@ -134,7 +149,7 @@
                   <nav aria-label="breadcrumb">
                      <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?php echo HTTP_PATH; ?>index">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><?php $current_page = basename($_SERVER['PHP_SELF'],".php");  echo preg_replace("/[^a-zA-Z]/", " ", $current_page); ?></li>
+                        <li class="breadcrumb-item active" aria-current="page"><span style="background: #1c67a2;padding: 5px;color: #ffffff;text-transform: uppercase;"><?php $current_page = basename($_SERVER['PHP_SELF'],".php");  echo preg_replace("/[^a-zA-Z]/", " ", $current_page); ?></span></li>
                      </ul>
                   </nav>
                </div>

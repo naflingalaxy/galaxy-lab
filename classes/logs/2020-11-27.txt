@@ -1,0 +1,27 @@
+Time : 12:39:29
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 12:32:08
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?, ?, ?, ?, ?)' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_id, invoice_job_card_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:invoice_id, :job_id, :cus_id :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 12:23:41
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?, ?, ?, ?, ?)' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_id, invoice_job_card_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:invoice_id, :job_id, :cus_id :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 12:17:52
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?, ?, ?, ?, ?)' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_id, invoice_job_card_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:invoice_id, :job_id, :cus_id :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 10:29:56
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?, ?, ?, ?, ?)' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_job_card_id, invoice_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:job_id, :invoice_id, :cus_id :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 09:55:37
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?, ?, ?, ?, ?, ?, ?, ?, ?)' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_job_card_id, invoice_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:job_id, :invoice_id, :cus_id :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 04:45:35
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC

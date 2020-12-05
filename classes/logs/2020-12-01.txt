@@ -1,0 +1,7 @@
+Time : 07:30:36
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 06:30:20
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1

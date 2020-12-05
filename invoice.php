@@ -9,10 +9,12 @@ require_once DOC_ROOT.'includes/functions.php';
 $main_menu_category = "sales";
 $current_page_name_variable = "invoice";
 $product_name = "Invoice";
+
 // Required pages & varibles ----------------------------
 $invoice_table_data = $db->query("SELECT * FROM tbl_galaxy_invoice ORDER BY invoice_uniq_id DESC");
 $invoice_max_id = $db->query("SELECT MAX(invoice_id) FROM tbl_galaxy_invoice");
-$job_table_data = $db->query("SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1");
+$job_table_data = $db->query("SELECT job_card_id, job_card_customer_id FROM tbl_galaxy_sales_job_card WHERE job_card_status = 2");
+
 
 if ($invoice_max_id) { $invoice_id = ++$invoice_max_id[0]['MAX(invoice_id)'];}
 // Adding data of JOB card-------------------------------------------------------------------
@@ -20,6 +22,7 @@ if (isset($_POST['btn-add'])) {
 
 	// $job_card_id = ;
 	$job_id = filter_var($_POST['jobid'], FILTER_SANITIZE_STRING);
+	$customer_id = getcusidbyjcid($job_id);
 	$cname = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 	$description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
 	$qty = filter_var($_POST['qty'], FILTER_SANITIZE_STRING);
@@ -30,10 +33,23 @@ if (isset($_POST['btn-add'])) {
 	$date_time = $current_date_time;
 	$user_id = $_SESSION['user_id'];
 
-	$invoice_array = array('job_id' => $job_id, 'invoice_id' => $invoice_id, 'cname' => $cname, 'description' => $description, 'qty' => $qty, 'rate' => $rate, 'discount' => $discount, 'advance' => $advance, 'date_time' => $date_time, 'user_id' => $user_id, 'status' => 0);
-	$invoice_sql = $db->query("INSERT INTO tbl_galaxy_invoice (invoice_job_card_id, invoice_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:job_id, :invoice_id, :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)", $invoice_array);
+	$invoice_array = array('job_id' => $job_id, 'invoice_id' => $invoice_id, 'cus_id' => $customer_id, 'cname' => $cname, 'description' => $description, 'qty' => $qty, 'rate' => $rate, 'discount' => $discount, 'advance' => $advance, 'date_time' => $date_time, 'user_id' => $user_id, 'status' => "0");
+	$invoice_sql = $db->query("INSERT INTO tbl_galaxy_invoice (invoice_id, invoice_job_card_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:invoice_id, :job_id, :cus_id, :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)", $invoice_array);
 
 	if ($invoice_sql) {
+
+		if ($advance != "0") {
+			$customer_account_array = array('cus_id' => $customer_id, 'status' => "1", 'credit_amount' => $advance);
+			$customer_account_sql = $db->query("UPDATE tbl_galaxy_customer_account SET account_status = :status WHERE account_customer_id = :cus_id AND account_credit = :credit_amount", $customer_account_array);
+
+			$total_amount = totalcreditamount($customer_id);
+			if ($advance == $total_amount) {
+				$jb_id_update_to_reciept_array = array('job_id' => $job_id, 'cus_idd' => $customer_id);
+				$jb_id_update_to_reciept_sql = $db->query("UPDATE tbl_galaxy_receipt SET receipt_jobcard_id = :job_id WHERE receipt_cus_id = :cus_idd", $jb_id_update_to_reciept_array);
+			}
+			
+		}
+
 		$successMessage = "Invoice Added Successfully.!";
 		setcookie("successMessage", $successMessage, time() + (5 * 1), "/"); // 1 minute
 		header("Location:".HTTP_PATH."invoice");

@@ -50,5 +50,46 @@ function getstockcountbristal($color){
 	
 	return $item_count;
 }
+
+function getcusname($cusID){
+	global $db;
+	global $table_name;
+
+	
+		$array = array("cusid"=> $cusID);
+		$select_name = $db->query("SELECT customer_name FROM tbl_galaxy_customer WHERE customer_id = :cusid", $array);
+		$selected_name = $select_name[0]['customer_name'];
+	
+	
+	return $selected_name;
+}
+
+function getcusidbyjcid($jid) {
+	global $db;
+	global $table_name;
+
+	
+		$array = array("jc_id"=> $jid);
+		$select_cus_id = $db->query("SELECT job_card_customer_id FROM tbl_galaxy_sales_job_card WHERE job_card_id = :jc_id", $array);
+		$select_detect_cus_id = $select_cus_id[0]['job_card_customer_id'];
+	
+	
+	return $select_detect_cus_id;
+
+}
+
+function totalcreditamount($cusid) {
+	global $db;
+	global $table_name;
+
+	
+		$array = array("cusid"=> $cusid);
+		$select_cus_id = $db->query("SELECT receipt_amount, receipt_cheque_amount, receipt_direct_deposit_amount FROM tbl_galaxy_receipt WHERE receipt_cus_id = :cusid", $array);
+		$select_detect_cus_id = $select_cus_id[0]['receipt_amount']+$select_cus_id[0]['receipt_cheque_amount']+$select_cus_id[0]['receipt_direct_deposit_amount'];
+	
+	
+	return $select_detect_cus_id;
+
+}
 ?>
 

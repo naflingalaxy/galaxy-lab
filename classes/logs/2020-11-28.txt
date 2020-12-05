@@ -1,0 +1,35 @@
+Time : 07:50:55
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : UPDATE tbl_galaxy_sales_job_card SET job_card_customer_id = :customer_id, job_card_customer_name = :name, job_card_address = :address, job_card_customer_number = :cnumber, job_card_job_type = :job, job_card_amount = :amount, job_card_qty = :qty, job_card_date_time = :date_time, job_card_added_user_id = :user_id WHERE job_card_uniq_id = :uniq_id
+
+Time : 04:40:07
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 04:39:15
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 04:39:13
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 04:37:24
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 04:37:22
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 04:37:08
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT * FROM tbl_galaxy_customer WHERE customer_id = :job_card_uniq_id
+
+Time : 04:29:53
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 04:26:36
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC

@@ -1,0 +1,111 @@
+Time : 11:23:09
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 11:16:16
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 2
+
+Time : 10:55:06
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 2
+
+Time : 10:50:47
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'customer_name, customer_address, customer_number, customer_status) VALUES (?,...' at line 1
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id	customer_name, customer_address, customer_number, customer_status) VALUES (:customer_id, :name, :address, :cnumber, :status)
+
+Time : 10:46:20
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'where clause'
+Raw SQL : SELECT job_card_customer_id FROM tbl_galaxy_sales_job_card WHERE job_card_customer_name = :user_name
+
+Time : 10:43:10
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT DISTINCT job_card_customer_name FROM tbl_galaxy_sales_job_card ORDER BY job_card_id DESC
+
+Time : 09:07:19
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 09:04:08
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:28:40
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :date_time)
+
+Time : 08:20:35
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:20:02
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :date_time)
+
+Time : 08:19:25
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :date_time)
+
+Time : 08:16:38
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:14:45
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:12:29
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:06:13
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:05:16
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:04:26
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer_account (account_customer_id, account_credit, account_debit, account_date_time) VALUES (:cust_id, :credit, :debit, :account_date_time)
+
+Time : 08:01:46
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'customer_balance' in 'field list'
+Raw SQL : SELECT customer_name, customer_id, customer_balance FROM tbl_galaxy_customer WHERE customer_name = :cust_name
+
+Time : 07:18:15
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_receipt (receipt_id, receipt_jobcard_id, receipt_invoice_id, receipt_cus_id, receipt_amount, receipt_amount_letters, receipt_cheque_number, receipt_cheque_amount, receipt_cheque_bank, receipt_cheque_date, receipt_direct_deposit_ref_number, receipt_direct_deposit_amount, receipt_direct_deposit_bank, receipt_direct_deposit_date_time, receipt_date_time, receipt_added_user, receipt_status) VALUES (:receipt_id, :job_id, :receipt_invoice_id, :customer_id, :cash_amount, :receipt_amount_letters, :cheque_number, :cheque_amount, :cheque_bank, :cheque_date, :direct_ref, :direct_amount, :direct_bank, :direct_date, :added_date, :user_id, :status)
+
+Time : 07:14:23
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'receipt_job_card_id' in 'field list'
+Raw SQL : INSERT INTO tbl_galaxy_receipt (receipt_id, receipt_job_card_id, receipt_invoice_id, receipt_cus_id, receipt_amount, receipt_amount_letters, receipt_cheque_number, receipt_cheque_amount, receipt_cheque_bank, receipt_cheque_date, receipt_direct_deposit_ref_number, receipt_direct_deposit_amount, receipt_direct_deposit_bank, receipt_direct_deposit_date_time, receipt_date_time, receipt_added_user, receipt_status) VALUES (:receipt_id, :job_id, :receipt_invoice_id, :customer_id, :cash_amount, :receipt_amount_letters, :cheque_number, :cheque_amount, :cheque_bank, :cheque_date, :direct_ref, :direct_amount, :direct_bank, :direct_date, :added_date, :user_id, :status)
+
+Time : 07:06:50
+SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+Raw SQL : INSERT INTO tbl_galaxy_receipt (receipt_id, receipt_job_card_id, receipt_invoice_id, receipt_cus_id, receipt_amount, receipt_amount_letters, receipt_cheque_number, receipt_cheque_amount, receipt_cheque_bank, receipt_cheque_date, receipt_direct_deposit_ref_number, receipt_direct_deposit_amount, receipt_direct_deposit_bank, receipt_direct_deposit_date_time, receipt_date_time, receipt_added_user, receipt_status) VALUES (:receipt_id, :job_id, :customer_id, :cash_amount, :receipt_amount_letters, :cheque_number, :cheque_amount, :cheque_bank, :cheque_date, :direct_ref, :direct_amount, :direct_bank, :direct_date, :added_date, :user_id, :status)
+
+Time : 07:05:32
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id, customer_name, customer_address, customer_number, customer_status) VALUES (:cus_id, :cus_name, :customer_address, :customer_number, :customer_status)
+
+Time : 07:03:33
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id, customer_name, customer_address, customer_number, customer_status) VALUES (:cus_id, :cus_name, :customer_address, :customer_number, :customer_status)
+
+Time : 07:00:29
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id, customer_name, customer_address, customer_number, customer_status) VALUES (:cus_id, :cus_name, :customer_address, :customer_number, :customer_status)
+
+Time : 07:00:10
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id, customer_name, customer_address, customer_number, customer_status) VALUES (:cus_id, :cus_name, :customer_address, :customer_number, :customer_status)
+
+Time : 06:59:39
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id, customer_name, customer_address, customer_number, customer_status) VALUES (:cus_id, :cus_name, :customer_address, :customer_number, :customer_status)
+
+Time : 06:44:46
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_customer (customer_id, customer_name, customer_address, customer_number, customer_status) VALUES (:cus_id, :cus_name, :customer_address, :customer_number, :customer_status)

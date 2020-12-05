@@ -1,0 +1,11 @@
+Time : 06:55:34
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_daily_expenses (expenses_category, expenses_description, expenses_amount, expenses_number, expenses_added_user, expenses_date, expenses_status) VALUES (:department, :description, :amount, :reference, :user_id, :date_time, :user_id)
+
+Time : 06:54:21
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_daily_expenses (expenses_category, expenses_description, expenses_amount, expenses_number, expenses_added_user, expenses_date, expenses_status) VALUES (:department, :description, :amount, :reference, :user_id, :date_time, :user_id)
+
+Time : 06:48:34
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO tbl_galaxy_daily_expenses (expenses_category, expenses_description, expenses_amount, expenses_number, expenses_added_user, expenses_date, expenses_status) VALUES (:department, :description, :amount, :reference, :user_id, :date_time, :user_id)

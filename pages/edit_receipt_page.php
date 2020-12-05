@@ -6,32 +6,25 @@
                      <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                            <div class="iq-header-title">
-                              <h4 class="card-title"> Edit Invoice #<?php if (isset($_GET['editid'])) { echo $update_data_retrive_sql[0]['invoice_id'];} ?></h4>
+                              <h4 class="card-title">Edit Receipt #<?php echo $edit_sql[0]['receipt_id']; ?></h4>
                            </div>
                         </div>
                         <div class="iq-card-body">
                            
                            <form method="post">
+                               <h4 class="card-title" style="padding-bottom: 15px;">CASH PAYMENT</h4>
                               <div class="form-row">
-                                 
+                                
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Job Card No</label>
                                        <select class="custom-select cost-main-menu" id="jobid" name="jobid" required>
-                                             <option disabled="" value="">Choose...</option>
-                                             <option <?php if ($job_table_data[0]['job_card_id'] == $edit_job_id) {echo 'selected=""'; } ?> value="<?php echo $job_table_data[0]['job_card_id']; ?>"><?php echo $job_table_data[0]['job_card_id']." (".getcusname($job_table_data[0]['job_card_customer_id']).")"; ?></option>
+                                             <option selected="" disabled="" value="">Choose...</option>
                                              <?php if ($job_table_data) {
-                                                      for ($z=0; $z < count($job_table_data); $z++) {
+                                                      for ($z=0; $z < count($job_table_data); $z++) { ?>
 
+                                             <option <?php if ($job_table_data[$z]['job_card_id'] == $edit_sql[0]['receipt_job_card_id']) { echo 'selected="selected"';} ?> value="<?php echo $job_table_data[$z]['job_card_id']; ?>"><?php echo $job_table_data[$z]['job_card_id']." (".$job_table_data[$z]['job_card_customer_name'].")"; ?></option>
 
-                                                         $job_card_id_check = $job_table_data[$z]['job_card_id'];
-                                                         $jb_array = array('chkid' => $job_card_id_check, 'edit_id' => $update_data_retrive_sql[0]['invoice_job_card_id']);
-                                                         $jb_sql = $db->query("SELECT invoice_job_card_id FROM tbl_galaxy_invoice WHERE invoice_job_card_id = :chkid AND invoice_job_card_id = :edit_id", $jb_array);
-                                                         if ($jb_sql) {
-                                                         ?>
-
-                                             <option <?php if ($job_table_data[$z]['job_card_id'] == $edit_job_id) { } ?> value="<?php echo $job_table_data[$z]['job_card_id']; ?>"><?php echo $job_table_data[$z]['job_card_id']." (".getcusname($job_table_data[$z]['job_card_customer_id']).")"; ?></option>
-
-                                             <?php } }} ?>                                             
+                                             <?php }} ?>                                             
                                        </select>
                                     
                                     <div class="invalid-tooltip">
@@ -42,59 +35,105 @@
                                  <div class="col-md-6 mb-3">
                                     <label for="validationTooltip04">Customer Name</label>
                                     
-                                    <input type="text" class="form-control" name="name" id="name" autocomplete="off" value="<?php if(isset($edit_cname)) {echo $edit_cname;} ?>" required>
+                                    <input type="text" class="form-control" name="name" id="name" value="<?php if (isset($edit_sql[0]['receipt_cus_name'])) { echo $edit_sql[0]['receipt_cus_name'];} ?>" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Item.
                                     </div>
                                  </div>
                                  
-                                 
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Description</label>
+                                  <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Amount</label>
                                     
-                                    <input type="text" class="form-control" name="description" id="description" value="<?php if (isset($edit_desc)) {echo $edit_desc;} ?>"  autocomplete="off" required>
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="cash_amount" id="cash_amount" autocomplete="off" value="<?php if (isset($edit_sql[0]['receipt_amount'])) { echo $edit_sql[0]['receipt_amount'];} ?>" required>
                                     <div class="invalid-tooltip">
                                        Please add a Address.
                                     </div>
                                  </div>
                                  <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Qty</label>
+                                    <label for="validationTooltip04">Amount In Letters</label>
                                     
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value="<?php if (isset($edit_qty)) {echo $edit_qty;} ?>" name="qty" id="qty" autocomplete="off" required>
+                                    <input type="text" class="form-control" name="amount_description" id="amount_description" value="<?php if (isset($edit_sql[0]['receipt_amount_letters'])) { echo $edit_sql[0]['receipt_amount_letters'];} ?>" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                        Please add a Address.
                                     </div>
                                  </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Rate</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^.0-9]/g,'');" value="<?php if (isset($edit_rate)) {echo $edit_rate;} ?>" name="rate" id="rate" maxlength="10" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Number.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Discount<code> (%)</code></label>
-                                    
-                                    <input type="text" class="form-control" maxlength="2" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="discount" id="discount" value="<?php if (isset($edit_discount)) {echo $edit_discount;} ?>" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Number.
-                                    </div>
-                                 </div>
-                                 <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip04">Advance Paid</label>
-                                    
-                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="advance" value="<?php if (isset($edit_advance)) {echo $edit_advance;} ?>" id="advance" maxlength="10" autocomplete="off" readonly required>
-                                    <div class="invalid-tooltip">
-                                       Please add a Number.
-                                    </div>
-                                 </div>
-                                 
                               </div>
+                              <div class="line"></div>
+                              <h4 class="card-title" style="padding-bottom: 15px;">CHEQUE PAYMENT</h4>
                               
-
+                              <div class="form-row">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Cheque Number</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="cheque_number" id="cheque_number" value="<?php if (isset($edit_sql[0]['receipt_cheque_number'])) { echo $edit_sql[0]['receipt_cheque_number'];} ?>" autocomplete="off">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Cheque Amount</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="cheque_amount" id="cheque_amount" value="<?php if (isset($edit_sql[0]['receipt_cheque_amount'])) { echo $edit_sql[0]['receipt_cheque_amount'];} ?>" autocomplete="off">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Bank Name</label>
+                                    
+                                    <input type="text" class="form-control" name="cheque_bank" id="cheque_bank" value="<?php if (isset($edit_sql[0]['receipt_cheque_bank'])) { echo $edit_sql[0]['receipt_cheque_bank'];} ?>" autocomplete="off">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Date</label>
+                                    
+                                    <input type="date" class="form-control" id="cheque_date" name="cheque_date" value="<?php if (isset($edit_sql[0]['receipt_cheque_date'])) { echo $edit_sql[0]['receipt_cheque_date'];} ?>" value="">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="line"></div>
+                              <h4 class="card-title" style="padding-bottom: 15px;">DIRECT DEPOSIT</h4>
+                              
+                              <div class="form-row">
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Ref Number</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="direct_ref" id="direct_ref"  value="<?php if (isset($edit_sql[0]['receipt_direct_deposit_ref_number'])) { echo $edit_sql[0]['receipt_direct_deposit_ref_number'];} ?>" autocomplete="off">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Amount</label>
+                                    
+                                    <input type="text" class="form-control" oninput="this.value=this.value.replace(/[^0-9]/g,'');" name="direct_amount" id="direct_amount"  value="<?php if (isset($edit_sql[0]['receipt_direct_deposit_amount'])) { echo $edit_sql[0]['receipt_direct_deposit_amount'];} ?>" autocomplete="off">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Bank Name</label>
+                                    
+                                    <input type="text" class="form-control" name="direct_bank" id="direct_bank" value="<?php if (isset($edit_sql[0]['receipt_direct_deposit_bank'])) { echo $edit_sql[0]['receipt_direct_deposit_bank'];} ?>" autocomplete="off">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 mb-3">
+                                    <label for="validationTooltip04">Date</label>
+                                    
+                                    <input type="date" class="form-control" id="direct_date" name="direct_date" value="<?php if (isset($edit_sql[0]['receipt_direct_deposit_date_time'])) { echo $edit_sql[0]['receipt_direct_deposit_date_time'];} ?>">
+                                    <div class="invalid-tooltip">
+                                       Please add a Address.
+                                    </div>
+                                 </div>
+                              </div>
                               <div class="form-group" style="padding: 15px 0 0 0; margin: 0;">
-                                 <button name="btn-update" class="btn btn-primary" type="submit">UPDATE #<?php echo $update_data_retrive_sql[0]['invoice_id']; ?></button>
+                                 <button name="btn-add-receipt-update" class="btn btn-primary" type="submit">UPDATE RECEIPT &emsp;#<?php echo $edit_sql[0]['receipt_id']; ?></button>
                               </div>
 
                            </form>
@@ -120,7 +159,7 @@
                   </div>
                  <div class="col-sm-12 col-lg-6">
                      
-                     <div class="iq-card" id="pdf">
+                     <div class="iq-card" id="pdf" style="display:none;">
                            <!-- <div class="iq-card-header d-flex justify-content-between">
                               <div class="iq-header-title">
                                  <h4 class="card-title">Details</h4>
@@ -137,7 +176,7 @@
                                  </tr>
                                  <tr>
                                    <td><b>INVOICE NUMBER</b> &emsp;</td>
-                                   <td><?php if (isset($_GET['editid'])) { echo $update_data_retrive_sql[0]['invoice_id'];} ?></td>
+                                   <td>#<?php if ($invoice_max_id) { echo $invoice_max_id[0]['MAX(invoice_id)'];} ?></td>
                                    <td><b>&emsp;&emsp;DATE &amp; TIME</b> &emsp;</td>
                                    <td><span id="dtime"></span></td>
                                  </tr>
@@ -248,6 +287,10 @@
                            <div class="iq-card">
                               
                               <div class="iq-card-body">
+                                 <div class="iq-header-title">
+                                    <h4 class="card-title">RECEIPTS
+                                    </h4>
+                                 </div>
                                  <?php if (isset($_COOKIE['delerrorMessage'])) {?>
                                     <div class="alert text-white bg-danger" role="alert">
                                     <div class="iq-alert-text"><?php echo $_COOKIE['delerrorMessage']; ?></div>
@@ -268,15 +311,15 @@
                                     <table id="datatable" class="table table-striped table-bordered">
                                        <thead>
                                           <tr>
-                                             <th scope="col">Ref No</th>
-                                             <th scope="col">Invoice Number</th>
-                                             <th scope="col">Invoice Job Card Number</th>
+                                             <th scope="col" style="display:none;">Ref No</th>
+                                             <th scope="col">Receipt Number</th>
+                                             <th scope="col">Receipt Job Card Number</th>
                                              <th scope="col">Customer Name</th>
-                                             <th scope="col">Customer Description</th>
-                                             <th scope="col">QTY</th>
-                                             <th scope="col">Rate</th>
-                                             <th scope="col">Discount</th>
-                                             <th scope="col">Advance Paid</th>
+                                             <th scope="col">Amount</th>
+                                             <th scope="col">Cheque Number</th>
+                                             <th scope="col">Cheque Amount</th>
+                                             <th scope="col">Direct Deposit Ref Number</th>
+                                             <th scope="col">Direct Deposit Amount</th>
                                              <th scope="col">Date & Time</th>
                                              <th scope="col">Added User</th>
                                              <th scope="col">Status</th>
@@ -288,40 +331,40 @@
                                           </tr>
                                        </thead>
                                        <tbody>
-                                          <?php if ($invoice_table_data) {
-                                                      for ($x=0; $x < count($invoice_table_data); $x++) { ?>
+                                          <?php if ($receipt_table_data) {
+                                                      for ($x=0; $x < count($receipt_table_data); $x++) { ?>
                                           <tr>
-                                             <td style="">#<?php echo $invoice_table_data[$x]['invoice_uniq_id']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_id']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_job_card_id']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_customer_name']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_description']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_qty']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_rate']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_discount']."%"; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_advance']; ?></td>
+                                             <td style="display:none;">#<?php echo $receipt_table_data[$x]['receipt_uniq_id']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_id']; ?></td>
+                                             <td><?php if ($receipt_table_data[$x]['receipt_jobcard_id'] == "0") { echo "Advance";} else {echo $receipt_table_data[$x]['receipt_jobcard_id'];} ?></td>
+                                             <td><?php echo getcusname($receipt_table_data[$x]['receipt_cus_id']); ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_amount']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_cheque_number']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_cheque_amount']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_direct_deposit_ref_number']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_direct_deposit_amount']; ?></td>
                                              
-                                             <td><?php echo $invoice_table_data[$x]['invoice_date_time']; ?></td>
-                                             <td><?php echo $invoice_table_data[$x]['invoice_added_user']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_date_time']; ?></td>
+                                             <td><?php echo $receipt_table_data[$x]['receipt_added_user']; ?></td>
                                              <td>
-                                                <?php if ($invoice_table_data[$x]['invoice_status'] == "0") { ?>
+                                                <?php if ($receipt_table_data[$x]['receipt_status'] == "0") { ?>
                                                 <div class="badge badge-pill badge-warning text-white">pending</div></td>
                                              <?php } else { ?>
                                                 <div class="badge badge-pill badge-success">active</div>
                                              <?php } ?>
                                              <td>
                                                 <div class="d-inline-block">
-                                                <?php if ($invoice_table_data[$x]['invoice_status'] != "1") { ?>
+                                                <?php if ($receipt_table_data[$x]['receipt_status'] != "1") { ?>
 
-                                                <a href="<?php echo HTTP_PATH; ?>edit-invoice?editid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn approve"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                                <a href="<?php echo HTTP_PATH; ?>invoice?confirmid=<?php echo $invoice_table_data[$x]['invoice_uniq_id'];?>" class="badge edit-btn btn-primary" onclick="return confirm('Are you sure you want to confirm Invoice #<?php echo $invoice_table_data[$x]['invoice_id']; ?> ?')"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                                <a href="<?php echo HTTP_PATH; ?>edit-receipt?editid=<?php echo $receipt_table_data[$x]['receipt_uniq_id'];?>" class="badge edit-btn approve"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                                <a href="<?php echo HTTP_PATH; ?>receipt?confirmid=<?php echo $receipt_table_data[$x]['receipt_uniq_id'];?>" class="badge edit-btn btn-primary" onclick="return confirm('Are you sure you want to confirm Receipt #<?php echo $receipt_table_data[$x]['receipt_id']; ?> ?')"><i class="fa fa-check" aria-hidden="true"></i></a>
                                              <?php } ?>
                                              
                                                  </div>
                                              </td>
                                              <td>
-                                                <?php if ($invoice_table_data[$x]['invoice_status'] != "0") { ?>
-                                                <a href="<?php echo HTTP_PATH; ?>pdf-view?invoiceid=<?php echo $invoice_table_data[$x]['invoice_id']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
+                                                <?php if ($receipt_table_data[$x]['receipt_status'] != "0") { ?>
+                                                <a href="<?php echo HTTP_PATH; ?>pdf-view?receiptid=<?php echo $receipt_table_data[$x]['receipt_id']; ?>" target="_blank"><i class="fa fa-print fa-2x" aria-hidden="true"></i></a>
                                              <?php } ?>
 
                                              </td>
@@ -434,12 +477,6 @@ function addThousandsSeparator(input) {
 }
 </script>
 
-<?php if (isset($_GET['editid'])) { ?>
-<script>
-   sumlist();
-</script>   
-   
-<?php } ?>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     

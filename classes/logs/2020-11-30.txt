@@ -1,0 +1,31 @@
+Time : 12:27:49
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 12:27:27
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 12:26:33
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 11:30:09
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'invoice_customer_id' cannot be null
+Raw SQL : INSERT INTO tbl_galaxy_invoice (invoice_id, invoice_job_card_id, invoice_customer_id, invoice_customer_name, invoice_description, invoice_qty, invoice_rate, invoice_discount, invoice_advance, invoice_date_time, invoice_added_user, invoice_status) VALUES (:invoice_id, :job_id, :cus_id, :cname, :description, :qty, :rate, :discount, :advance, :date_time, :user_id, :status)
+
+Time : 06:57:09
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 06:55:54
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 06:55:47
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1
+
+Time : 06:55:27
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'job_card_customer_name' in 'field list'
+Raw SQL : SELECT job_card_id, job_card_customer_name FROM tbl_galaxy_sales_job_card WHERE job_card_status = 1

@@ -71,7 +71,7 @@ th { font-weight: 600; }
 /*---------------------------------------------------------------------
                                   Badge
 -----------------------------------------------------------------------*/
-.badge {color: black !important;text-transform: uppercase;color: black; padding: .3em .6em; font-weight: normal; line-height: 1.3; box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.07), -20px -20px 20px rgba(255, 255, 255, 0.7), 6px 6px 6px rgba(0, 0, 0, 0.09), -6px -6px 6px rgba(255, 255, 255, 0.9); }
+.badge {color: #ffffff !important;text-transform: uppercase;color: black; padding: .3em .6em; font-weight: 500; line-height: 1.3; box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.07), -20px -20px 20px rgba(255, 255, 255, 0.7), 6px 6px 6px rgba(0, 0, 0, 0.09), -6px -6px 6px rgba(255, 255, 255, 0.9); }
 .breadcrumb.bg-primary .breadcrumb-item+.breadcrumb-item::before { color: #ffffff; }
 
 /*---------------------------------------------------------------------
@@ -264,7 +264,7 @@ border-radius: 10px; }
 .iq-top-navbar .iq-navbar-custom .navbar-breadcrumb { display: inline-block; margin: 15px 0 0 30px; float: left; }
 .iq-top-navbar .breadcrumb .breadcrumb-item.active { color: #777D74;text-transform: capitalize; }
 .iq-top-navbar .breadcrumb { background: transparent; padding: 0; margin: 0; }
-.iq-top-navbar .breadcrumb li { list-style-type: none; font-size: 12px; }
+.iq-top-navbar .breadcrumb li { list-style-type: none; font-size: 18px; }
 .breadcrumb-item+.breadcrumb-item::before { content: "\ea5f"; font-family: 'remixicon'; font-size: 14px; vertical-align: sub; color: #777D74; }
 .iq-top-navbar .breadcrumb li a, .iq-top-navbar .breadcrumb li a:hover { text-decoration: none; }
 .navbar-list { margin: 0; padding: 0; float: right; }
@@ -1220,14 +1220,14 @@ table#mytbl > tbody > tr > td:fourth-child , table#mytbl > tbody > th {
   }
 }
 @media only screen and (min-width: 1200px) {
-  body {  font-size: 11px;
+  body {  font-size: 11.5px;
   }
   .btn-add {
     margin: 29px 15px;
   }
 }
 @media only screen and (min-width: 1920px) {
-  body {  font-size: 12px;
+  body {  font-size: 11.6px;
   }
   .btn-add {
     margin: 32px 40px;
